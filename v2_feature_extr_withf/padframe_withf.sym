@@ -1,0 +1,305 @@
+v {xschem version=3.4.8RC file_version=1.3}
+G {}
+K {type=subcircuit
+format="@name @pinlist @symname"
+spectre_format="@name ( @pinlist ) @symname"
+template="name=x1"
+}
+V {}
+S {}
+F {}
+E {}
+L 4 130 -560 150 -560 {}
+L 4 -150 -560 -130 -560 {}
+L 4 -150 500 -130 500 {}
+L 4 130 490 150 490 {}
+L 4 130 510 150 510 {}
+L 4 -150 520 -130 520 {}
+L 4 -150 440 -130 440 {}
+L 4 130 430 150 430 {}
+L 4 -150 460 -130 460 {}
+L 4 130 450 150 450 {}
+L 4 -150 480 -130 480 {}
+L 4 130 470 150 470 {}
+L 4 130 380 150 380 {}
+L 4 -150 380 -130 380 {}
+L 4 -150 400 -130 400 {}
+L 4 130 400 150 400 {}
+L 4 130 360 150 360 {}
+L 4 -150 360 -130 360 {}
+L 4 130 130 150 130 {}
+L 4 -150 130 -130 130 {}
+L 4 -150 190 -130 190 {}
+L 4 130 190 150 190 {}
+L 4 130 150 150 150 {}
+L 4 -150 150 -130 150 {}
+L 4 -150 210 -130 210 {}
+L 4 130 210 150 210 {}
+L 4 -150 40 -130 40 {}
+L 4 -150 20 -130 20 {}
+L 4 -150 170 -130 170 {}
+L 4 -150 320 -130 320 {}
+L 4 -150 70 -130 70 {}
+L 4 -150 90 -130 90 {}
+L 4 -150 110 -130 110 {}
+L 4 -150 230 -130 230 {}
+L 4 -150 300 -130 300 {}
+L 4 -150 280 -130 280 {}
+L 4 -150 260 -130 260 {}
+L 4 130 230 150 230 {}
+L 4 130 280 150 280 {}
+L 4 130 300 150 300 {}
+L 4 130 260 150 260 {}
+L 4 130 40 150 40 {}
+L 4 130 170 150 170 {}
+L 4 130 320 150 320 {}
+L 4 130 70 150 70 {}
+L 4 130 90 150 90 {}
+L 4 130 110 150 110 {}
+L 4 130 20 150 20 {}
+L 4 130 -395 150 -395 {}
+L 4 130 -335 150 -335 {}
+L 4 130 -315 150 -315 {}
+L 4 130 -275 150 -275 {}
+L 4 130 -65 150 -65 {}
+L 4 130 -195 150 -195 {}
+L 4 130 -235 150 -235 {}
+L 4 130 -355 150 -355 {}
+L 4 130 -45 150 -45 {}
+L 4 130 -255 150 -255 {}
+L 4 130 -215 150 -215 {}
+L 4 130 -25 150 -25 {}
+L 4 130 -160 150 -160 {}
+L 4 130 -140 150 -140 {}
+L 4 130 -375 150 -375 {}
+L 4 -150 -25 -130 -25 {}
+L 4 -150 -45 -130 -45 {}
+L 4 -150 -315 -130 -315 {}
+L 4 -150 -395 -130 -395 {}
+L 4 -150 -335 -130 -335 {}
+L 4 -150 -140 -130 -140 {}
+L 4 -150 -160 -130 -160 {}
+L 4 -150 -235 -130 -235 {}
+L 4 -150 -195 -130 -195 {}
+L 4 -150 -65 -130 -65 {}
+L 4 -150 -355 -130 -355 {}
+L 4 -150 -215 -130 -215 {}
+L 4 -150 -375 -130 -375 {}
+L 4 -150 -275 -130 -275 {}
+L 4 -150 -255 -130 -255 {}
+L 4 -150 -525 -130 -525 {}
+L 4 130 -525 150 -525 {}
+L 4 -150 -120 -130 -120 {}
+L 4 -150 -505 -130 -505 {}
+L 4 130 -120 150 -120 {}
+L 4 130 -505 150 -505 {}
+L 4 -150 -100 -130 -100 {}
+L 4 -150 -485 -130 -485 {}
+L 4 130 -100 150 -100 {}
+L 4 130 -485 150 -485 {}
+L 4 -150 -465 -130 -465 {}
+L 4 130 -465 150 -465 {}
+L 4 -150 -445 -130 -445 {}
+L 4 130 -445 150 -445 {}
+L 4 -150 -425 -130 -425 {}
+L 4 130 -425 150 -425 {}
+B 5 147.5 -562.5 152.5 -557.5 {name=en_feedback_in dir=in}
+B 5 -152.5 -562.5 -147.5 -557.5 {name=en_feedback_out dir=out}
+B 5 -152.5 497.5 -147.5 502.5 {name=SPI_CS_N_out dir=out}
+B 5 147.5 487.5 152.5 492.5 {name=SPI_CS_N_in dir=in}
+B 5 147.5 507.5 152.5 512.5 {name=SPI_MISO_out dir=out}
+B 5 -152.5 517.5 -147.5 522.5 {name=SPI_MISO_in dir=in}
+B 5 -152.5 437.5 -147.5 442.5 {name=SPI_SCK_out dir=out}
+B 5 147.5 427.5 152.5 432.5 {name=SPI_SCK_in dir=in}
+B 5 -152.5 457.5 -147.5 462.5 {name=SPI_MOSI_out dir=out}
+B 5 147.5 447.5 152.5 452.5 {name=SPI_MOSI_in dir=in}
+B 5 -152.5 477.5 -147.5 482.5 {name=SPI_RST_N_out dir=out}
+B 5 147.5 467.5 152.5 472.5 {name=SPI_RST_N_in dir=in}
+B 5 147.5 377.5 152.5 382.5 {name=C2F_REQ_out dir=out}
+B 5 -152.5 377.5 -147.5 382.5 {name=C2F_REQ_in dir=in}
+B 5 -152.5 397.5 -147.5 402.5 {name=C2F_ACK_out dir=out}
+B 5 147.5 397.5 152.5 402.5 {name=C2F_ACK_in dir=in}
+B 5 147.5 357.5 152.5 362.5 {name=C2F_COMP_out dir=out}
+B 5 -152.5 357.5 -147.5 362.5 {name=C2F_COMP_in dir=in}
+B 5 147.5 127.5 152.5 132.5 {name=NN1_REQ_out dir=out}
+B 5 -152.5 127.5 -147.5 132.5 {name=NN1_REQ_in dir=in}
+B 5 -152.5 187.5 -147.5 192.5 {name=NN1_ACK_out dir=out}
+B 5 147.5 187.5 152.5 192.5 {name=NN1_ACK_in dir=in}
+B 5 147.5 147.5 152.5 152.5 {name=NN2_REQ_out dir=out}
+B 5 -152.5 147.5 -147.5 152.5 {name=NN2_REQ_in dir=in}
+B 5 -152.5 207.5 -147.5 212.5 {name=NN2_ACK_out dir=out}
+B 5 147.5 207.5 152.5 212.5 {name=NN2_ACK_in dir=in}
+B 5 -152.5 37.5 -147.5 42.5 {name=V2I_INN_out dir=out}
+B 5 -152.5 17.5 -147.5 22.5 {name=V2I_INP_out dir=out}
+B 5 -152.5 167.5 -147.5 172.5 {name=NN3_REQ_in dir=in}
+B 5 -152.5 317.5 -147.5 322.5 {name=BG_PROBE_in dir=in}
+B 5 -152.5 67.5 -147.5 72.5 {name=NN1_MEM_PROBE_in dir=in}
+B 5 -152.5 87.5 -147.5 92.5 {name=NN2_MEM_PROBE_in dir=in}
+B 5 -152.5 107.5 -147.5 112.5 {name=NN3_MEM_PROBE_in dir=in}
+B 5 -152.5 227.5 -147.5 232.5 {name=NN3_ACK_out dir=out}
+B 5 -152.5 297.5 -147.5 302.5 {name=BG_BIAS_out dir=out}
+B 5 -152.5 277.5 -147.5 282.5 {name=BG_100kRES_out dir=out}
+B 5 -152.5 257.5 -147.5 262.5 {name=BG_100mV_out dir=out}
+B 5 147.5 227.5 152.5 232.5 {name=NN3_ACK_in dir=in}
+B 5 147.5 277.5 152.5 282.5 {name=BG_100kRES_in dir=in}
+B 5 147.5 297.5 152.5 302.5 {name=BG_BIAS_in dir=in}
+B 5 147.5 257.5 152.5 262.5 {name=BG_100mV_in dir=in}
+B 5 147.5 37.5 152.5 42.5 {name=V2I_INN_in dir=in}
+B 5 147.5 167.5 152.5 172.5 {name=NN3_REQ_out dir=out}
+B 5 147.5 317.5 152.5 322.5 {name=BG_PROBE_out dir=out}
+B 5 147.5 67.5 152.5 72.5 {name=NN1_MEM_PROBE_out dir=out}
+B 5 147.5 87.5 152.5 92.5 {name=NN2_MEM_PROBE_out dir=out}
+B 5 147.5 107.5 152.5 112.5 {name=NN3_MEM_PROBE_out dir=out}
+B 5 147.5 17.5 152.5 22.5 {name=V2I_INP_in dir=in}
+B 5 147.5 -397.5 152.5 -392.5 {name=vbias_in dir=in}
+B 5 147.5 -337.5 152.5 -332.5 {name=vspkthr_in dir=in}
+B 5 147.5 -317.5 152.5 -312.5 {name=vref_in dir=in}
+B 5 147.5 -277.5 152.5 -272.5 {name=vout_amp_out dir=out}
+B 5 147.5 -67.5 152.5 -62.5 {name=vbias_bufP_in dir=in}
+B 5 147.5 -197.5 152.5 -192.5 {name=vout_dn_out dir=out}
+B 5 147.5 -237.5 152.5 -232.5 {name=vmem_dn_out dir=out}
+B 5 147.5 -357.5 152.5 -352.5 {name=vleak_in dir=in}
+B 5 147.5 -47.5 152.5 -42.5 {name=vbias_bufN_in dir=in}
+B 5 147.5 -257.5 152.5 -252.5 {name=vmem_up_out dir=out}
+B 5 147.5 -217.5 152.5 -212.5 {name=vout_up_out dir=out}
+B 5 147.5 -27.5 152.5 -22.5 {name=ch_sel_in dir=in}
+B 5 147.5 -162.5 152.5 -157.5 {name=req_dn_out dir=out}
+B 5 147.5 -142.5 152.5 -137.5 {name=req_up_out dir=out}
+B 5 147.5 -377.5 152.5 -372.5 {name=vgain_in dir=in}
+B 5 -12.5 547.5 -7.5 552.5 {name=iovss dir=inout}
+B 5 -12.5 -582.5 -7.5 -577.5 {name=iovdd dir=inout}
+B 5 7.5 -582.5 12.5 -577.5 {name=vdd dir=inout}
+B 5 7.5 547.5 12.5 552.5 {name=vss dir=inout}
+B 5 -152.5 -27.5 -147.5 -22.5 {name=ch_sel_out dir=out}
+B 5 -152.5 -47.5 -147.5 -42.5 {name=vbias_bufN_out dir=out}
+B 5 -152.5 -317.5 -147.5 -312.5 {name=vref_out dir=out}
+B 5 -152.5 -397.5 -147.5 -392.5 {name=vbias_out dir=out}
+B 5 -152.5 -337.5 -147.5 -332.5 {name=vspkthr_out dir=out}
+B 5 -152.5 -142.5 -147.5 -137.5 {name=req_dn_in dir=in}
+B 5 -152.5 -162.5 -147.5 -157.5 {name=req_up_in dir=in}
+B 5 -152.5 -237.5 -147.5 -232.5 {name=vmem_dn_in dir=in}
+B 5 -152.5 -197.5 -147.5 -192.5 {name=vout_dn_in dir=in}
+B 5 -152.5 -67.5 -147.5 -62.5 {name=vbias_bufP_out dir=out}
+B 5 -152.5 -357.5 -147.5 -352.5 {name=vleak_out dir=out}
+B 5 -152.5 -217.5 -147.5 -212.5 {name=vout_up_in dir=in}
+B 5 -152.5 -377.5 -147.5 -372.5 {name=vgain_out dir=out}
+B 5 -152.5 -277.5 -147.5 -272.5 {name=vout_amp_in dir=in}
+B 5 -152.5 -257.5 -147.5 -252.5 {name=vmem_up_in dir=in}
+B 5 -152.5 -527.5 -147.5 -522.5 {name=vin_p_ch1_out dir=out}
+B 5 147.5 -527.5 152.5 -522.5 {name=vin_p_ch1_in dir=in}
+B 5 -152.5 -122.5 -147.5 -117.5 {name=ack_up_out dir=out}
+B 5 -152.5 -507.5 -147.5 -502.5 {name=vin_n_ch1_out dir=out}
+B 5 147.5 -122.5 152.5 -117.5 {name=ack_up_in dir=in}
+B 5 147.5 -507.5 152.5 -502.5 {name=vin_n_ch1_in dir=in}
+B 5 -152.5 -102.5 -147.5 -97.5 {name=ack_dn_out dir=out}
+B 5 -152.5 -487.5 -147.5 -482.5 {name=vin_p_ch2_out dir=out}
+B 5 147.5 -102.5 152.5 -97.5 {name=ack_dn_in dir=in}
+B 5 147.5 -487.5 152.5 -482.5 {name=vin_p_ch2_in dir=in}
+B 5 -152.5 -467.5 -147.5 -462.5 {name=vin_n_ch2_out dir=out}
+B 5 147.5 -467.5 152.5 -462.5 {name=vin_n_ch2_in dir=in}
+B 5 -152.5 -447.5 -147.5 -442.5 {name=vthr_h_out dir=out}
+B 5 147.5 -447.5 152.5 -442.5 {name=vthr_h_in dir=in}
+B 5 -152.5 -427.5 -147.5 -422.5 {name=vthr_l_out dir=out}
+B 5 147.5 -427.5 152.5 -422.5 {name=vthr_l_in dir=in}
+P 4 5 130 -580 -130 -580 -130 0 130 0 130 -580 {}
+P 4 5 130 0 -130 0 -130 550 130 550 130 0 {}
+T {en_feedback_in} 125 -556 2 0 0.2 0.2 {}
+T {en_feedback_out} -125 -556 2 1 0.2 0.2 {}
+T {SPI_CS_N_out} -125 504 2 1 0.2 0.2 {}
+T {SPI_CS_N_in} 125 494 2 0 0.2 0.2 {}
+T {SPI_MISO_out} 125 506 0 1 0.2 0.2 {}
+T {SPI_MISO_in} -125 516 0 0 0.2 0.2 {}
+T {SPI_SCK_out} -125 444 2 1 0.2 0.2 {}
+T {SPI_SCK_in} 125 434 2 0 0.2 0.2 {}
+T {SPI_MOSI_out} -125 464 2 1 0.2 0.2 {}
+T {SPI_MOSI_in} 125 454 2 0 0.2 0.2 {}
+T {SPI_RST_N_out} -125 484 2 1 0.2 0.2 {}
+T {SPI_RST_N_in} 125 474 2 0 0.2 0.2 {}
+T {C2F_REQ_out} 125 376 0 1 0.2 0.2 {}
+T {C2F_REQ_in} -125 376 0 0 0.2 0.2 {}
+T {C2F_ACK_out} -125 404 2 1 0.2 0.2 {}
+T {C2F_ACK_in} 125 404 2 0 0.2 0.2 {}
+T {C2F_COMP_out} 125 356 0 1 0.2 0.2 {}
+T {C2F_COMP_in} -125 356 0 0 0.2 0.2 {}
+T {NN1_REQ_out} 125 126 0 1 0.2 0.2 {}
+T {NN1_REQ_in} -125 126 0 0 0.2 0.2 {}
+T {NN1_ACK_out} -125 194 2 1 0.2 0.2 {}
+T {NN1_ACK_in} 125 194 2 0 0.2 0.2 {}
+T {NN2_REQ_out} 125 146 0 1 0.2 0.2 {}
+T {NN2_REQ_in} -125 146 0 0 0.2 0.2 {}
+T {NN2_ACK_out} -125 214 2 1 0.2 0.2 {}
+T {NN2_ACK_in} 125 214 2 0 0.2 0.2 {}
+T {V2I_INN_out} -125 44 2 1 0.2 0.2 {}
+T {V2I_INP_out} -125 24 2 1 0.2 0.2 {}
+T {NN3_REQ_in} -125 166 0 0 0.2 0.2 {}
+T {BG_PROBE_in} -125 316 0 0 0.2 0.2 {}
+T {NN1_MEM_PROBE_in} -125 66 0 0 0.2 0.2 {}
+T {NN2_MEM_PROBE_in} -125 86 0 0 0.2 0.2 {}
+T {NN3_MEM_PROBE_in} -125 106 0 0 0.2 0.2 {}
+T {NN3_ACK_out} -125 234 2 1 0.2 0.2 {}
+T {BG_BIAS_out} -125 304 2 1 0.2 0.2 {}
+T {BG_100kRES_out} -125 284 2 1 0.2 0.2 {}
+T {BG_100mV_out} -125 264 2 1 0.2 0.2 {}
+T {NN3_ACK_in} 125 234 2 0 0.2 0.2 {}
+T {BG_100kRES_in} 125 284 2 0 0.2 0.2 {}
+T {BG_BIAS_in} 125 304 2 0 0.2 0.2 {}
+T {BG_100mV_in} 125 264 2 0 0.2 0.2 {}
+T {V2I_INN_in} 125 44 2 0 0.2 0.2 {}
+T {NN3_REQ_out} 125 166 0 1 0.2 0.2 {}
+T {BG_PROBE_out} 125 316 0 1 0.2 0.2 {}
+T {NN1_MEM_PROBE_out} 125 66 0 1 0.2 0.2 {}
+T {NN2_MEM_PROBE_out} 125 86 0 1 0.2 0.2 {}
+T {NN3_MEM_PROBE_out} 125 106 0 1 0.2 0.2 {}
+T {V2I_INP_in} 125 24 2 0 0.2 0.2 {}
+T {@symname} -54 -276 0 0 0.3 0.3 {}
+T {@name} 115 -592 0 0 0.2 0.2 {}
+T {vbias_in} 125 -399 0 1 0.2 0.2 {}
+T {vspkthr_in} 125 -339 0 1 0.2 0.2 {}
+T {vref_in} 125 -319 0 1 0.2 0.2 {}
+T {vout_amp_out} 125 -279 0 1 0.2 0.2 {}
+T {vbias_bufP_in} 125 -69 0 1 0.2 0.2 {}
+T {vout_dn_out} 125 -199 0 1 0.2 0.2 {}
+T {vmem_dn_out} 125 -239 0 1 0.2 0.2 {}
+T {vleak_in} 125 -359 0 1 0.2 0.2 {}
+T {vbias_bufN_in} 125 -49 0 1 0.2 0.2 {}
+T {vmem_up_out} 125 -259 0 1 0.2 0.2 {}
+T {vout_up_out} 125 -219 0 1 0.2 0.2 {}
+T {ch_sel_in} 125 -29 0 1 0.2 0.2 {}
+T {req_dn_out} 125 -164 0 1 0.2 0.2 {}
+T {req_up_out} 125 -144 0 1 0.2 0.2 {}
+T {vgain_in} 125 -379 0 1 0.2 0.2 {}
+T {iovss} -6 545 1 1 0.2 0.2 {}
+T {iovdd} -6 -545 1 1 0.2 0.2 {}
+T {vdd} 19 -555 1 1 0.2 0.2 {}
+T {vss} 14 545 1 1 0.2 0.2 {}
+T {ch_sel_out} -125 -29 0 0 0.2 0.2 {}
+T {vbias_bufN_out} -125 -49 0 0 0.2 0.2 {}
+T {vref_out} -125 -319 0 0 0.2 0.2 {}
+T {vbias_out} -125 -399 0 0 0.2 0.2 {}
+T {vspkthr_out} -125 -339 0 0 0.2 0.2 {}
+T {req_dn_in} -125 -144 0 0 0.2 0.2 {}
+T {req_up_in} -125 -164 0 0 0.2 0.2 {}
+T {vmem_dn_in} -125 -239 0 0 0.2 0.2 {}
+T {vout_dn_in} -125 -199 0 0 0.2 0.2 {}
+T {vbias_bufP_out} -125 -69 0 0 0.2 0.2 {}
+T {vleak_out} -125 -359 0 0 0.2 0.2 {}
+T {vout_up_in} -125 -219 0 0 0.2 0.2 {}
+T {vgain_out} -125 -379 0 0 0.2 0.2 {}
+T {vout_amp_in} -125 -279 0 0 0.2 0.2 {}
+T {vmem_up_in} -125 -259 0 0 0.2 0.2 {}
+T {vin_p_ch1_out} -125 -529 0 0 0.2 0.2 {}
+T {vin_p_ch1_in} 125 -529 0 1 0.2 0.2 {}
+T {ack_up_out} -125 -124 0 0 0.2 0.2 {}
+T {vin_n_ch1_out} -125 -509 0 0 0.2 0.2 {}
+T {ack_up_in} 125 -124 0 1 0.2 0.2 {}
+T {vin_n_ch1_in} 125 -509 0 1 0.2 0.2 {}
+T {ack_dn_out} -125 -104 0 0 0.2 0.2 {}
+T {vin_p_ch2_out} -125 -489 0 0 0.2 0.2 {}
+T {ack_dn_in} 125 -104 0 1 0.2 0.2 {}
+T {vin_p_ch2_in} 125 -489 0 1 0.2 0.2 {}
+T {vin_n_ch2_out} -125 -469 0 0 0.2 0.2 {}
+T {vin_n_ch2_in} 125 -469 0 1 0.2 0.2 {}
+T {vthr_h_out} -125 -449 0 0 0.2 0.2 {}
+T {vthr_h_in} 125 -449 0 1 0.2 0.2 {}
+T {vthr_l_out} -125 -429 0 0 0.2 0.2 {}
+T {vthr_l_in} 125 -429 0 1 0.2 0.2 {}

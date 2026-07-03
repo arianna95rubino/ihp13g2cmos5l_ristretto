@@ -1,0 +1,35 @@
+v {xschem version=3.4.8RC file_version=1.3}
+G {}
+K {type=subcircuit
+format="@name @pinlist @symname"
+spectre_format="@name ( @pinlist ) @symname"
+template="name=x1"
+}
+V {}
+S {}
+F {}
+E {}
+L 4 0 -90 0 -70 {}
+L 4 0 80 0 100 {}
+L 4 -30 -70 30 -70 {}
+L 4 -30 80 30 80 {}
+L 4 30 -40 30 50 {}
+L 4 -0 -40 0 -10 {}
+L 4 -20 -10 20 -10 {}
+L 4 -20 10 20 10 {}
+L 4 0 10 -0 50 {}
+L 4 -30 -40 -30 50 {}
+L 4 30 -70 30 -40 {}
+L 4 -30 -70 -30 -40 {}
+L 4 -0 -70 0 -40 {}
+L 4 0 50 0 80 {}
+L 4 -30 50 -30 80 {}
+L 4 30 45 30 80 {}
+B 5 -2.5 -92.5 2.5 -87.5 {name=vcap_top dir=in}
+B 5 -22.5 77.5 -17.5 82.5 {name=vss dir=inout}
+B 5 -2.5 97.5 2.5 102.5 {name=vcap_bot dir=in}
+T {@symname} -44.5 -6 0 0 0.3 0.3 {}
+T {@name} 35 -72 0 0 0.2 0.2 {}
+T {vcap_top} 14 -65 1 0 0.2 0.2 {}
+T {vss} -16 75 1 1 0.2 0.2 {}
+T {vcap_bot} 1 75 3 0 0.2 0.2 {}
