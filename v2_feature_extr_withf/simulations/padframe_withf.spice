@@ -1,0 +1,349 @@
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/padframe_withf.sch
+.subckt padframe_withf en_feedback_in en_feedback_out SPI_CS_N_out SPI_CS_N_in SPI_MISO_out SPI_MISO_in SPI_SCK_out SPI_SCK_in
++ SPI_MOSI_out SPI_MOSI_in SPI_RST_N_out SPI_RST_N_in C2F_REQ_out C2F_REQ_in C2F_ACK_out C2F_ACK_in C2F_COMP_out C2F_COMP_in NN1_REQ_out
++ NN1_REQ_in NN1_ACK_out NN1_ACK_in NN2_REQ_out NN2_REQ_in NN2_ACK_out NN2_ACK_in V2I_INN_out V2I_INP_out NN3_REQ_in BG_PROBE_in
++ NN1_MEM_PROBE_in NN2_MEM_PROBE_in NN3_MEM_PROBE_in NN3_ACK_out BG_BIAS_out BG_100kRES_out BG_100mV_out NN3_ACK_in BG_100kRES_in BG_BIAS_in
++ BG_100mV_in V2I_INN_in NN3_REQ_out BG_PROBE_out NN1_MEM_PROBE_out NN2_MEM_PROBE_out NN3_MEM_PROBE_out V2I_INP_in vbias_in vspkthr_in vref_in
++ vout_amp_out vbias_bufP_in vout_dn_out vmem_dn_out vleak_in vbias_bufN_in vmem_up_out vout_up_out ch_sel_in req_dn_out req_up_out vgain_in
++ iovss iovdd vdd vss ch_sel_out vbias_bufN_out vref_out vbias_out vspkthr_out req_dn_in req_up_in vmem_dn_in vout_dn_in vbias_bufP_out
++ vleak_out vout_up_in vgain_out vout_amp_in vmem_up_in vin_p_ch1_out vin_p_ch1_in ack_up_out vin_n_ch1_out ack_up_in vin_n_ch1_in ack_dn_out
++ vin_p_ch2_out ack_dn_in vin_p_ch2_in vin_n_ch2_out vin_n_ch2_in vthr_h_out vthr_h_in vthr_l_out vthr_l_in
+*.PININFO iovss:B iovdd:B vdd:B vss:B vin_p_ch1_in:I vin_n_ch1_in:I vin_p_ch2_in:I vin_n_ch2_in:I vin_p_ch1_out:O vin_n_ch1_out:O
+*+ vin_p_ch2_out:O vin_n_ch2_out:O vthr_h_in:I vthr_l_in:I vthr_h_out:O vthr_l_out:O vout_amp_in:I vout_up_in:I vout_dn_in:I vout_amp_out:O
+*+ vout_up_out:O vout_dn_out:O ch_sel_in:I ch_sel_out:O vbias_in:I vbias_out:O vbias_bufN_in:I vbias_bufN_out:O vbias_bufP_in:I vbias_bufP_out:O
+*+ vgain_in:I vleak_in:I vspkthr_in:I vref_in:I vgain_out:O vleak_out:O vspkthr_out:O vref_out:O vmem_up_in:I vmem_dn_in:I req_up_in:I
+*+ req_dn_in:I vmem_up_out:O vmem_dn_out:O req_up_out:O req_dn_out:O ack_up_in:I ack_up_out:O ack_dn_in:I ack_dn_out:O V2I_INP_in:I V2I_INN_in:I
+*+ NN3_MEM_PROBE_in:I NN2_MEM_PROBE_in:I NN1_MEM_PROBE_in:I BG_100mV_in:I BG_BIAS_in:I BG_100kRES_in:I BG_PROBE_in:I NN3_ACK_in:I NN3_REQ_in:I
+*+ V2I_INP_out:O V2I_INN_out:O NN3_MEM_PROBE_out:O NN2_MEM_PROBE_out:O NN1_MEM_PROBE_out:O BG_100mV_out:O BG_BIAS_out:O BG_100kRES_out:O
+*+ BG_PROBE_out:O NN3_ACK_out:O NN3_REQ_out:O NN2_ACK_in:I NN1_ACK_in:I NN2_REQ_in:I NN1_REQ_in:I C2F_COMP_in:I C2F_ACK_in:I C2F_REQ_in:I
+*+ SPI_RST_N_in:I SPI_MOSI_in:I SPI_SCK_in:I SPI_CS_N_in:I SPI_MISO_in:I NN2_ACK_out:O NN1_ACK_out:O NN2_REQ_out:O NN1_REQ_out:O C2F_COMP_out:O
+*+ C2F_ACK_out:O C2F_REQ_out:O SPI_RST_N_out:O SPI_MOSI_out:O SPI_SCK_out:O SPI_MISO_out:O SPI_CS_N_out:O en_feedback_in:I en_feedback_out:O
+x1 iovdd iovss vout_up_out vout_up_in vdd vss sg13cmos5l_IOPadAnalog
+x6 iovdd iovss vout_dn_out vout_dn_in vdd vss sg13cmos5l_IOPadAnalog
+x7 iovdd iovss vbias_bufP_in vbias_bufP_out vdd vss sg13cmos5l_IOPadAnalog
+x8 iovdd iovss vbias_in vbias_out vdd vss sg13cmos5l_IOPadAnalog
+x9 iovdd iovss vthr_h_in vthr_h_out vdd vss sg13cmos5l_IOPadAnalog
+x10 iovdd iovss vthr_l_in vthr_l_out vdd vss sg13cmos5l_IOPadAnalog
+x16 iovdd iovss vdd vss sg13cmos5l_IOPadVdd
+x17 iovdd iovss SPI_CS_N_out SPI_CS_N_in vdd vss sg13cmos5l_IOPadIn
+x18 iovdd iovss SPI_MOSI_out SPI_MOSI_in vdd vss sg13cmos5l_IOPadIn
+x19 iovdd iovss SPI_SCK_out SPI_SCK_in vdd vss sg13cmos5l_IOPadIn
+x25 NN2_REQ_in iovdd iovss NN2_REQ_out vdd vss sg13cmos5l_IOPadOut16mA
+x26 iovdd iovss NN2_ACK_out NN2_ACK_in vdd vss sg13cmos5l_IOPadIn
+x27 iovdd iovss vdd vss sg13cmos5l_IOPadIOVdd
+x21 iovdd iovss C2F_ACK_out C2F_ACK_in vdd vss sg13cmos5l_IOPadIn
+x22 C2F_COMP_in iovdd iovss C2F_COMP_out vdd vss sg13cmos5l_IOPadOut16mA
+x23 NN1_REQ_in iovdd iovss NN1_REQ_out vdd vss sg13cmos5l_IOPadOut16mA
+x24 iovdd iovss NN1_ACK_out NN1_ACK_in vdd vss sg13cmos5l_IOPadIn
+x49 iovdd iovss vdd vss sg13cmos5l_Filler400
+x51 iovdd iovss vdd vss sg13cmos5l_Filler400
+x52 iovdd iovss vdd vss sg13cmos5l_Filler400
+x54 iovdd iovss vdd vss sg13cmos5l_Filler400
+x55 iovdd iovss vdd vss sg13cmos5l_Filler400
+x57 iovdd iovss vdd vss sg13cmos5l_Filler400
+x58 iovdd iovss vdd vss sg13cmos5l_Filler400
+x60 iovdd iovss vdd vss sg13cmos5l_Filler400
+x61 iovdd iovss vdd vss sg13cmos5l_Filler400
+x63 iovdd iovss vdd vss sg13cmos5l_Filler400
+x64 iovdd iovss vdd vss sg13cmos5l_Filler400
+x65 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x66 iovdd iovss vdd vss sg13cmos5l_Filler400
+x67 iovdd iovss vdd vss sg13cmos5l_Filler400
+x73 SPI_MISO_in iovdd iovss SPI_MISO_out vdd vss sg13cmos5l_IOPadOut16mA
+x133 iovdd iovss vdd vss sg13cmos5l_IOPadVdd
+x134 iovdd iovss vin_p_ch2_in vin_p_ch2_out vdd vss sg13cmos5l_IOPadAnalog
+x135 iovdd iovss vin_n_ch1_in vin_n_ch1_out vdd vss sg13cmos5l_IOPadAnalog
+x136 iovdd iovss vin_p_ch1_in vin_p_ch1_out vdd vss sg13cmos5l_IOPadAnalog
+x139 iovdd iovss vout_amp_out vout_amp_in vdd vss sg13cmos5l_IOPadAnalog
+x140 iovdd iovss vin_n_ch2_in vin_n_ch2_out vdd vss sg13cmos5l_IOPadAnalog
+x141 iovdd iovss vleak_in vleak_out vdd vss sg13cmos5l_IOPadAnalog
+x142 iovdd iovss vspkthr_in vspkthr_out vdd vss sg13cmos5l_IOPadAnalog
+x149 iovdd iovss vmem_dn_out vmem_dn_in vdd vss sg13cmos5l_IOPadAnalog
+x150 iovdd iovss vbias_bufN_in vbias_bufN_out vdd vss sg13cmos5l_IOPadAnalog
+x137 iovdd iovss vgain_in vgain_out vdd vss sg13cmos5l_IOPadAnalog
+x138 iovdd iovss vref_in vref_out vdd vss sg13cmos5l_IOPadAnalog
+x147 iovdd iovss vmem_up_out vmem_up_in vdd vss sg13cmos5l_IOPadAnalog
+x148 iovdd iovss vdd vss sg13cmos5l_IOPadVss
+x152 req_up_in iovdd iovss req_up_out vdd vss sg13cmos5l_IOPadOut16mA
+x153 req_dn_in iovdd iovss req_dn_out vdd vss sg13cmos5l_IOPadOut16mA
+x171 iovdd iovss vdd vss sg13cmos5l_IOPadVss
+x155 iovdd iovss vdd vss sg13cmos5l_IOPadIOVss
+x156 iovdd iovss vdd vss sg13cmos5l_IOPadIOVdd
+x157 iovdd iovss vdd vss sg13cmos5l_IOPadVss
+x158 iovdd iovss V2I_INP_in V2I_INP_out vdd vss sg13cmos5l_IOPadAnalog
+x159 iovdd iovss V2I_INN_in V2I_INN_out vdd vss sg13cmos5l_IOPadAnalog
+x160 iovdd iovss NN3_MEM_PROBE_out NN3_MEM_PROBE_in vdd vss sg13cmos5l_IOPadAnalog
+x164 iovdd iovss NN2_MEM_PROBE_out NN2_MEM_PROBE_in vdd vss sg13cmos5l_IOPadAnalog
+x165 iovdd iovss BG_BIAS_in BG_BIAS_out vdd vss sg13cmos5l_IOPadAnalog
+x166 iovdd iovss BG_100kRES_in BG_100kRES_out vdd vss sg13cmos5l_IOPadAnalog
+x167 iovdd iovss BG_PROBE_out BG_PROBE_in vdd vss sg13cmos5l_IOPadAnalog
+x168 iovdd iovss NN3_ACK_out NN3_ACK_in vdd vss sg13cmos5l_IOPadIn
+x169 NN3_REQ_in iovdd iovss NN3_REQ_out vdd vss sg13cmos5l_IOPadOut16mA
+x170 iovdd iovss vdd vss sg13cmos5l_IOPadVdd
+x172 iovdd iovss vdd vss sg13cmos5l_IOPadVss
+x173 iovdd iovss BG_100mV_in BG_100mV_out vdd vss sg13cmos5l_IOPadAnalog
+x174 iovdd iovss NN1_MEM_PROBE_out NN1_MEM_PROBE_in vdd vss sg13cmos5l_IOPadAnalog
+x151 iovdd iovss ch_sel_out ch_sel_in vdd vss sg13cmos5l_IOPadIn
+x239 iovdd iovss ack_up_out ack_up_in vdd vss sg13cmos5l_IOPadIn
+x15 iovdd iovss ack_dn_out ack_dn_in vdd vss sg13cmos5l_IOPadIn
+x31 iovdd iovss vdd vss sg13cmos5l_Filler2000
+x20 iovdd iovss vdd vss sg13cmos5l_Filler400
+x32 iovdd iovss vdd vss sg13cmos5l_Filler400
+x33 iovdd iovss vdd vss sg13cmos5l_Filler400
+x34 iovdd iovss vdd vss sg13cmos5l_Filler400
+x36 iovdd iovss vdd vss sg13cmos5l_Filler400
+x37 iovdd iovss vdd vss sg13cmos5l_Filler400
+x39 iovdd iovss vdd vss sg13cmos5l_Filler400
+x40 iovdd iovss vdd vss sg13cmos5l_Filler400
+x42 iovdd iovss vdd vss sg13cmos5l_Filler400
+x43 iovdd iovss vdd vss sg13cmos5l_Filler400
+x45 iovdd iovss vdd vss sg13cmos5l_Filler400
+x46 iovdd iovss vdd vss sg13cmos5l_Filler400
+x48 iovdd iovss vdd vss sg13cmos5l_Filler400
+x68 iovdd iovss vdd vss sg13cmos5l_Filler400
+x69 iovdd iovss vdd vss sg13cmos5l_Filler400
+x111 iovdd iovss vdd vss sg13cmos5l_Filler400
+x112 iovdd iovss vdd vss sg13cmos5l_Filler400
+x175 iovdd iovss vdd vss sg13cmos5l_Filler400
+x176 iovdd iovss vdd vss sg13cmos5l_Filler400
+x177 iovdd iovss vdd vss sg13cmos5l_Filler400
+x178 iovdd iovss vdd vss sg13cmos5l_Filler400
+x179 iovdd iovss vdd vss sg13cmos5l_Filler400
+x180 iovdd iovss vdd vss sg13cmos5l_Filler400
+x181 iovdd iovss vdd vss sg13cmos5l_Filler400
+x182 iovdd iovss vdd vss sg13cmos5l_Filler400
+x183 iovdd iovss vdd vss sg13cmos5l_Filler400
+x184 iovdd iovss vdd vss sg13cmos5l_Filler400
+x185 iovdd iovss vdd vss sg13cmos5l_Filler400
+x186 iovdd iovss vdd vss sg13cmos5l_Filler400
+x187 iovdd iovss vdd vss sg13cmos5l_Filler400
+x188 iovdd iovss vdd vss sg13cmos5l_Filler400
+x189 iovdd iovss vdd vss sg13cmos5l_Filler400
+x190 iovdd iovss vdd vss sg13cmos5l_Filler400
+x191 iovdd iovss vdd vss sg13cmos5l_Filler400
+x192 iovdd iovss vdd vss sg13cmos5l_Filler400
+x193 iovdd iovss vdd vss sg13cmos5l_Filler400
+x194 iovdd iovss vdd vss sg13cmos5l_Filler400
+x215 iovdd iovss vdd vss sg13cmos5l_Filler400
+x216 iovdd iovss vdd vss sg13cmos5l_Filler400
+x217 iovdd iovss vdd vss sg13cmos5l_Filler400
+x218 iovdd iovss vdd vss sg13cmos5l_Filler400
+x219 iovdd iovss vdd vss sg13cmos5l_Filler400
+x220 iovdd iovss vdd vss sg13cmos5l_Filler400
+x221 iovdd iovss vdd vss sg13cmos5l_Filler400
+x222 iovdd iovss vdd vss sg13cmos5l_Filler400
+x223 iovdd iovss vdd vss sg13cmos5l_Filler400
+x224 iovdd iovss vdd vss sg13cmos5l_Filler400
+x225 iovdd iovss vdd vss sg13cmos5l_Filler400
+x226 iovdd iovss vdd vss sg13cmos5l_Filler400
+x227 iovdd iovss vdd vss sg13cmos5l_Filler400
+x228 iovdd iovss vdd vss sg13cmos5l_Filler400
+x229 iovdd iovss vdd vss sg13cmos5l_Filler400
+x230 iovdd iovss vdd vss sg13cmos5l_Filler400
+x231 iovdd iovss vdd vss sg13cmos5l_Filler400
+x232 iovdd iovss vdd vss sg13cmos5l_Filler400
+x233 iovdd iovss vdd vss sg13cmos5l_Filler400
+x234 iovdd iovss vdd vss sg13cmos5l_Filler400
+x235 iovdd iovss vdd vss sg13cmos5l_Filler400
+x236 iovdd iovss vdd vss sg13cmos5l_Filler400
+x237 iovdd iovss vdd vss sg13cmos5l_Filler400
+x238 iovdd iovss vdd vss sg13cmos5l_Filler400
+x240 iovdd iovss vdd vss sg13cmos5l_Filler400
+x241 iovdd iovss vdd vss sg13cmos5l_Filler400
+x242 iovdd iovss vdd vss sg13cmos5l_Filler400
+x243 iovdd iovss vdd vss sg13cmos5l_Filler400
+x244 iovdd iovss vdd vss sg13cmos5l_Filler400
+x245 iovdd iovss vdd vss sg13cmos5l_Filler400
+x246 iovdd iovss vdd vss sg13cmos5l_Filler400
+x79 iovdd iovss vdd vss sg13cmos5l_Filler400
+x81 iovdd iovss vdd vss sg13cmos5l_Filler400
+x82 iovdd iovss vdd vss sg13cmos5l_Filler400
+x84 iovdd iovss vdd vss sg13cmos5l_Filler400
+x85 iovdd iovss vdd vss sg13cmos5l_Filler400
+x87 iovdd iovss vdd vss sg13cmos5l_Filler400
+x88 iovdd iovss vdd vss sg13cmos5l_Filler400
+x90 iovdd iovss vdd vss sg13cmos5l_Filler400
+x91 iovdd iovss vdd vss sg13cmos5l_Filler400
+x93 iovdd iovss vdd vss sg13cmos5l_Filler400
+x94 iovdd iovss vdd vss sg13cmos5l_Filler400
+x96 iovdd iovss vdd vss sg13cmos5l_Filler400
+x97 iovdd iovss vdd vss sg13cmos5l_Filler400
+x98 iovdd iovss vdd vss sg13cmos5l_Filler2000
+x99 iovdd iovss vdd vss sg13cmos5l_Filler400
+x100 iovdd iovss vdd vss sg13cmos5l_Filler400
+x101 iovdd iovss vdd vss sg13cmos5l_Filler400
+x102 iovdd iovss vdd vss sg13cmos5l_Filler400
+x103 iovdd iovss vdd vss sg13cmos5l_Filler400
+x104 iovdd iovss vdd vss sg13cmos5l_Filler400
+x105 iovdd iovss vdd vss sg13cmos5l_Filler400
+x106 iovdd iovss vdd vss sg13cmos5l_Filler400
+x107 iovdd iovss vdd vss sg13cmos5l_Filler400
+x108 iovdd iovss vdd vss sg13cmos5l_Filler400
+x109 iovdd iovss vdd vss sg13cmos5l_Filler400
+x110 iovdd iovss vdd vss sg13cmos5l_Filler400
+x113 iovdd iovss vdd vss sg13cmos5l_Filler400
+x114 iovdd iovss vdd vss sg13cmos5l_Filler400
+x115 iovdd iovss vdd vss sg13cmos5l_Filler400
+x116 iovdd iovss vdd vss sg13cmos5l_Filler400
+x117 iovdd iovss vdd vss sg13cmos5l_Filler400
+x118 iovdd iovss vdd vss sg13cmos5l_Filler400
+x119 iovdd iovss vdd vss sg13cmos5l_Filler400
+x120 iovdd iovss vdd vss sg13cmos5l_Filler400
+x121 iovdd iovss vdd vss sg13cmos5l_Filler400
+x122 iovdd iovss vdd vss sg13cmos5l_Filler400
+x123 iovdd iovss vdd vss sg13cmos5l_Filler400
+x124 iovdd iovss vdd vss sg13cmos5l_Filler400
+x125 iovdd iovss vdd vss sg13cmos5l_Filler400
+x126 iovdd iovss vdd vss sg13cmos5l_Filler400
+x127 iovdd iovss vdd vss sg13cmos5l_Filler400
+x128 iovdd iovss vdd vss sg13cmos5l_Filler400
+x129 iovdd iovss vdd vss sg13cmos5l_Filler400
+x130 iovdd iovss vdd vss sg13cmos5l_Filler400
+x131 iovdd iovss vdd vss sg13cmos5l_Filler400
+x132 iovdd iovss vdd vss sg13cmos5l_Filler400
+x195 iovdd iovss vdd vss sg13cmos5l_Filler400
+x196 iovdd iovss vdd vss sg13cmos5l_Filler400
+x197 iovdd iovss vdd vss sg13cmos5l_Filler400
+x198 iovdd iovss vdd vss sg13cmos5l_Filler400
+x199 iovdd iovss vdd vss sg13cmos5l_Filler400
+x200 iovdd iovss vdd vss sg13cmos5l_Filler400
+x201 iovdd iovss vdd vss sg13cmos5l_Filler400
+x202 iovdd iovss vdd vss sg13cmos5l_Filler400
+x203 iovdd iovss vdd vss sg13cmos5l_Filler400
+x204 iovdd iovss vdd vss sg13cmos5l_Filler400
+x205 iovdd iovss vdd vss sg13cmos5l_Filler400
+x206 iovdd iovss vdd vss sg13cmos5l_Filler400
+x207 iovdd iovss vdd vss sg13cmos5l_Filler400
+x208 iovdd iovss vdd vss sg13cmos5l_Filler400
+x209 iovdd iovss vdd vss sg13cmos5l_Filler400
+x210 iovdd iovss vdd vss sg13cmos5l_Filler400
+x211 iovdd iovss vdd vss sg13cmos5l_Filler400
+x212 iovdd iovss vdd vss sg13cmos5l_Filler400
+x213 iovdd iovss vdd vss sg13cmos5l_Filler400
+x214 iovdd iovss vdd vss sg13cmos5l_Filler400
+x247 iovdd iovss vdd vss sg13cmos5l_Filler400
+x248 iovdd iovss vdd vss sg13cmos5l_Filler400
+x249 iovdd iovss vdd vss sg13cmos5l_Filler400
+x250 iovdd iovss vdd vss sg13cmos5l_Filler400
+x251 iovdd iovss vdd vss sg13cmos5l_Filler400
+x252 iovdd iovss vdd vss sg13cmos5l_Filler400
+x253 iovdd iovss vdd vss sg13cmos5l_Filler400
+x254 iovdd iovss vdd vss sg13cmos5l_Filler400
+x255 iovdd iovss vdd vss sg13cmos5l_Filler400
+x256 iovdd iovss vdd vss sg13cmos5l_Filler400
+x257 iovdd iovss vdd vss sg13cmos5l_Filler400
+x258 iovdd iovss vdd vss sg13cmos5l_Filler400
+x259 iovdd iovss vdd vss sg13cmos5l_Filler400
+x260 iovdd iovss vdd vss sg13cmos5l_Filler400
+x261 iovdd iovss vdd vss sg13cmos5l_Filler400
+x262 iovdd iovss vdd vss sg13cmos5l_Filler400
+x2 iovdd iovss vdd vss sg13cmos5l_IOPadIOVdd
+x3 iovdd iovss vdd vss sg13cmos5l_IOPadVdd
+x4 iovdd iovss vdd vss sg13cmos5l_IOPadIOVss
+x5 C2F_REQ_in iovdd iovss C2F_REQ_out vdd vss sg13cmos5l_IOPadOut16mA
+x11 iovdd iovss SPI_RST_N_out SPI_RST_N_in vdd vss sg13cmos5l_IOPadIn
+x12 iovdd iovss vdd vss sg13cmos5l_IOPadIOVss
+x13 iovdd iovss vdd vss sg13cmos5l_IOPadIOVdd
+x14 iovdd iovss en_feedback_out en_feedback_in vdd vss sg13cmos5l_IOPadIn
+x70 iovdd iovss vdd vss sg13cmos5l_IOPadVss
+x143 iovdd iovss vdd vss sg13cmos5l_IOPadIOVss
+x28 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x29 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x30 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x35 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x38 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x41 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x44 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x47 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x50 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x53 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x56 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x59 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x62 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x144 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x145 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x146 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x154 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x161 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x162 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x163 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x263 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x264 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x265 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x266 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x267 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x71 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x72 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x74 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x75 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x76 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x77 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x78 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x80 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x83 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x86 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x89 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x92 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x95 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x268 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x269 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x270 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x271 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x272 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x273 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x274 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x275 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x276 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x277 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x278 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x279 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x280 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x281 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x282 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x283 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x284 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x285 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x286 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x287 iovdd iovss vdd vss sg13cmos5l_Filler4000
+x288 iovdd iovss vdd vss sg13cmos5l_Filler4000
+.ends
+
+* expanding   symbol:  sg13cmos5l_IOPadAnalog.sym # of pins=6
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/sg13cmos5l_IOPadAnalog.sym
+.include /foss/pdks/ihp-sg13cmos5l/libs.ref/sg13cmos5l_io/cdl/sg13cmos5l_io.cdl
+
+* expanding   symbol:  sg13cmos5l_IOPadVdd.sym # of pins=4
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/sg13cmos5l_IOPadVdd.sym
+.include /foss/pdks/ihp-sg13cmos5l/libs.ref/sg13cmos5l_io/cdl/sg13cmos5l_io.cdl
+
+* expanding   symbol:  sg13cmos5l_IOPadIn.sym # of pins=6
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/sg13cmos5l_IOPadIn.sym
+.include /foss/pdks/ihp-sg13cmos5l/libs.ref/sg13cmos5l_io/cdl/sg13cmos5l_io.cdl
+
+* expanding   symbol:  sg13cmos5l_IOPadOut16mA.sym # of pins=6
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/sg13cmos5l_IOPadOut16mA.sym
+.include /foss/pdks/ihp-sg13cmos5l/libs.ref/sg13cmos5l_io/cdl/sg13cmos5l_io.cdl
+
+* expanding   symbol:  sg13cmos5l_IOPadIOVdd.sym # of pins=4
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/sg13cmos5l_IOPadIOVdd.sym
+.include /foss/pdks/ihp-sg13cmos5l/libs.ref/sg13cmos5l_io/cdl/sg13cmos5l_io.cdl
+
+* expanding   symbol:  sg13cmos5l_Filler400.sym # of pins=4
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/sg13cmos5l_Filler400.sym
+.include /foss/pdks/ihp-sg13cmos5l/libs.ref/sg13cmos5l_io/cdl/sg13cmos5l_io.cdl
+
+* expanding   symbol:  sg13cmos5l_Filler4000.sym # of pins=4
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/sg13cmos5l_Filler4000.sym
+.include /foss/pdks/ihp-sg13cmos5l/libs.ref/sg13cmos5l_io/cdl/sg13cmos5l_io.cdl
+
+* expanding   symbol:  sg13cmos5l_IOPadVss.sym # of pins=4
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/sg13cmos5l_IOPadVss.sym
+.include /foss/pdks/ihp-sg13cmos5l/libs.ref/sg13cmos5l_io/cdl/sg13cmos5l_io.cdl
+
+* expanding   symbol:  sg13cmos5l_IOPadIOVss.sym # of pins=4
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/sg13cmos5l_IOPadIOVss.sym
+.include /foss/pdks/ihp-sg13cmos5l/libs.ref/sg13cmos5l_io/cdl/sg13cmos5l_io.cdl
+
+* expanding   symbol:  sg13cmos5l_Filler2000.sym # of pins=4
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/sg13cmos5l_Filler2000.sym
+.include /foss/pdks/ihp-sg13cmos5l/libs.ref/sg13cmos5l_io/cdl/sg13cmos5l_io.cdl

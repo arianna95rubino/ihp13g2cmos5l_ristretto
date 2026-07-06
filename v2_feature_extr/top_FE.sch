@@ -244,7 +244,7 @@ C {ipin.sym} 525 200 2 0 {name=pin_NN1_ACK_pad lab=NN1_ACK_pad}
 C {ipin.sym} 525 220 2 0 {name=pin_NN2_ACK_pad lab=NN2_ACK_pad}
 C {ipin.sym} 525 240 2 0 {name=pin_NN3_ACK_pad lab=NN3_ACK_pad}
 C {ipin.sym} 525 270 2 0 {name=pin_BG_100mV_pad lab=BG_100mV_pad}
-C {ipin.sym} 525 290 2 0 {name=pin_BG_100kRES_pad lab=BG_100kRES_pad}
+C {iopin.sym} 525 290 0 0 {name=pin_BG_100kRES_pad lab=BG_100kRES_pad}
 C {ipin.sym} 525 310 2 0 {name=pin_BG_BIAS_pad lab=BG_BIAS_pad}
 C {ipin.sym} 525 410 2 0 {name=pin_C2F_ACK_pad lab=C2F_ACK_pad}
 C {ipin.sym} 525 440 2 0 {name=pin_SPI_SCK_pad lab=SPI_SCK_pad}
@@ -267,7 +267,7 @@ C {opin.sym} 55 200 2 0 {name=pin_NN1_ACK_core lab=NN1_ACK_core}
 C {opin.sym} 55 220 2 0 {name=pin_NN2_ACK_core lab=NN2_ACK_core}
 C {opin.sym} 55 240 2 0 {name=pin_NN3_ACK_core lab=NN3_ACK_core}
 C {opin.sym} 40 270 2 0 {name=pin_BG_100mV_core lab=BG_100mV_core}
-C {opin.sym} 40 290 2 0 {name=pin_BG_100kRES_core lab=BG_100kRES_core}
+C {iopin.sym} 40 290 2 0 {name=pin_BG_100kRES_core lab=BG_100kRES_core}
 C {opin.sym} 40 310 2 0 {name=pin_BG_BIAS_core lab=BG_BIAS_core}
 C {opin.sym} 55 410 2 0 {name=pin_C2F_ACK_core lab=C2F_ACK_core}
 C {opin.sym} 55 450 2 0 {name=pin_SPI_SCK_core lab=SPI_SCK_core}
