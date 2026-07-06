@@ -26,36 +26,36 @@ N -1180 420 -1130 420 {lab=vout_amp_in}
 N -1180 540 -1130 540 {lab=vout_up_in}
 N -1190 660 -1140 660 {lab=vout_dn_in}
 N -1180 900 -1130 900 {lab=vbias_out}
-N -20 -340 -20 -290 {lab=vbias_bufN_out}
+N 460 -340 460 -290 {lab=vbias_bufN_out}
 N -1180 780 -1130 780 {lab=vbias_bufP_out}
 N -1180 -140 -1130 -140 {lab=ch_sel_out}
 N -1420 820 -1370 820 {lab=vbias_bufP_in}
-N -60 -580 -60 -530 {lab=vbias_bufN_in}
+N 420 -580 420 -530 {lab=vbias_bufN_in}
 N -1420 940 -1370 940 {lab=vbias_in}
 N -1420 -160 -1370 -160 {lab=ch_sel_in}
 N -1420 700 -1370 700 {lab=vout_dn_out}
 N -1420 580 -1370 580 {lab=vout_up_out}
 N -1420 460 -1370 460 {lab=vout_amp_out}
 N -780 -580 -780 -530 {lab=vgain_in}
-N -660 -580 -660 -530 {lab=vleak_in}
-N -540 -580 -540 -530 {lab=vspkthr_in}
-N -420 -580 -420 -530 {lab=vref_in}
-N -300 -580 -300 -530 {lab=vmem_up_out}
+N 60 -580 60 -530 {lab=vleak_in}
+N 180 -580 180 -530 {lab=vspkthr_in}
+N 300 -580 300 -530 {lab=vref_in}
+N -60 -580 -60 -530 {lab=vmem_up_out}
 N -180 -580 -180 -530 {lab=vmem_dn_out}
-N 80 -580 80 -530 {lab=req_up_out}
-N 200 -580 200 -530 {lab=req_dn_out}
+N -640 -580 -640 -530 {lab=req_up_out}
+N -520 -580 -520 -530 {lab=req_dn_out}
 N -740 -340 -740 -290 {lab=vgain_out}
-N -620 -340 -620 -290 {lab=vleak_out}
-N -500 -340 -500 -290 {lab=vspkthr_out}
-N -380 -340 -380 -290 {lab=vref_out}
-N -260 -340 -260 -290 {lab=vmem_up_in}
+N 100 -340 100 -290 {lab=vleak_out}
+N 220 -340 220 -290 {lab=vspkthr_out}
+N 340 -340 340 -290 {lab=vref_out}
+N -20 -340 -20 -290 {lab=vmem_up_in}
 N -140 -340 -140 -290 {lab=vmem_dn_in}
-N 120 -340 120 -290 {lab=req_up_in}
-N 240 -340 240 -290 {lab=req_dn_in}
-N 440 -570 440 -530 {lab=ack_up_in}
-N 420 -340 420 -290 {lab=ack_up_out}
-N 320 -570 320 -530 {lab=ack_dn_in}
-N 300 -340 300 -290 {lab=ack_dn_out}
+N -600 -340 -600 -290 {lab=req_up_in}
+N -480 -340 -480 -290 {lab=req_dn_in}
+N -400 -570 -400 -530 {lab=ack_up_in}
+N -420 -340 -420 -290 {lab=ack_up_out}
+N -280 -570 -280 -530 {lab=ack_dn_in}
+N -300 -340 -300 -290 {lab=ack_dn_out}
 N -2950 580 -2420 580 {lab=vss}
 N -2950 620 -2420 620 {lab=vdd}
 N -2950 660 -2420 660 {lab=iovdd}
@@ -221,16 +221,16 @@ C {sg13cmos5l_IOPadAnalog.sym} -1280 80 1 0 {name=x135}
 C {sg13cmos5l_IOPadAnalog.sym} -1280 -40 1 0 {name=x136}
 C {sg13cmos5l_IOPadAnalog.sym} -1280 440 1 0 {name=x139}
 C {sg13cmos5l_IOPadAnalog.sym} -1280 320 1 0 {name=x140}
-C {sg13cmos5l_IOPadAnalog.sym} -640 -440 2 0 {name=x141}
-C {sg13cmos5l_IOPadAnalog.sym} -520 -440 2 0 {name=x142}
+C {sg13cmos5l_IOPadOut16mA.sym} -640 -440 2 0 {name=x141}
+C {sg13cmos5l_IOPadOut16mA.sym} -520 -440 2 0 {name=x142}
 C {sg13cmos5l_IOPadAnalog.sym} -160 -440 2 0 {name=x149}
 C {sg13cmos5l_IOPadAnalog.sym} -40 -440 2 0 {name=x150}
 C {sg13cmos5l_IOPadAnalog.sym} -760 -440 2 0 {name=x137}
-C {sg13cmos5l_IOPadAnalog.sym} -400 -440 2 0 {name=x138}
-C {sg13cmos5l_IOPadAnalog.sym} -280 -440 2 0 {name=x147}
+C {sg13cmos5l_IOPadIn.sym} -400 -440 2 0 {name=x138}
+C {sg13cmos5l_IOPadIn.sym} -280 -440 2 0 {name=x147}
 C {sg13cmos5l_IOPadVss.sym} 920 -440 2 0 {name=x148}
-C {sg13cmos5l_IOPadOut16mA.sym} 80 -440 2 0 {name=x152}
-C {sg13cmos5l_IOPadOut16mA.sym} 200 -440 2 0 {name=x153}
+C {sg13cmos5l_IOPadAnalog.sym} 80 -440 2 0 {name=x152}
+C {sg13cmos5l_IOPadAnalog.sym} 200 -440 2 0 {name=x153}
 C {sg13cmos5l_IOPadVss.sym} -1120 1440 0 0 {name=x171}
 C {sg13cmos5l_IOPadIOVss.sym} -1000 1440 0 0 {name=x155}
 C {sg13cmos5l_IOPadIOVdd.sym} -880 1440 0 0 {name=x156}
@@ -282,33 +282,33 @@ C {ipin.sym} -1420 -160 0 0 {name=pin_chselin lab=ch_sel_in}
 C {opin.sym} -1130 -140 0 0 {name=pin_chselout lab=ch_sel_out}
 C {ipin.sym} -1420 940 0 0 {name=pin_vbiasin lab=vbias_in}
 C {opin.sym} -1130 900 0 0 {name=pin_vbiasout lab=vbias_out}
-C {ipin.sym} -60 -580 1 0 {name=pin_vbiasbufNin lab=vbias_bufN_in}
-C {opin.sym} -20 -290 1 0 {name=pin_vbiabufNout lab=vbias_bufN_out}
+C {ipin.sym} 420 -580 1 0 {name=pin_vbiasbufNin lab=vbias_bufN_in}
+C {opin.sym} 460 -290 1 0 {name=pin_vbiabufNout lab=vbias_bufN_out}
 C {ipin.sym} -1420 820 0 0 {name=pin_vbiasbufPin lab=vbias_bufP_in}
 C {opin.sym} -1130 780 0 0 {name=pin_vbiabufPout lab=vbias_bufP_out}
 C {ipin.sym} -780 -580 1 0 {name=pin_vgainin lab=vgain_in}
-C {ipin.sym} -660 -580 1 0 {name=pin_vleakin lab=vleak_in}
-C {ipin.sym} -540 -580 1 0 {name=pin_vspkthrin lab=vspkthr_in}
-C {ipin.sym} -420 -580 1 0 {name=pin_vrefin lab=vref_in}
+C {ipin.sym} 60 -580 1 0 {name=pin_vleakin lab=vleak_in}
+C {ipin.sym} 180 -580 1 0 {name=pin_vspkthrin lab=vspkthr_in}
+C {ipin.sym} 300 -580 1 0 {name=pin_vrefin lab=vref_in}
 C {opin.sym} -740 -290 1 0 {name=pin_vgainout lab=vgain_out}
-C {opin.sym} -620 -290 1 0 {name=pin_vleakout lab=vleak_out}
-C {opin.sym} -500 -290 1 0 {name=pin_vspkthrout lab=vspkthr_out}
-C {opin.sym} -380 -290 1 0 {name=pin_vrefout lab=vref_out}
-C {ipin.sym} -260 -290 3 0 {name=pin_vmemupin lab=vmem_up_in}
+C {opin.sym} 100 -290 1 0 {name=pin_vleakout lab=vleak_out}
+C {opin.sym} 220 -290 1 0 {name=pin_vspkthrout lab=vspkthr_out}
+C {opin.sym} 340 -290 1 0 {name=pin_vrefout lab=vref_out}
+C {ipin.sym} -20 -290 3 0 {name=pin_vmemupin lab=vmem_up_in}
 C {ipin.sym} -140 -290 3 0 {name=pin_vmemudnin lab=vmem_dn_in}
-C {ipin.sym} 120 -290 3 0 {name=pin_requpin lab=req_up_in}
-C {ipin.sym} 240 -290 3 0 {name=pin_reqdnin lab=req_dn_in}
-C {opin.sym} -300 -580 3 0 {name=pin_vmemupout lab=vmem_up_out}
+C {ipin.sym} -600 -290 3 0 {name=pin_requpin lab=req_up_in}
+C {ipin.sym} -480 -290 3 0 {name=pin_reqdnin lab=req_dn_in}
+C {opin.sym} -60 -580 3 0 {name=pin_vmemupout lab=vmem_up_out}
 C {opin.sym} -180 -580 3 0 {name=pin_vmemudnout lab=vmem_dn_out}
-C {opin.sym} 80 -580 3 0 {name=pin_requpout lab=req_up_out}
-C {opin.sym} 200 -580 3 0 {name=pin_reqdnout lab=req_dn_out}
-C {ipin.sym} 440 -570 1 0 {name=pin_ackupin lab=ack_up_in}
-C {opin.sym} 420 -290 1 0 {name=pin_ackupout lab=ack_up_out}
-C {ipin.sym} 320 -570 1 0 {name=pin_ackdnin lab=ack_dn_in}
-C {opin.sym} 300 -290 1 0 {name=pin_ackdnout lab=ack_dn_out}
+C {opin.sym} -640 -580 3 0 {name=pin_requpout lab=req_up_out}
+C {opin.sym} -520 -580 3 0 {name=pin_reqdnout lab=req_dn_out}
+C {ipin.sym} -400 -570 1 0 {name=pin_ackupin lab=ack_up_in}
+C {opin.sym} -420 -290 1 0 {name=pin_ackupout lab=ack_up_out}
+C {ipin.sym} -280 -570 1 0 {name=pin_ackdnin lab=ack_dn_in}
+C {opin.sym} -300 -290 1 0 {name=pin_ackdnout lab=ack_dn_out}
 C {sg13cmos5l_IOPadIn.sym} -1280 -160 1 0 {name=x151}
-C {sg13cmos5l_IOPadIn.sym} 440 -440 2 0 {name=x239}
-C {sg13cmos5l_IOPadIn.sym} 320 -440 2 0 {name=x15}
+C {sg13cmos5l_IOPadAnalog.sym} 440 -440 2 0 {name=x239}
+C {sg13cmos5l_IOPadAnalog.sym} 320 -440 2 0 {name=x15}
 C {sg13cmos5l_Filler2000.sym} -2750 920 0 0 {name=x31}
 C {sg13cmos5l_Filler400.sym} -860 1940 0 0 {name=x20}
 C {sg13cmos5l_Filler400.sym} -820 1940 0 0 {name=x32}
