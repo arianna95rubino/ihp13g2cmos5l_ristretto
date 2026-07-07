@@ -141,16 +141,16 @@ x135 iovdd iovss vin_n_ch1_in vin_n_ch1_out vdd vss sg13cmos5l_IOPadAnalog
 x136 iovdd iovss vin_p_ch1_in vin_p_ch1_out vdd vss sg13cmos5l_IOPadAnalog
 x139 iovdd iovss vout_amp_out vout_amp_in vdd vss sg13cmos5l_IOPadAnalog
 x140 iovdd iovss vin_n_ch2_in vin_n_ch2_out vdd vss sg13cmos5l_IOPadAnalog
-x141 iovdd iovss vleak_in vleak_out vdd vss sg13cmos5l_IOPadAnalog
-x142 iovdd iovss vspkthr_in vspkthr_out vdd vss sg13cmos5l_IOPadAnalog
+x141 req_up_in iovdd iovss req_up_out vdd vss sg13cmos5l_IOPadOut16mA
+x142 req_dn_in iovdd iovss req_dn_out vdd vss sg13cmos5l_IOPadOut16mA
 x149 iovdd iovss vmem_dn_out vmem_dn_in vdd vss sg13cmos5l_IOPadAnalog
-x150 iovdd iovss vbias_bufN_in vbias_bufN_out vdd vss sg13cmos5l_IOPadAnalog
+x150 iovdd iovss vmem_up_out vmem_up_in vdd vss sg13cmos5l_IOPadAnalog
 x137 iovdd iovss vgain_in vgain_out vdd vss sg13cmos5l_IOPadAnalog
-x138 iovdd iovss vref_in vref_out vdd vss sg13cmos5l_IOPadAnalog
-x147 iovdd iovss vmem_up_out vmem_up_in vdd vss sg13cmos5l_IOPadAnalog
+x138 iovdd iovss ack_up_out ack_up_in vdd vss sg13cmos5l_IOPadIn
+x147 iovdd iovss ack_dn_out ack_dn_in vdd vss sg13cmos5l_IOPadIn
 x148 iovdd iovss vdd vss sg13cmos5l_IOPadVss
-x152 req_up_in iovdd iovss req_up_out vdd vss sg13cmos5l_IOPadOut16mA
-x153 req_dn_in iovdd iovss req_dn_out vdd vss sg13cmos5l_IOPadOut16mA
+x152 iovdd iovss vleak_in vleak_out vdd vss sg13cmos5l_IOPadAnalog
+x153 iovdd iovss vspkthr_in vspkthr_out vdd vss sg13cmos5l_IOPadAnalog
 x171 iovdd iovss vdd vss sg13cmos5l_IOPadVss
 x155 iovdd iovss vdd vss sg13cmos5l_IOPadIOVss
 x156 iovdd iovss vdd vss sg13cmos5l_IOPadIOVdd
@@ -169,8 +169,8 @@ x172 iovdd iovss vdd vss sg13cmos5l_IOPadVss
 x173 iovdd iovss BG_100mV_in BG_100mV_out vdd vss sg13cmos5l_IOPadAnalog
 x174 iovdd iovss NN1_MEM_PROBE_out NN1_MEM_PROBE_in vdd vss sg13cmos5l_IOPadAnalog
 x151 iovdd iovss ch_sel_out ch_sel_in vdd vss sg13cmos5l_IOPadIn
-x239 iovdd iovss ack_up_out ack_up_in vdd vss sg13cmos5l_IOPadIn
-x15 iovdd iovss ack_dn_out ack_dn_in vdd vss sg13cmos5l_IOPadIn
+x239 iovdd iovss vbias_bufN_in vbias_bufN_out vdd vss sg13cmos5l_IOPadAnalog
+x15 iovdd iovss vref_in vref_out vdd vss sg13cmos5l_IOPadAnalog
 x31 iovdd iovss vdd vss sg13cmos5l_Filler2000
 x20 iovdd iovss vdd vss sg13cmos5l_Filler400
 x32 iovdd iovss vdd vss sg13cmos5l_Filler400
@@ -502,7 +502,7 @@ MM25 net5 net5 vss vss sg13_lv_nmos w=2u l=2u ng=2 m=2
 MM26 net5 vbias vdd vdd sg13_lv_pmos w=2u l=1u ng=2 m=4
 MM1 vss vss vss vss sg13_lv_nmos w=1u l=1.54u ng=1 m=4
 MM2 vss vss vss vss sg13_lv_nmos w=4u l=0.13u ng=4 m=8
-MM3 vdd vdd vdd vdd sg13_lv_pmos w=1u l=1u ng=1 m=12
+MM3 vdd vdd vdd vdd sg13_lv_pmos w=1u l=1u ng=1 m=20
 MM4 vss vss vss vss sg13_lv_nmos w=1u l=0.78u ng=1 m=2
 .ends
 

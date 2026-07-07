@@ -105,7 +105,6 @@ N 1760 -780 1760 -730 {lab=vdd}
 N 1720 -780 1760 -780 {lab=vdd}
 N 1720 -780 1720 -620 {lab=vdd}
 N 1760 -680 1760 -620 {lab=vdd}
-N 1760 -700 1790 -700 {lab=vdd}
 N 1720 -620 1760 -620 {lab=vdd}
 N 1590 -780 1590 -720 {lab=vss}
 N 1590 -690 1640 -690 {lab=vss}
@@ -124,6 +123,7 @@ N 1550 -620 1590 -620 {lab=vss}
 N 1510 -620 1550 -620 {lab=vss}
 N 1790 -780 1790 -700 {lab=vdd}
 N 1760 -780 1790 -780 {lab=vdd}
+N 1755 -700 1790 -700 {lab=vdd}
 C {devices/title.sym} 160 0 0 0 {name=l5 author="(c) 2026 Arianna Rubino, Apache-2.0 license"}
 C {ipin.sym} 540 -540 0 0 {name=pin_vinp lab=vinp}
 C {ipin.sym} 540 -470 0 0 {name=pin_vinn lab=vinn}
@@ -240,7 +240,7 @@ C {sg13g2_pr/sg13_lv_pmos.sym} 1740 -700 0 0 {name=M3
 l=1u
 w=1u
 ng=1
-m=12
+m=20
 model=sg13_lv_pmos
 spiceprefix=X
 }
