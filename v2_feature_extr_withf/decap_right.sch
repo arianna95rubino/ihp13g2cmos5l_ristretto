@@ -53,7 +53,7 @@ spiceprefix=X
 }
 C {sg13cmos5l_pr/cap_mfringe.sym} 340 -480 0 0 {name=C3
 model=cap_mfringe
-w=25u
+w=50u
 l=42u
 mmin=1
 mmax=4
@@ -77,7 +77,7 @@ spiceprefix=X
 }
 C {sg13cmos5l_pr/cap_mfringe.sym} 340 -360 2 1 {name=C6
 model=cap_mfringe
-w=25u
+w=50u
 l=42u
 mmin=1
 mmax=4
@@ -101,7 +101,7 @@ spiceprefix=X
 }
 C {sg13cmos5l_pr/cap_mfringe.sym} 340 -240 0 0 {name=C9
 model=cap_mfringe
-w=25u
+w=50u
 l=42u
 mmin=1
 mmax=4
@@ -125,7 +125,7 @@ spiceprefix=X
 }
 C {sg13cmos5l_pr/cap_mfringe.sym} 340 -120 2 1 {name=C12
 model=cap_mfringe
-w=25u
+w=50u
 l=42u
 mmin=1
 mmax=4

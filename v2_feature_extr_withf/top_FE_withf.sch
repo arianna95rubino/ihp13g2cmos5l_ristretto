@@ -133,6 +133,8 @@ N 55 530 180 530 {lab=SPI_MISO_core}
 N -535 -182.5 -535 -115 {lab=#net1}
 N 480 -550 520 -550 {lab=en_feedback_pad}
 N 85 -550 180 -550 {lab=#net2}
+N -890 -440 -890 -390 {lab=vdd}
+N -890 -280 -890 -230 {lab=vss}
 C {2ch_feature_extr_withf.sym} -475 -330 0 0 {name=x1}
 C {padframe_withf.sym} 330 10 0 0 {name=x2}
 C {lab_wire.sym} -475 -500 3 0 {name=p1 sig_type=std_logic lab=vdd}
@@ -290,3 +292,6 @@ C {ipin.sym} 55 530 0 0 {name=pin_SPI_MISO_core lab=SPI_MISO_core}
 C {ipin.sym} 520 -550 2 0 {name=pin_en_feedback_pad lab=en_feedback_pad}
 C {lab_wire.sym} 170 -550 0 0 {name=p80 sig_type=std_logic lab=en_feedback_core}
 C {lab_wire.sym} -535 -175 3 0 {name=p81 sig_type=std_logic lab=en_feedback_core}
+C {decap_full.sym} -890 -340 0 0 {name=x3}
+C {lab_wire.sym} -890 -430 3 0 {name=p82 sig_type=std_logic lab=vdd}
+C {lab_wire.sym} -890 -270 3 0 {name=p83 sig_type=std_logic lab=vss}
