@@ -292,6 +292,6 @@ C {ipin.sym} 55 530 0 0 {name=pin_SPI_MISO_core lab=SPI_MISO_core}
 C {ipin.sym} 520 -550 2 0 {name=pin_en_feedback_pad lab=en_feedback_pad}
 C {lab_wire.sym} 170 -550 0 0 {name=p80 sig_type=std_logic lab=en_feedback_core}
 C {lab_wire.sym} -535 -175 3 0 {name=p81 sig_type=std_logic lab=en_feedback_core}
-C {decap_full.sym} -890 -340 0 0 {name=x3}
+C {top_FE_powergrid_withf.sym} -890 -340 0 0 {name=x3}
 C {lab_wire.sym} -890 -430 3 0 {name=p82 sig_type=std_logic lab=vdd}
 C {lab_wire.sym} -890 -270 3 0 {name=p83 sig_type=std_logic lab=vss}
