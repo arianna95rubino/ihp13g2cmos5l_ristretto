@@ -28,7 +28,7 @@ x2 en_feedback_pad en_feedback_core SPI_CS_N_core SPI_CS_N_pad SPI_MISO_pad SPI_
 + vmem_dn_core vout_dn_core vbias_bufP_core vleak_core vout_up_core vgain_core vout_amp_core vmem_up_core vin_p_ch1_core vin_p_ch1_pad
 + ack_up_core vin_n_ch1_core ack_up_pad vin_n_ch1_pad ack_dn_core vin_p_ch2_core ack_dn_pad vin_p_ch2_pad vin_n_ch2_core vin_n_ch2_pad
 + vthr_h_core vthr_h_pad vthr_l_core vthr_l_pad padframe_withf
-x3 vdd vss decap_full
+x3 vdd vss top_FE_powergrid_withf
 .ends
 
 * expanding   symbol:  2ch_feature_extr_withf.sym # of pins=26
@@ -395,10 +395,10 @@ x288 iovdd iovss vdd vss sg13cmos5l_Filler4000
 .ends
 
 
-* expanding   symbol:  decap_full.sym # of pins=2
-** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_full.sym
-** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_full.sch
-.subckt decap_full vdd vss
+* expanding   symbol:  top_FE_powergrid_withf.sym # of pins=2
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/top_FE_powergrid_withf.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/top_FE_powergrid_withf.sch
+.subckt top_FE_powergrid_withf vdd vss
 *.PININFO vdd:B vss:B
 x1 vdd vss decap_bottom
 x2 vdd vss decap_right
@@ -428,6 +428,14 @@ x25 vdd vss decap_centre
 x26 vdd vss decap_centre
 x27 vdd vss decap_centre
 x28 vdd vss decap_centre
+x29 vdd vss decap_top
+x30 vdd vss decap_centre
+x31 vdd vss decap_centre
+x32 vdd vss decap_centre
+x33 vdd vss decap_centre
+x34 vdd vss decap_right
+x35 vdd vss decap_bottom_corner
+x36 vdd vss decap_top_corner
 .ends
 
 
@@ -643,97 +651,63 @@ x5 vss vdd net2 vn_ch en_feedback_n tgate
 * expanding   symbol:  decap_bottom.sym # of pins=2
 ** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_bottom.sym
 ** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_bottom.sch
-.subckt decap_bottom vdd vss
-*.PININFO vdd:B vss:B
-CC1 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC2 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC3 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC4 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC5 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC6 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC7 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC8 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC9 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
+.subckt decap_bottom top bot
+*.PININFO top:B bot:B
+x1 top bot decap_unit_bottom
 .ends
 
 
 * expanding   symbol:  decap_right.sym # of pins=2
 ** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_right.sym
 ** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_right.sch
-.subckt decap_right vdd vss
-*.PININFO vdd:B vss:B
-CC1 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC2 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC3 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC4 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC5 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC6 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC7 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC8 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC9 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC10 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC11 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC12 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
+.subckt decap_right top bot
+*.PININFO top:B bot:B
+x1 top bot decap_unit
 .ends
 
 
 * expanding   symbol:  decap_left.sym # of pins=2
 ** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_left.sym
 ** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_left.sch
-.subckt decap_left vdd vss
-*.PININFO vdd:B vss:B
-CC1 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC2 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC3 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC4 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC5 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC6 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC7 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC8 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC9 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC10 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC11 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC12 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
+.subckt decap_left top bot
+*.PININFO top:B bot:B
+x1 top bot decap_unit
 .ends
 
 
 * expanding   symbol:  decap_centre.sym # of pins=2
 ** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_centre.sym
 ** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_centre.sch
-.subckt decap_centre vdd vss
-*.PININFO vdd:B vss:B
-CC1 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC2 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC3 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC4 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC5 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC6 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC7 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC8 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC9 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC10 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC11 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC12 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
+.subckt decap_centre top bot
+*.PININFO top:B bot:B
+x1 top bot decap_unit
 .ends
 
 
 * expanding   symbol:  decap_top.sym # of pins=2
 ** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_top.sym
 ** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_top.sch
-.subckt decap_top vdd vss
-*.PININFO vdd:B vss:B
-CC1 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC2 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC3 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC4 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC5 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC6 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC7 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC8 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC9 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC10 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC11 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC12 vdd vss cap_mfringe w=50u l=42u mmin=1 mmax=4
+.subckt decap_top top bot
+*.PININFO top:B bot:B
+x1 top bot decap_unit
+.ends
+
+
+* expanding   symbol:  decap_bottom_corner.sym # of pins=2
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_bottom_corner.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_bottom_corner.sch
+.subckt decap_bottom_corner top bot
+*.PININFO top:B bot:B
+x1 top bot decap_unit_bottom
+.ends
+
+
+* expanding   symbol:  decap_top_corner.sym # of pins=2
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_top_corner.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_top_corner.sch
+.subckt decap_top_corner top bot
+*.PININFO top:B bot:B
+x1 top bot decap_unit
 .ends
 
 
@@ -843,6 +817,43 @@ x5 vtop vbot mcap_5p
 *.PININFO va:B vb:B
 MM8 vmid vmid va va sg13_lv_pmos w=4u l=4u ng=1
 MM16 vmid vmid vb vb sg13_lv_pmos w=4u l=4u ng=1
+.ends
+
+
+* expanding   symbol:  decap_unit_bottom.sym # of pins=2
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_unit_bottom.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_unit_bottom.sch
+.subckt decap_unit_bottom top bot
+*.PININFO top:B bot:B
+CC1 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
+CC2 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
+CC3 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
+CC4 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
+CC5 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
+CC6 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
+CC7 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
+CC8 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
+CC9 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
+.ends
+
+
+* expanding   symbol:  decap_unit.sym # of pins=2
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_unit.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_unit.sch
+.subckt decap_unit top bot
+*.PININFO top:B bot:B
+CC1 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
+CC2 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
+CC3 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
+CC4 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
+CC5 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
+CC6 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
+CC7 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
+CC8 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
+CC9 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
+CC10 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
+CC11 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
+CC12 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
 .ends
 
 

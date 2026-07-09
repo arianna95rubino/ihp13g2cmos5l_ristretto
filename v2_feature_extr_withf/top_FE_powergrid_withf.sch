@@ -20,7 +20,6 @@ N 90 -500 170 -500 {lab=vss}
 N 250 -540 250 -500 {lab=vss}
 N 170 -500 250 -500 {lab=vss}
 N 470 -710 470 -660 {lab=vdd}
-N 890 -710 960 -710 {lab=vdd}
 N 960 -710 960 -660 {lab=vdd}
 N 890 -710 890 -660 {lab=vdd}
 N 820 -710 890 -710 {lab=vdd}
@@ -79,8 +78,6 @@ N 610 -290 610 -240 {lab=vss}
 N 540 -240 610 -240 {lab=vss}
 N 540 -290 540 -240 {lab=vss}
 N 470 -240 540 -240 {lab=vss}
-N 1170 -540 1170 -490 {lab=vss}
-N 1170 -710 1170 -660 {lab=vdd}
 N 600 -990 600 -940 {lab=vdd}
 N 740 -990 820 -990 {lab=vdd}
 N 820 -990 820 -940 {lab=vdd}
@@ -105,8 +102,39 @@ N 690 0 770 0 {lab=vss}
 N 770 -40 770 0 {lab=vss}
 N 690 -40 690 0 {lab=vss}
 N 610 0 690 0 {lab=vss}
+N 900 -990 900 -940 {lab=vdd}
+N 900 -820 900 -770 {lab=vss}
+N 820 -990 900 -990 {lab=vdd}
+N 820 -770 900 -770 {lab=vss}
+N 890 -710 960 -710 {lab=vdd}
+N 1100 -710 1100 -660 {lab=vdd}
+N 1030 -710 1030 -660 {lab=vdd}
+N 1030 -710 1100 -710 {lab=vdd}
+N 960 -710 1030 -710 {lab=vdd}
+N 1030 -540 1030 -490 {lab=vss}
+N 1100 -540 1100 -490 {lab=vss}
+N 1030 -490 1100 -490 {lab=vss}
+N 960 -490 1030 -490 {lab=vss}
+N 1100 -460 1100 -410 {lab=vdd}
+N 1030 -460 1030 -410 {lab=vdd}
+N 1030 -460 1100 -460 {lab=vdd}
+N 960 -460 1030 -460 {lab=vdd}
+N 1030 -290 1030 -240 {lab=vss}
+N 1100 -290 1100 -240 {lab=vss}
+N 1030 -240 1100 -240 {lab=vss}
+N 960 -240 1030 -240 {lab=vss}
+N 1270 -710 1270 -660 {lab=vdd}
+N 1270 -710 1350 -710 {lab=vdd}
+N 1350 -710 1350 -660 {lab=vdd}
+N 1270 -540 1270 -490 {lab=vss}
+N 1270 -490 1350 -490 {lab=vss}
+N 1350 -540 1350 -490 {lab=vss}
+N 250 -320 250 -260 {lab=vdd}
+N 250 -140 250 -90 {lab=vss}
+N 1210 -1010 1210 -950 {lab=vdd}
+N 1210 -830 1210 -780 {lab=vss}
 C {decap_bottom.sym} 610 -100 0 0 {name=x1}
-C {decap_right.sym} 1170 -600 0 0 {name=x2}
+C {decap_right.sym} 1270 -600 0 0 {name=x2}
 C {decap_left.sym} 90 -600 0 0 {name=x3}
 C {decap_centre.sym} 470 -600 0 0 {name=x4}
 C {decap_top.sym} 600 -880 0 0 {name=x5}
@@ -139,11 +167,23 @@ C {decap_centre.sym} 890 -350 0 0 {name=x27}
 C {decap_centre.sym} 960 -350 0 0 {name=x28}
 C {lab_wire.sym} 700 -460 0 0 {name=p5 sig_type=std_logic lab=vdd}
 C {lab_wire.sym} 720 -240 0 0 {name=p6 sig_type=std_logic lab=vss}
-C {lab_wire.sym} 1170 -680 0 0 {name=p7 sig_type=std_logic lab=vdd}
-C {lab_wire.sym} 1170 -510 0 0 {name=p8 sig_type=std_logic lab=vss}
 C {lab_wire.sym} 720 -990 0 0 {name=p9 sig_type=std_logic lab=vdd}
 C {lab_wire.sym} 710 -770 0 0 {name=p10 sig_type=std_logic lab=vss}
 C {lab_wire.sym} 720 0 0 0 {name=p11 sig_type=std_logic lab=vss}
 C {lab_wire.sym} 720 -200 0 0 {name=p12 sig_type=std_logic lab=vdd}
 C {iopin.sym} 150 -860 0 0 {name=pin_vdd lab=vdd}
 C {iopin.sym} 150 -830 0 0 {name=pin_vss lab=vss}
+C {decap_top.sym} 900 -880 0 0 {name=x29}
+C {decap_centre.sym} 1030 -600 0 0 {name=x30}
+C {decap_centre.sym} 1100 -600 0 0 {name=x31}
+C {decap_centre.sym} 1030 -350 0 0 {name=x32}
+C {decap_centre.sym} 1100 -350 0 0 {name=x33}
+C {decap_right.sym} 1350 -600 0 0 {name=x34}
+C {lab_wire.sym} 1320 -710 0 0 {name=p7 sig_type=std_logic lab=vdd}
+C {lab_wire.sym} 1320 -490 0 0 {name=p8 sig_type=std_logic lab=vss}
+C {decap_bottom_corner.sym} 250 -200 0 0 {name=x35}
+C {lab_wire.sym} 250 -290 1 0 {name=p13 sig_type=std_logic lab=vdd}
+C {lab_wire.sym} 250 -100 1 0 {name=p14 sig_type=std_logic lab=vss}
+C {decap_top_corner.sym} 1210 -890 0 0 {name=x36}
+C {lab_wire.sym} 1210 -980 1 0 {name=p15 sig_type=std_logic lab=vdd}
+C {lab_wire.sym} 1210 -790 1 0 {name=p16 sig_type=std_logic lab=vss}
