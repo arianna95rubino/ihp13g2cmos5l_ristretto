@@ -240,7 +240,7 @@ C {sg13g2_pr/sg13_lv_pmos.sym} 1740 -700 0 0 {name=M3
 l=1u
 w=1u
 ng=1
-m=20
+m=21
 model=sg13_lv_pmos
 spiceprefix=X
 }

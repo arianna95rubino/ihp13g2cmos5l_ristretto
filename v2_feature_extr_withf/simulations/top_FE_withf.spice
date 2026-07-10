@@ -547,7 +547,7 @@ MM25 net5 net5 vss vss sg13_lv_nmos w=2u l=2u ng=2 m=2
 MM26 net5 vbias vdd vdd sg13_lv_pmos w=2u l=1u ng=2 m=4
 MM1 vss vss vss vss sg13_lv_nmos w=1u l=1.54u ng=1 m=4
 MM2 vss vss vss vss sg13_lv_nmos w=4u l=0.13u ng=4 m=8
-MM3 vdd vdd vdd vdd sg13_lv_pmos w=1u l=1u ng=1 m=20
+MM3 vdd vdd vdd vdd sg13_lv_pmos w=1u l=1u ng=1 m=21
 MM4 vss vss vss vss sg13_lv_nmos w=1u l=0.78u ng=1 m=2
 .ends
 
@@ -570,7 +570,7 @@ MM6 net1 net1 vdd vdd sg13_lv_pmos w=2u l=2u ng=2 m=2
 MM11 net1 vbias vss vss sg13_lv_nmos w=2u l=1u ng=2 m=4
 MM12 vdd vdd vdd vdd sg13_lv_pmos w=1u l=1.54u ng=1 m=4
 MM13 vdd vdd vdd vdd sg13_lv_pmos w=4u l=0.13u ng=4 m=8
-MM14 vss vss vss vss sg13_lv_nmos w=1u l=1u ng=1 m=12
+MM14 vss vss vss vss sg13_lv_nmos w=1u l=1u ng=1 m=21
 MM16 vdd vdd vdd vdd sg13_lv_pmos w=1u l=0.78u ng=1 m=2
 .ends
 

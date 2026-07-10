@@ -252,7 +252,7 @@ C {sg13g2_pr/sg13_lv_nmos.sym} 1880 -770 0 0 {name=M14
 l=1u
 w=1u
 ng=1
-m=12
+m=21
 model=sg13_lv_nmos
 spiceprefix=X
 }
