@@ -859,15 +859,15 @@ MM16 vmid vmid vb vb sg13_lv_pmos w=4u l=4u ng=1
 ** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_unit_bottom.sch
 .subckt decap_unit_bottom top bot
 *.PININFO top:B bot:B
-CC1 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC2 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC3 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC4 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC5 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC6 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC7 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC8 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC9 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
+x1 top bot decap_quad
+x2 top bot decap_quad
+x3 top bot decap_quad
+x4 top bot decap_quad
+x5 top bot decap_quad
+x6 top bot decap_quad
+x7 top bot decap_quad
+x8 top bot decap_quad
+x9 top bot decap_quad
 .ends
 
 
@@ -876,18 +876,18 @@ CC9 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
 ** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_unit.sch
 .subckt decap_unit top bot
 *.PININFO top:B bot:B
-CC1 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC2 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC3 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC4 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC5 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC6 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC7 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC8 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC9 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC10 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC11 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
-CC12 top bot cap_mfringe w=50u l=42u mmin=1 mmax=4
+x1 top bot decap_quad
+x2 top bot decap_quad
+x3 top bot decap_quad
+x4 top bot decap_quad
+x5 top bot decap_quad
+x6 top bot decap_quad
+x7 top bot decap_quad
+x8 top bot decap_quad
+x9 top bot decap_quad
+x10 top bot decap_quad
+x11 top bot decap_quad
+x12 top bot decap_quad
 .ends
 
 
@@ -901,5 +901,17 @@ x2 vtop vbot cap20ux20u
 x3 vtop vbot cap20ux20u
 x4 vtop vbot cap20ux20u
 x5 vtop vbot cap20ux20u
+.ends
+
+
+* expanding   symbol:  decap_quad.sym # of pins=2
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_quad.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/decap_quad.sch
+.subckt decap_quad top bot
+*.PININFO top:B bot:B
+CC1 top bot cap_mfringe w=24u l=20u mmin=1 mmax=4
+CC2 top bot cap_mfringe w=24u l=20u mmin=1 mmax=4
+CC3 top bot cap_mfringe w=24u l=20u mmin=1 mmax=4
+CC4 top bot cap_mfringe w=24u l=20u mmin=1 mmax=4
 .ends
 

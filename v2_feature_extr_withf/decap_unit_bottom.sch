@@ -5,104 +5,41 @@ V {}
 S {}
 F {}
 E {}
-N 120 -140 120 -110 {lab=top}
-N 220 -170 220 -110 {lab=top}
-N 320 -140 320 -110 {lab=top}
+N 120 -160 120 -130 {lab=top}
+N 220 -190 220 -130 {lab=top}
+N 320 -160 320 -130 {lab=top}
 N 320 -400 320 -350 {lab=top}
 N 220 -400 320 -400 {lab=top}
 N 120 -400 120 -350 {lab=top}
 N 220 -400 220 -350 {lab=top}
 N 120 -400 220 -400 {lab=top}
 N 70 -400 120 -400 {lab=top}
-N 120 -260 320 -260 {lab=bot}
-N 120 -260 120 -230 {lab=bot}
-N 320 -260 320 -230 {lab=bot}
-N 120 -140 320 -140 {lab=top}
-N 120 -170 120 -140 {lab=top}
-N 320 -170 320 -140 {lab=top}
-N 220 -10 320 -10 {lab=vss}
-N 120 -50 120 -10 {lab=vss}
-N 320 -50 320 -10 {lab=vss}
-N 120 -290 120 -260 {lab=bot}
-N 220 -290 220 -230 {lab=bot}
-N 320 -290 320 -260 {lab=bot}
-N 70 -260 120 -260 {lab=bot}
-N 220 -50 220 -10 {lab=vss}
-N 120 -10 220 -10 {lab=vss}
-C {sg13cmos5l_pr/cap_mfringe.sym} 120 -320 0 0 {name=C1
-model=cap_mfringe
-w=50u
-l=42u
-mmin=1
-mmax=4
-spiceprefix=X
-}
-C {sg13cmos5l_pr/cap_mfringe.sym} 220 -320 0 0 {name=C2
-model=cap_mfringe
-w=50u
-l=42u
-mmin=1
-mmax=4
-spiceprefix=X
-}
-C {sg13cmos5l_pr/cap_mfringe.sym} 320 -320 0 0 {name=C3
-model=cap_mfringe
-w=50u
-l=42u
-mmin=1
-mmax=4
-spiceprefix=X
-}
-C {sg13cmos5l_pr/cap_mfringe.sym} 120 -200 2 1 {name=C4
-model=cap_mfringe
-w=50u
-l=42u
-mmin=1
-mmax=4
-spiceprefix=X
-}
-C {sg13cmos5l_pr/cap_mfringe.sym} 220 -200 2 1 {name=C5
-model=cap_mfringe
-w=50u
-l=42u
-mmin=1
-mmax=4
-spiceprefix=X
-}
-C {sg13cmos5l_pr/cap_mfringe.sym} 320 -200 2 1 {name=C6
-model=cap_mfringe
-w=50u
-l=42u
-mmin=1
-mmax=4
-spiceprefix=X
-}
-C {sg13cmos5l_pr/cap_mfringe.sym} 120 -80 0 0 {name=C7
-model=cap_mfringe
-w=50u
-l=42u
-mmin=1
-mmax=4
-spiceprefix=X
-}
-C {sg13cmos5l_pr/cap_mfringe.sym} 220 -80 0 0 {name=C8
-model=cap_mfringe
-w=50u
-l=42u
-mmin=1
-mmax=4
-spiceprefix=X
-}
-C {sg13cmos5l_pr/cap_mfringe.sym} 320 -80 0 0 {name=C9
-model=cap_mfringe
-w=50u
-l=42u
-mmin=1
-mmax=4
-spiceprefix=X
-}
+N 120 -270 320 -270 {lab=bot}
+N 120 -270 120 -240 {lab=bot}
+N 320 -270 320 -240 {lab=bot}
+N 120 -160 320 -160 {lab=top}
+N 120 -190 120 -160 {lab=top}
+N 320 -190 320 -160 {lab=top}
+N 220 -40 320 -40 {lab=bot}
+N 120 -80 120 -40 {lab=bot}
+N 320 -80 320 -40 {lab=bot}
+N 120 -300 120 -270 {lab=bot}
+N 220 -300 220 -240 {lab=bot}
+N 320 -300 320 -270 {lab=bot}
+N 70 -270 120 -270 {lab=bot}
+N 220 -80 220 -40 {lab=bot}
+N 120 -40 220 -40 {lab=bot}
 C {iopin.sym} 70 -400 2 0 {name=pin_top lab=top}
-C {iopin.sym} 70 -260 2 0 {name=pin_bot lab=bot}
-C {lab_wire.sym} 220 -260 0 0 {name=p1 sig_type=std_logic lab=bot}
-C {lab_wire.sym} 220 -140 0 0 {name=p2 sig_type=std_logic lab=top}
-C {lab_wire.sym} 220 -20 0 0 {name=p3 sig_type=std_logic lab=bot}
+C {iopin.sym} 70 -270 2 0 {name=pin_bot lab=bot}
+C {lab_wire.sym} 220 -270 0 0 {name=p1 sig_type=std_logic lab=bot}
+C {lab_wire.sym} 220 -160 0 0 {name=p2 sig_type=std_logic lab=top}
+C {lab_wire.sym} 220 -50 0 0 {name=p3 sig_type=std_logic lab=bot}
+C {decap_quad.sym} 120 -320 0 0 {name=x1}
+C {decap_quad.sym} 220 -320 0 0 {name=x2}
+C {decap_quad.sym} 320 -320 0 0 {name=x3}
+C {decap_quad.sym} 120 -220 2 0 {name=x4}
+C {decap_quad.sym} 220 -220 2 0 {name=x5}
+C {decap_quad.sym} 320 -220 2 0 {name=x6}
+C {decap_quad.sym} 120 -100 0 0 {name=x7}
+C {decap_quad.sym} 220 -100 0 0 {name=x8}
+C {decap_quad.sym} 320 -100 0 0 {name=x9}
