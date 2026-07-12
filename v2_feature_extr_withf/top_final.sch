@@ -132,34 +132,35 @@ N 480 -550 520 -550 {lab=en_feedback_pad}
 N 85 -550 180 -550 {lab=en_feedback_core}
 N -890 -440 -890 -390 {lab=vdd}
 N -890 -280 -890 -230 {lab=vss}
-N -370 190 -330 190 {lab=vdd}
-N -370 210 -330 210 {lab=vss}
-N -795 290 -670 290 {lab=SPI_CS_N_core}
-N -795 330 -670 330 {lab=SPI_MOSI_core}
-N -795 350 -670 350 {lab=SPI_RST_N_core}
-N -370 330 -245 330 {lab=C2F_REQ_core}
-N -795 270 -670 270 {lab=C2F_ACK_core}
-N -370 350 -245 350 {lab=C2F_COMP_core}
-N -370 310 -245 310 {lab=NN1_REQ_core}
-N -790 250 -665 250 {lab=NN1_ACK_core}
-N -370 290 -245 290 {lab=NN2_REQ_core}
-N -370 270 -245 270 {lab=NN3_REQ_core}
-N -795 210 -670 210 {lab=NN3_ACK_core}
-N -370 230 -250 230 {lab=BG_PROBE_core}
+N -275 60 -235 60 {lab=vss}
+N -275 120 -150 120 {lab=SPI_CS_N_core}
+N -275 180 -150 180 {lab=SPI_MOSI_core}
+N -275 200 -150 200 {lab=SPI_RST_N_core}
+N -275 250 -150 250 {lab=C2F_REQ_core}
+N -275 270 -150 270 {lab=C2F_ACK_core}
+N -275 290 -150 290 {lab=C2F_COMP_core}
+N -275 340 -150 340 {lab=NN1_REQ_core}
+N -275 360 -150 360 {lab=NN1_ACK_core}
+N -275 380 -150 380 {lab=NN2_REQ_core}
+N -455 450 -455 575 {lab=NN3_REQ_core}
+N -475 445 -475 580 {lab=NN3_ACK_core}
+N -615 450 -615 570 {lab=BG_PROBE_core}
 N 30 290 180 290 {lab=BG_100kRES_core}
-N -810 190 -670 190 {lab=BG_BIAS_core}
-N -810 170 -670 170 {lab=BG_100mV_core}
-N -375 170 -190 170 {lab=NN1_MEM_PROBE_core}
-N -375 150 -190 150 {lab=NN2_MEM_PROBE_core}
-N -375 130 -190 130 {lab=NN3_MEM_PROBE_core}
-N -780 150 -670 150 {lab=V2I_INN_core}
+N -655 450 -655 590 {lab=BG_BIAS_core}
+N -675 450 -675 590 {lab=BG_100mV_core}
+N -795 450 -795 635 {lab=NN1_MEM_PROBE_core}
+N -815 450 -815 635 {lab=NN2_MEM_PROBE_core}
+N -835 450 -835 635 {lab=NN3_MEM_PROBE_core}
+N -875 450 -875 560 {lab=V2I_INN_core}
 N 60 30 180 30 {lab=V2I_INP_core}
 N 60 50 180 50 {lab=V2I_INN_core}
-N -790 130 -670 130 {lab=V2I_INP_core}
-N -370 250 -210 250 {lab=BG_100kRES_core}
-N -790 230 -665 230 {lab=NN2_ACK_core}
-N -800 310 -665 310 {lab=SPI_SCK_core}
-N -370 370 -245 370 {lab=SPI_MISO_core}
+N -895 450 -895 570 {lab=V2I_INP_core}
+N -635 450 -635 610 {lab=BG_100kRES_core}
+N -280 400 -155 400 {lab=NN2_ACK_core}
+N -275 160 -140 160 {lab=SPI_SCK_core}
+N -275 140 -150 140 {lab=SPI_MISO_core}
+N -275 40 -235 40 {lab=vdd}
+N -1035 230 -945 230 {lab=vbias_bufP_core}
 C {2ch_feature_extr_withf.sym} -475 -330 0 0 {name=x1}
 C {padframe_withf.sym} 330 10 0 0 {name=x2}
 C {lab_wire.sym} -475 -500 3 0 {name=p1 sig_type=std_logic lab=vdd}
@@ -297,29 +298,30 @@ C {lab_wire.sym} -535 -175 3 0 {name=p81 sig_type=std_logic lab=en_feedback_core
 C {top_FE_powergrid_withf.sym} -890 -340 0 0 {name=x3}
 C {lab_wire.sym} -890 -430 3 0 {name=p82 sig_type=std_logic lab=vdd}
 C {lab_wire.sym} -890 -270 3 0 {name=p83 sig_type=std_logic lab=vss}
-C {lab_wire.sym} -340 190 0 0 {name=p84 sig_type=std_logic lab=vdd}
-C {lab_wire.sym} -340 210 0 0 {name=p85 sig_type=std_logic lab=vss}
-C {lab_wire.sym} -785 290 2 0 {name=p86 sig_type=std_logic lab=SPI_CS_N_core}
-C {lab_wire.sym} -785 310 2 0 {name=p88 sig_type=std_logic lab=SPI_SCK_core}
-C {lab_wire.sym} -780 330 2 0 {name=p89 sig_type=std_logic lab=SPI_MOSI_core}
-C {lab_wire.sym} -785 350 2 0 {name=p90 sig_type=std_logic lab=SPI_RST_N_core}
-C {lab_wire.sym} -360 330 2 0 {name=p91 sig_type=std_logic lab=C2F_REQ_core}
-C {lab_wire.sym} -785 270 2 0 {name=p92 sig_type=std_logic lab=C2F_ACK_core}
-C {lab_wire.sym} -360 350 2 0 {name=p93 sig_type=std_logic lab=C2F_COMP_core}
-C {lab_wire.sym} -355 310 2 0 {name=p94 sig_type=std_logic lab=NN1_REQ_core}
-C {lab_wire.sym} -775 250 2 0 {name=p95 sig_type=std_logic lab=NN1_ACK_core}
-C {lab_wire.sym} -360 290 2 0 {name=p96 sig_type=std_logic lab=NN2_REQ_core}
-C {lab_wire.sym} -785 230 2 0 {name=p97 sig_type=std_logic lab=NN2_ACK_core}
-C {lab_wire.sym} -360 270 2 0 {name=p98 sig_type=std_logic lab=NN3_REQ_core}
-C {lab_wire.sym} -785 210 2 0 {name=p99 sig_type=std_logic lab=NN3_ACK_core}
-C {lab_wire.sym} -360 230 2 0 {name=p100 sig_type=std_logic lab=BG_PROBE_core}
-C {lab_wire.sym} -800 190 2 0 {name=p102 sig_type=std_logic lab=BG_BIAS_core}
-C {lab_wire.sym} -800 170 2 0 {name=p103 sig_type=std_logic lab=BG_100mV_core}
-C {lab_wire.sym} -365 170 2 0 {name=p104 sig_type=std_logic lab=NN1_MEM_PROBE_core}
-C {lab_wire.sym} -365 150 2 0 {name=p105 sig_type=std_logic lab=NN2_MEM_PROBE_core}
-C {lab_wire.sym} -365 130 2 0 {name=p106 sig_type=std_logic lab=NN3_MEM_PROBE_core}
-C {lab_wire.sym} -770 150 2 0 {name=p107 sig_type=std_logic lab=V2I_INN_core}
-C {lab_wire.sym} -780 130 2 0 {name=p108 sig_type=std_logic lab=V2I_INP_core}
-C {INI_Block_Arianna.sym} -520 250 0 0 {}
-C {lab_wire.sym} -360 250 2 0 {name=p109 sig_type=std_logic lab=BG_100kRES_core}
-C {lab_wire.sym} -360 370 2 0 {name=p101 sig_type=std_logic lab=SPI_MISO_core}
+C {lab_wire.sym} -245 40 0 0 {name=p84 sig_type=std_logic lab=vdd}
+C {lab_wire.sym} -245 60 0 0 {name=p85 sig_type=std_logic lab=vss}
+C {lab_wire.sym} -155 120 0 0 {name=p86 sig_type=std_logic lab=SPI_CS_N_core}
+C {lab_wire.sym} -165 160 0 0 {name=p88 sig_type=std_logic lab=SPI_SCK_core}
+C {lab_wire.sym} -155 180 0 0 {name=p89 sig_type=std_logic lab=SPI_MOSI_core}
+C {lab_wire.sym} -155 200 0 0 {name=p90 sig_type=std_logic lab=SPI_RST_N_core}
+C {lab_wire.sym} -155 250 0 0 {name=p91 sig_type=std_logic lab=C2F_REQ_core}
+C {lab_wire.sym} -170 270 0 0 {name=p92 sig_type=std_logic lab=C2F_ACK_core}
+C {lab_wire.sym} -155 290 0 0 {name=p93 sig_type=std_logic lab=C2F_COMP_core}
+C {lab_wire.sym} -160 340 0 0 {name=p94 sig_type=std_logic lab=NN1_REQ_core}
+C {lab_wire.sym} -160 360 0 0 {name=p95 sig_type=std_logic lab=NN1_ACK_core}
+C {lab_wire.sym} -155 380 0 0 {name=p96 sig_type=std_logic lab=NN2_REQ_core}
+C {lab_wire.sym} -160 400 0 0 {name=p97 sig_type=std_logic lab=NN2_ACK_core}
+C {lab_wire.sym} -455 460 3 0 {name=p98 sig_type=std_logic lab=NN3_REQ_core}
+C {lab_wire.sym} -475 455 3 0 {name=p99 sig_type=std_logic lab=NN3_ACK_core}
+C {lab_wire.sym} -615 460 3 0 {name=p100 sig_type=std_logic lab=BG_PROBE_core}
+C {lab_wire.sym} -655 480 3 0 {name=p102 sig_type=std_logic lab=BG_BIAS_core}
+C {lab_wire.sym} -675 465 3 0 {name=p103 sig_type=std_logic lab=BG_100mV_core}
+C {lab_wire.sym} -795 460 3 0 {name=p104 sig_type=std_logic lab=NN1_MEM_PROBE_core}
+C {lab_wire.sym} -815 460 3 0 {name=p105 sig_type=std_logic lab=NN2_MEM_PROBE_core}
+C {lab_wire.sym} -835 460 3 0 {name=p106 sig_type=std_logic lab=NN3_MEM_PROBE_core}
+C {lab_wire.sym} -875 460 3 0 {name=p107 sig_type=std_logic lab=V2I_INN_core}
+C {lab_wire.sym} -895 460 3 0 {name=p108 sig_type=std_logic lab=V2I_INP_core}
+C {lab_wire.sym} -635 460 3 0 {name=p109 sig_type=std_logic lab=BG_100kRES_core}
+C {lab_wire.sym} -165 140 0 0 {name=p101 sig_type=std_logic lab=SPI_MISO_core}
+C {INI_Block.sym} -425 130 0 0 {name=x4}
+C {lab_wire.sym} -950 230 0 0 {name=p87 sig_type=std_logic lab=vbias_bufP_core}

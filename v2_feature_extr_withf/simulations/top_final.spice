@@ -24,9 +24,9 @@ x2 en_feedback_pad en_feedback_core SPI_CS_N_core SPI_CS_N_pad SPI_MISO_pad SPI_
 + ack_up_core vin_n_ch1_core ack_up_pad vin_n_ch1_pad ack_dn_core vin_p_ch2_core ack_dn_pad vin_p_ch2_pad vin_n_ch2_core vin_n_ch2_pad
 + vthr_h_core vthr_h_pad vthr_l_core vthr_l_pad padframe_withf
 x3 vdd vss top_FE_powergrid_withf
-x1 V2I_INP_core NN3_MEM_PROBE_core V2I_INN_core NN2_MEM_PROBE_core BG_100mV_core NN1_MEM_PROBE_core vdd BG_BIAS_core vss
-+ BG_PROBE_core BG_100kRES_core NN3_REQ_core NN3_ACK_core NN2_REQ_core NN2_ACK_core NN1_REQ_core NN1_ACK_core C2F_REQ_core C2F_ACK_core
-+ C2F_COMP_core SPI_CS_N_core SPI_MISO_core SPI_SCK_core SPI_MOSI_core SPI_RST_N_core INI_Block_Arianna
+x4 vdd SPI_CS_N_core SPI_MISO_core SPI_SCK_core vss SPI_MOSI_core SPI_RST_N_core NN1_REQ_core NN1_ACK_core NN2_REQ_core
++ NN2_ACK_core NN3_REQ_core NN3_ACK_core BG_PROBE_core BG_100kRES_core BG_BIAS_core BG_100mV_core NN1_MEM_PROBE_core NN2_MEM_PROBE_core
++ NN3_MEM_PROBE_core V2I_INN_core V2I_INP_core vbias_bufP_core C2F_REQ_core C2F_ACK_core C2F_COMP_core INI_Block
 .ends
 
 * expanding   symbol:  2ch_feature_extr_withf.sym # of pins=26
@@ -437,39 +437,51 @@ x36 vdd vss decap_top_corner
 .ends
 
 
-* expanding   symbol:  INI_Block_Arianna.sym # of pins=25
-** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/INI_Block_Arianna.sym
-** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/INI_Block_Arianna.sch
-.subckt INI_Block_Arianna V2I_INP NN3_MEM_PROB V2I_INN NN2_MEM_PROB BG_100mV NN1_MEM_PROB vdd BG_BIAS vss BG_PROB BG_100k NN3_REQ
-+ NN3_ACK NN2_REQ NN2_ACK NN1_REQ NN1_ACK C2F_REQ C2F_ACK C2F_COMP SPI_CS_N SPI_MISO SPI_SCK SPI_MOSI SPI_RST_N
-*.PININFO vdd:B vss:B V2I_INP:I V2I_INN:I BG_100mV:I BG_BIAS:I BG_100k:B NN3_ACK:I NN2_ACK:I NN1_ACK:I C2F_ACK:I SPI_CS_N:I
-*+ SPI_SCK:I SPI_MOSI:I SPI_RST_N:I NN3_MEM_PROB:O NN2_MEM_PROB:O NN1_MEM_PROB:O BG_PROB:O NN3_REQ:O NN2_REQ:O NN1_REQ:O C2F_REQ:O C2F_COMP:O
-*+ SPI_MISO:O
-MM1 vss vss vss vss sg13_lv_nmos w=0.15u l=0.13u ng=1
-MM2 vss vss vss vss sg13_lv_nmos w=0.15u l=0.13u ng=1
-* noconn V2I_INP
-* noconn V2I_INN
-* noconn BG_100mV
-* noconn BG_BIAS
-* noconn NN3_ACK
-* noconn NN2_ACK
-* noconn NN1_ACK
-* noconn C2F_ACK
-* noconn SPI_CS_N
-* noconn SPI_SCK
-* noconn SPI_MOSI
-* noconn SPI_RST_N
-* noconn BG_100k
-* noconn NN3_MEM_PROB
-* noconn NN2_MEM_PROB
-* noconn NN1_MEM_PROB
-* noconn BG_PROB
-* noconn NN3_REQ
-* noconn NN2_REQ
-* noconn NN1_REQ
-* noconn C2F_REQ
-* noconn C2F_COMP
-* noconn SPI_MISO
+* expanding   symbol:  INI_Block.sym # of pins=26
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/INI_Block.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/INI_Block.sch
+.subckt INI_Block VDD SPI_CS_N SPI_MISO SPI_SCK VSS SPI_MOSI SPI_RST_N NN1_REQ NN1_ACK NN2_REQ NN2_ACK NN3_REQ NN3_ACK BG_PROB
++ BG_100kRES BG_BIAS BG_100mV NN1_MEM_PROB NN2_MEM_PROB NN3_MEM_PROB V2I_INN V2I_INP MEM_bufferbias C2F_REQ C2F_ACK C2F_COMP
+*.PININFO SPI_CS_N:I SPI_MISO:O SPI_SCK:I SPI_MOSI:I SPI_RST_N:I VSS:B VDD:B MEM_bufferbias:I C2F_REQ:O C2F_COMP:O C2F_ACK:I
+*+ NN1_REQ:O NN2_REQ:O NN3_REQ:O NN1_ACK:I NN2_ACK:I NN3_ACK:I V2I_INN:I V2I_INP:I NN1_MEM_PROB:O NN2_MEM_PROB:O NN3_MEM_PROB:O BG_100mV:I
+*+ BG_BIAS:I BG_100kRES:B BG_PROB:O
+xspi SPI_CS_N SPI_MISO SPI_MOSI en_VS_10[0] en_VS_10[10] en_VS_10[1] en_VS_10[2] en_VS_10[3] en_VS_10[4] en_VS_10[5] en_VS_10[6]
++ en_VS_10[7] en_VS_10[8] en_VS_10[9] en_VS_11[0] en_VS_11[10] en_VS_11[1] en_VS_11[2] en_VS_11[3] en_VS_11[4] en_VS_11[5] en_VS_11[6]
++ en_VS_11[7] en_VS_11[8] en_VS_11[9] BIASGEN_en_VS[0] BIASGEN_en_VS[10] BIASGEN_en_VS[1] BIASGEN_en_VS[2] BIASGEN_en_VS[3] BIASGEN_en_VS[4]
++ BIASGEN_en_VS[5] BIASGEN_en_VS[6] BIASGEN_en_VS[7] BIASGEN_en_VS[8] BIASGEN_en_VS[9] BIASGEN_BYP_en_VS[0] BIASGEN_BYP_en_VS[10]
++ BIASGEN_BYP_en_VS[1] BIASGEN_BYP_en_VS[2] BIASGEN_BYP_en_VS[3] BIASGEN_BYP_en_VS[4] BIASGEN_BYP_en_VS[5] BIASGEN_BYP_en_VS[6] BIASGEN_BYP_en_VS[7]
++ BIASGEN_BYP_en_VS[8] BIASGEN_BYP_en_VS[9] BIASGEN_EXT_REF_en_VS[0] BIASGEN_EXT_REF_en_VS[10] BIASGEN_EXT_REF_en_VS[1] BIASGEN_EXT_REF_en_VS[2]
++ BIASGEN_EXT_REF_en_VS[3] BIASGEN_EXT_REF_en_VS[4] BIASGEN_EXT_REF_en_VS[5] BIASGEN_EXT_REF_en_VS[6] BIASGEN_EXT_REF_en_VS[7] BIASGEN_EXT_REF_en_VS[8]
++ BIASGEN_EXT_REF_en_VS[9] en_VS_15[0] en_VS_15[10] en_VS_15[1] en_VS_15[2] en_VS_15[3] en_VS_15[4] en_VS_15[5] en_VS_15[6] en_VS_15[7] en_VS_15[8]
++ en_VS_15[9] en_VS_16[0] en_VS_16[10] en_VS_16[1] en_VS_16[2] en_VS_16[3] en_VS_16[4] en_VS_16[5] en_VS_16[6] en_VS_16[7] en_VS_16[8]
++ en_VS_16[9] en_VS_1[0] en_VS_1[10] en_VS_1[1] en_VS_1[2] en_VS_1[3] en_VS_1[4] en_VS_1[5] en_VS_1[6] en_VS_1[7] en_VS_1[8] en_VS_1[9]
++ en_VS_2[0] en_VS_2[10] en_VS_2[1] en_VS_2[2] en_VS_2[3] en_VS_2[4] en_VS_2[5] en_VS_2[6] en_VS_2[7] en_VS_2[8] en_VS_2[9] en_VS_3[0]
++ en_VS_3[10] en_VS_3[1] en_VS_3[2] en_VS_3[3] en_VS_3[4] en_VS_3[5] en_VS_3[6] en_VS_3[7] en_VS_3[8] en_VS_3[9] en_VS_4[0] en_VS_4[10]
++ en_VS_4[1] en_VS_4[2] en_VS_4[3] en_VS_4[4] en_VS_4[5] en_VS_4[6] en_VS_4[7] en_VS_4[8] en_VS_4[9] en_VS_5[0] en_VS_5[10] en_VS_5[1]
++ en_VS_5[2] en_VS_5[3] en_VS_5[4] en_VS_5[5] en_VS_5[6] en_VS_5[7] en_VS_5[8] en_VS_5[9] en_VS_6[0] en_VS_6[10] en_VS_6[1] en_VS_6[2]
++ en_VS_6[3] en_VS_6[4] en_VS_6[5] en_VS_6[6] en_VS_6[7] en_VS_6[8] en_VS_6[9] en_VS_7[0] en_VS_7[10] en_VS_7[1] en_VS_7[2] en_VS_7[3]
++ en_VS_7[4] en_VS_7[5] en_VS_7[6] en_VS_7[7] en_VS_7[8] en_VS_7[9] en_VS_8[0] en_VS_8[10] en_VS_8[1] en_VS_8[2] en_VS_8[3] en_VS_8[4]
++ en_VS_8[5] en_VS_8[6] en_VS_8[7] en_VS_8[8] en_VS_8[9] en_VS_9[0] en_VS_9[10] en_VS_9[1] en_VS_9[2] en_VS_9[3] en_VS_9[4] en_VS_9[5]
++ en_VS_9[6] en_VS_9[7] en_VS_9[8] en_VS_9[9] SPI_RST_N SPI_SCK VDD VSS bias_gen_spi_top
+* noconn en_VS_11[10:0]
+* noconn en_VS_10[10:0]
+xiniblockanalog BIASGEN_en_VS[10] BIASGEN_en_VS[9] BIASGEN_en_VS[8] BIASGEN_en_VS[7] BIASGEN_en_VS[6] BIASGEN_en_VS[5]
++ BIASGEN_en_VS[4] BIASGEN_en_VS[3] BIASGEN_en_VS[2] BIASGEN_en_VS[1] BIASGEN_en_VS[0] BIASGEN_BYP_en_VS[10] BIASGEN_BYP_en_VS[9]
++ BIASGEN_BYP_en_VS[8] BIASGEN_BYP_en_VS[7] BIASGEN_BYP_en_VS[6] BIASGEN_BYP_en_VS[5] BIASGEN_BYP_en_VS[4] BIASGEN_BYP_en_VS[3] BIASGEN_BYP_en_VS[2]
++ BIASGEN_BYP_en_VS[1] BIASGEN_BYP_en_VS[0] BIASGEN_EXT_REF_en_VS[10] BIASGEN_EXT_REF_en_VS[9] BIASGEN_EXT_REF_en_VS[8] BIASGEN_EXT_REF_en_VS[7]
++ BIASGEN_EXT_REF_en_VS[6] BIASGEN_EXT_REF_en_VS[5] BIASGEN_EXT_REF_en_VS[4] BIASGEN_EXT_REF_en_VS[3] BIASGEN_EXT_REF_en_VS[2] BIASGEN_EXT_REF_en_VS[1]
++ BIASGEN_EXT_REF_en_VS[0] en_VS_7[10] en_VS_7[9] en_VS_7[8] en_VS_7[7] en_VS_7[6] en_VS_7[5] en_VS_7[4] en_VS_7[3] en_VS_7[2] en_VS_7[1] en_VS_7[0]
++ en_VS_9[10] en_VS_9[9] en_VS_9[8] en_VS_9[7] en_VS_9[6] en_VS_9[5] en_VS_9[4] en_VS_9[3] en_VS_9[2] en_VS_9[1] en_VS_9[0] en_VS_1[10]
++ en_VS_1[9] en_VS_1[8] en_VS_1[7] en_VS_1[6] en_VS_1[5] en_VS_1[4] en_VS_1[3] en_VS_1[2] en_VS_1[1] en_VS_1[0] en_VS_6[10] en_VS_6[9]
++ en_VS_6[8] en_VS_6[7] en_VS_6[6] en_VS_6[5] en_VS_6[4] en_VS_6[3] en_VS_6[2] en_VS_6[1] en_VS_6[0] en_VS_5[10] en_VS_5[9] en_VS_5[8]
++ en_VS_5[7] en_VS_5[6] en_VS_5[5] en_VS_5[4] en_VS_5[3] en_VS_5[2] en_VS_5[1] en_VS_5[0] en_VS_3[10] en_VS_3[9] en_VS_3[8] en_VS_3[7]
++ en_VS_3[6] en_VS_3[5] en_VS_3[4] en_VS_3[3] en_VS_3[2] en_VS_3[1] en_VS_3[0] en_VS_8[10] en_VS_8[9] en_VS_8[8] en_VS_8[7] en_VS_8[6]
++ en_VS_8[5] en_VS_8[4] en_VS_8[3] en_VS_8[2] en_VS_8[1] en_VS_8[0] en_VS_2[10] en_VS_2[9] en_VS_2[8] en_VS_2[7] en_VS_2[6] en_VS_2[5]
++ en_VS_2[4] en_VS_2[3] en_VS_2[2] en_VS_2[1] en_VS_2[0] en_VS_4[10] en_VS_4[9] en_VS_4[8] en_VS_4[7] en_VS_4[6] en_VS_4[5] en_VS_4[4]
++ en_VS_4[3] en_VS_4[2] en_VS_4[1] en_VS_4[0] BG_PROB NN3_MEM_PROB NN3_REQ NN3_ACK NN2_MEM_PROB NN2_REQ NN2_ACK VDD NN1_MEM_PROB V2I_INP
++ NN1_REQ V2I_INN BG_100kRES NN1_ACK VSS BG_BIAS BG_100mV C2F_REQ C2F_ACK C2F_COMP MEM_bufferbias INI_Block_analog
+* noconn en_VS_16[10:0]
+* noconn en_VS_15[10:0]
 .ends
 
 
@@ -587,8 +599,8 @@ MM4 vss vss vss vss sg13_lv_nmos w=1u l=0.78u ng=1 m=2
 
 
 * expanding   symbol:  a_buffP.sym # of pins=6
-** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/a_buffP.sym
-** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/a_buffP.sch
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/a_buffP.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/a_buffP.sch
 .subckt a_buffP vdd vout vinp vinn vbias vss
 *.PININFO vinp:I vinn:I vbias:I vdd:B vss:B vout:O
 MM3 gate_n_l gate_n_l vss vss sg13_lv_nmos w=2u l=1u ng=2 m=2
@@ -745,6 +757,93 @@ x1 top bot decap_unit
 .ends
 
 
+* expanding   symbol:  bias_gen_spi_top.sym # of pins=23
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/bias_gen_spi_top.sym
+.include ./bias_gen_spi_top_lvs.spice
+
+* expanding   symbol:  INI_Block_analog.sym # of pins=33
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/INI_Block_analog.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/INI_Block_analog.sch
+.subckt INI_Block_analog BIASGEN_en_VS[10] BIASGEN_en_VS[9] BIASGEN_en_VS[8] BIASGEN_en_VS[7] BIASGEN_en_VS[6] BIASGEN_en_VS[5]
++ BIASGEN_en_VS[4] BIASGEN_en_VS[3] BIASGEN_en_VS[2] BIASGEN_en_VS[1] BIASGEN_en_VS[0] BIASGEN_BYP_en_VS[10] BIASGEN_BYP_en_VS[9]
++ BIASGEN_BYP_en_VS[8] BIASGEN_BYP_en_VS[7] BIASGEN_BYP_en_VS[6] BIASGEN_BYP_en_VS[5] BIASGEN_BYP_en_VS[4] BIASGEN_BYP_en_VS[3] BIASGEN_BYP_en_VS[2]
++ BIASGEN_BYP_en_VS[1] BIASGEN_BYP_en_VS[0] BIASGEN_EXT_REF_en_VS[10] BIASGEN_EXT_REF_en_VS[9] BIASGEN_EXT_REF_en_VS[8] BIASGEN_EXT_REF_en_VS[7]
++ BIASGEN_EXT_REF_en_VS[6] BIASGEN_EXT_REF_en_VS[5] BIASGEN_EXT_REF_en_VS[4] BIASGEN_EXT_REF_en_VS[3] BIASGEN_EXT_REF_en_VS[2] BIASGEN_EXT_REF_en_VS[1]
++ BIASGEN_EXT_REF_en_VS[0] reg_out7[10] reg_out7[9] reg_out7[8] reg_out7[7] reg_out7[6] reg_out7[5] reg_out7[4] reg_out7[3] reg_out7[2] reg_out7[1]
++ reg_out7[0] reg_out9[10] reg_out9[9] reg_out9[8] reg_out9[7] reg_out9[6] reg_out9[5] reg_out9[4] reg_out9[3] reg_out9[2] reg_out9[1]
++ reg_out9[0] reg_out1[10] reg_out1[9] reg_out1[8] reg_out1[7] reg_out1[6] reg_out1[5] reg_out1[4] reg_out1[3] reg_out1[2] reg_out1[1]
++ reg_out1[0] reg_out6[10] reg_out6[9] reg_out6[8] reg_out6[7] reg_out6[6] reg_out6[5] reg_out6[4] reg_out6[3] reg_out6[2] reg_out6[1]
++ reg_out6[0] reg_out5[10] reg_out5[9] reg_out5[8] reg_out5[7] reg_out5[6] reg_out5[5] reg_out5[4] reg_out5[3] reg_out5[2] reg_out5[1]
++ reg_out5[0] reg_out3[10] reg_out3[9] reg_out3[8] reg_out3[7] reg_out3[6] reg_out3[5] reg_out3[4] reg_out3[3] reg_out3[2] reg_out3[1]
++ reg_out3[0] reg_out8[10] reg_out8[9] reg_out8[8] reg_out8[7] reg_out8[6] reg_out8[5] reg_out8[4] reg_out8[3] reg_out8[2] reg_out8[1]
++ reg_out8[0] reg_out2[10] reg_out2[9] reg_out2[8] reg_out2[7] reg_out2[6] reg_out2[5] reg_out2[4] reg_out2[3] reg_out2[2] reg_out2[1]
++ reg_out2[0] reg_out4[10] reg_out4[9] reg_out4[8] reg_out4[7] reg_out4[6] reg_out4[5] reg_out4[4] reg_out4[3] reg_out4[2] reg_out4[1]
++ reg_out4[0] BG_PROB NN3_MEM_PROB NN3_REQ NN3_ACK NN2_MEM_PROB NN2_REQ NN2_ACK VDD NN1_MEM_PROB V2I_INP NN1_REQ V2I_INN BG_100kRES NN1_ACK VSS
++ BG_BIAS BG_100mV C2F_REQ C2F_ACK C2F_COMP MEM_bufferbias
+*.PININFO VSS:I VDD:I NN1_REQ:O NN1_ACK:I V2I_INN:I V2I_INP:I reg_out9[10:0]:I BG_PROB:O reg_out8[10:0]:I reg_out7[10:0]:I
+*+ reg_out6[10:0]:I reg_out5[10:0]:I reg_out4[10:0]:I reg_out3[10:0]:I reg_out2[10:0]:I reg_out1[10:0]:I BG_100mV:I BG_BIAS:I BG_100kRES:I NN2_REQ:O
+*+ NN2_ACK:I NN3_REQ:O NN3_ACK:I BIASGEN_en_VS[10:0]:I BIASGEN_BYP_en_VS[10:0]:I BIASGEN_EXT_REF_en_VS[10:0]:I C2F_REQ:O C2F_COMP:O C2F_ACK:I
+*+ MEM_bufferbias:I NN1_MEM_PROB:O NN2_MEM_PROB:O NN3_MEM_PROB:O
+x15 VDD NNDPI_gain_VNI NNDPI_lk_VNI net1 NN1_REQ NNADAP_gain_VPI NNADAPDPI_gain_VNI NN1_ADAP_cap_VTO NN1_ACK NNADAPDPI_lk_VNI
++ NNREF_lk_VNI VSS NN1_REF_cap_VTO NNPULEXT_pwbias_VPI net2 neuron_LVS
+x16 VDD V2I_imax_VPI V2I_INN V2I_INP net2 VSS V2I
+* noconn C2F_REQ
+* noconn C2F_COMP
+x17 reg_out9[10] reg_out9[9] reg_out9[8] reg_out9[7] reg_out9[6] reg_out9[5] reg_out9[4] reg_out9[3] reg_out9[2] reg_out9[1]
++ reg_out9[0] VSS VDD net7 BG_PROB ref_VUN[7] ref_VUN[6] ref_VUN[5] ref_VUN[4] ref_VUN[3] ref_VUN[2] ref_VUN[1] ref_VUN[0] BIASGEN_en_VS[0]
++ CoreFineDAC_CurrentOutput_N
+* noconn #net7
+x1 ref_VUN[7] ref_VUN[6] ref_VUN[5] ref_VUN[4] ref_VUN[3] ref_VUN[2] ref_VUN[1] ref_VUN[0] VSS BIASGEN_en_VS[0] CoreDiodeT
+x2 reg_out8[10] reg_out8[9] reg_out8[8] reg_out8[7] reg_out8[6] reg_out8[5] reg_out8[4] reg_out8[3] reg_out8[2] reg_out8[1]
++ reg_out8[0] VSS VDD NNPULEXT_pwbias_VPI net8 ref_VUN[7] ref_VUN[6] ref_VUN[5] ref_VUN[4] ref_VUN[3] ref_VUN[2] ref_VUN[1] ref_VUN[0]
++ BIASGEN_en_VS[0] CoreFineDAC_N
+* noconn #net8
+x10 reg_out7[10] reg_out7[9] reg_out7[8] reg_out7[7] reg_out7[6] reg_out7[5] reg_out7[4] reg_out7[3] reg_out7[2] reg_out7[1]
++ reg_out7[0] VSS VDD net9 NNADAPDPI_lk_VNI ref_VUN[7] ref_VUN[6] ref_VUN[5] ref_VUN[4] ref_VUN[3] ref_VUN[2] ref_VUN[1] ref_VUN[0]
++ BIASGEN_en_VS[0] CoreFineDAC_N
+* noconn #net9
+x9 reg_out6[10] reg_out6[9] reg_out6[8] reg_out6[7] reg_out6[6] reg_out6[5] reg_out6[4] reg_out6[3] reg_out6[2] reg_out6[1]
++ reg_out6[0] VSS VDD net10 NNADAPDPI_gain_VNI ref_VUN[7] ref_VUN[6] ref_VUN[5] ref_VUN[4] ref_VUN[3] ref_VUN[2] ref_VUN[1] ref_VUN[0]
++ BIASGEN_en_VS[0] CoreFineDAC_N
+* noconn #net10
+x8 reg_out5[10] reg_out5[9] reg_out5[8] reg_out5[7] reg_out5[6] reg_out5[5] reg_out5[4] reg_out5[3] reg_out5[2] reg_out5[1]
++ reg_out5[0] VSS VDD NNADAP_gain_VPI net11 ref_VUN[7] ref_VUN[6] ref_VUN[5] ref_VUN[4] ref_VUN[3] ref_VUN[2] ref_VUN[1] ref_VUN[0]
++ BIASGEN_en_VS[0] CoreFineDAC_N
+* noconn #net11
+x7 reg_out4[10] reg_out4[9] reg_out4[8] reg_out4[7] reg_out4[6] reg_out4[5] reg_out4[4] reg_out4[3] reg_out4[2] reg_out4[1]
++ reg_out4[0] VSS VDD net12 NNREF_lk_VNI ref_VUN[7] ref_VUN[6] ref_VUN[5] ref_VUN[4] ref_VUN[3] ref_VUN[2] ref_VUN[1] ref_VUN[0]
++ BIASGEN_en_VS[0] CoreFineDAC_N
+* noconn #net12
+x4 reg_out3[10] reg_out3[9] reg_out3[8] reg_out3[7] reg_out3[6] reg_out3[5] reg_out3[4] reg_out3[3] reg_out3[2] reg_out3[1]
++ reg_out3[0] VSS VDD net13 NNDPI_lk_VNI ref_VUN[7] ref_VUN[6] ref_VUN[5] ref_VUN[4] ref_VUN[3] ref_VUN[2] ref_VUN[1] ref_VUN[0]
++ BIASGEN_en_VS[0] CoreFineDAC_N
+* noconn #net13
+x6 reg_out2[10] reg_out2[9] reg_out2[8] reg_out2[7] reg_out2[6] reg_out2[5] reg_out2[4] reg_out2[3] reg_out2[2] reg_out2[1]
++ reg_out2[0] VSS VDD net14 NNDPI_gain_VNI ref_VUN[7] ref_VUN[6] ref_VUN[5] ref_VUN[4] ref_VUN[3] ref_VUN[2] ref_VUN[1] ref_VUN[0]
++ BIASGEN_en_VS[0] CoreFineDAC_N
+* noconn #net14
+x12 reg_out1[10] reg_out1[9] reg_out1[8] reg_out1[7] reg_out1[6] reg_out1[5] reg_out1[4] reg_out1[3] reg_out1[2] reg_out1[1]
++ reg_out1[0] VSS VDD V2I_imax_VPI net15 ref_VUN[7] ref_VUN[6] ref_VUN[5] ref_VUN[4] ref_VUN[3] ref_VUN[2] ref_VUN[1] ref_VUN[0]
++ BIASGEN_en_VS[0] CoreFineDAC_N
+* noconn #net15
+x14 VDD V2I_imax_VPI V2I_INN V2I_INP net5 VSS V2I
+x3 VDD V2I_imax_VPI V2I_INN V2I_INP net4 VSS V2I
+x5 BG_BIAS BIASGEN_BYP_en_VS[0] BG_100mV BIASGEN_EXT_REF_en_VS[0] VDD ref_VUN[7] ref_VUN[6] ref_VUN[5] ref_VUN[4] ref_VUN[3]
++ ref_VUN[2] ref_VUN[1] ref_VUN[0] BG_100kRES VSS MasterBias
+x11 VDD NNDPI_gain_VNI NNDPI_lk_VNI net6 NN2_REQ NNADAP_gain_VPI NNADAPDPI_gain_VNI NN2_ADAP_cap_VTO NN2_ACK NNADAPDPI_lk_VNI
++ NNREF_lk_VNI VSS NN2_REF_cap_VTO NNPULEXT_pwbias_VPI net5 neuron_LVS
+x13 VDD NNDPI_gain_VNI NNDPI_lk_VNI net3 NN3_REQ NNADAP_gain_VPI NNADAPDPI_gain_VNI NN3_ADAP_cap_VTO NN3_ACK NNADAPDPI_lk_VNI
++ NNREF_lk_VNI VSS NN3_REF_cap_VTO NNPULEXT_pwbias_VPI net4 neuron_LVS
+* noconn C2F_ACK
+x18 VDD NN1_MEM_PROB net1 NN1_MEM_PROB MEM_bufferbias VSS a_buffP
+x19 VDD NN2_MEM_PROB net6 NN2_MEM_PROB MEM_bufferbias VSS a_buffP
+x20 VDD NN3_MEM_PROB net3 NN3_MEM_PROB MEM_bufferbias VSS a_buffP
+* noconn BIASGEN_en_VS[10:1]
+* noconn BIASGEN_EXT_REF_en_VS[10:1]
+* noconn BIASGEN_BYP_en_VS[10:1]
+.ends
+
+
 * expanding   symbol:  ota_p_wr.sym # of pins=6
 ** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/ota_p_wr.sym
 ** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/ota_p_wr.sch
@@ -891,6 +990,275 @@ x12 top bot decap_quad
 .ends
 
 
+* expanding   symbol:  neuron_LVS.sym # of pins=15
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/neuron_LVS.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/neuron_LVS.sch
+.subckt neuron_LVS vdda DPI_gain_VNI DPI_lk_VNI SOM_mem_VTO req_VAO ADAP_gain_VPI ADAPDPI_gain_VNI ADAPDPI_cap_VTO ack_VAI
++ ADAPDPI_lk_VNI REF_lk_VNI vssa REF_cap_VTO PULEXT_pwbias_VPI DPI_in_UNI
+*.PININFO REF_lk_VNI:I vssa:B vdda:B req_VAO:O ack_VAI:I DPI_lk_VNI:I ADAP_gain_VPI:I ADAPDPI_gain_VNI:I ADAPDPI_lk_VNI:I
+*+ ADAPDPI_cap_VTO:O SOM_mem_VTO:O REF_cap_VTO:O PULEXT_pwbias_VPI:I DPI_gain_VNI:I DPI_in_UNI:B
+Xfb vdda FB_cmpstate_VABO SOM_mem_VTO vssa FB_system
+Xadap vdda PULEXT_ackext_VABO ADAPDPI_cap_VTO ADAP_gain_VPI DPI_in_UNI ADAPDPI_gain_VNI ADAPDPI_lk_VNI vssa ADAP_system
+Xref net2 SOM_mem_VTO net1 REF_cap_VTO vssa REF_lk_VNI vdda REF_system
+xext vdda vssa net3 ack_VAI PULEXT_pwbias_VPI PULEXT_cap_VP pulse_extender_V2
+Xinv2 vdda net1 req_VAO vssa inv
+Xinv3 vdda net2 ack_VAI vssa inv
+Xinv4 vdda PULEXT_ackext_VABO net3 vssa inv
+x1 vdda req_VAO FB_cmpstate_VABO vssa inv_hc
+Xdpi1 DPI_in_UNI vdda SOM_mem_VTO DPI_gain_VNI vssa DPI_lk_VNI DPI_gain
+x2 SOM_mem_VTO vssa cfringe60x8
+x3 ADAPDPI_cap_VTO vssa cfringe35x8
+x4 REF_cap_VTO vssa cfringe35x8
+x5 PULEXT_cap_VP vssa cfringe6x3
+.ends
+
+
+* expanding   symbol:  V2I.sym # of pins=6
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/V2I.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/V2I.sch
+.subckt V2I vdda imax_VPI inputcm_VNI inputcm_VPI out_UPO vssa
+*.PININFO inputcm_VNI:I inputcm_VPI:I out_UPO:O imax_VPI:I vdda:B vssa:B
+MMIRA Vm Vm vssa vssa sg13_hv_nmos w=4u l=1u ng=2 m=4
+MMBIAS Vb imax_VPI vdda vdda sg13_hv_pmos w=4u l=1u ng=2 m=4
+MMIRB out_UPO Vm vssa vssa sg13_hv_nmos w=4u l=1u ng=2 m=4
+MMdiffINN out_UPO inputcm_VNI Vb vdda sg13_hv_pmos w=4u l=1u ng=2 m=4
+MMIDC out_UPO imax_VPI vdda vdda sg13_hv_pmos w=3u l=1u ng=2 m=4
+MMdiffINP Vm inputcm_VPI Vb vdda sg13_hv_pmos w=4u l=1u ng=2 m=4
+MMDdiffINP Vb Vb Vb vdda sg13_hv_pmos w=4u l=1u ng=2 m=2
+MMDdiffINN Vb Vb Vb vdda sg13_hv_pmos w=4u l=1u ng=2 m=2
+.ends
+
+
+* expanding   symbol:  CoreFineDAC_CurrentOutput_N.sym # of pins=7
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/CoreFineDAC_CurrentOutput_N.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/CoreFineDAC_CurrentOutput_N.sch
+.subckt CoreFineDAC_CurrentOutput_N en_VS[10] en_VS[9] en_VS[8] en_VS[7] en_VS[6] en_VS[5] en_VS[4] en_VS[3] en_VS[2] en_VS[1]
++ en_VS[0] vssa vdda bias_VP bias_VN MASTER_CoreDiodeT_bias_VN[7] MASTER_CoreDiodeT_bias_VN[6] MASTER_CoreDiodeT_bias_VN[5]
++ MASTER_CoreDiodeT_bias_VN[4] MASTER_CoreDiodeT_bias_VN[3] MASTER_CoreDiodeT_bias_VN[2] MASTER_CoreDiodeT_bias_VN[1] MASTER_CoreDiodeT_bias_VN[0] BIASGEN_en_VS
+*.PININFO MASTER_CoreDiodeT_bias_VN[7:0]:I en_VS[10:0]:I vssa:B vdda:B bias_VP:B bias_VN:B BIASGEN_en_VS:I
+xinv[10] vdda en_VSB[10] en_VS[10] vssa inv_BG
+xinv[9] vdda en_VSB[9] en_VS[9] vssa inv_BG
+xinv[8] vdda en_VSB[8] en_VS[8] vssa inv_BG
+xinv[7] vdda en_VSB[7] en_VS[7] vssa inv_BG
+xinv[6] vdda en_VSB[6] en_VS[6] vssa inv_BG
+xinv[5] vdda en_VSB[5] en_VS[5] vssa inv_BG
+xinv[4] vdda en_VSB[4] en_VS[4] vssa inv_BG
+xinv[3] vdda en_VSB[3] en_VS[3] vssa inv_BG
+xinv[2] vdda en_VSB[2] en_VS[2] vssa inv_BG
+xinv[1] vdda en_VSB[1] en_VS[1] vssa inv_BG
+xinv[0] vdda en_VSB[0] en_VS[0] vssa inv_BG
+x1 MASTER_CoreDiodeT_bias_VN[7] MASTER_CoreDiodeT_bias_VN[6] MASTER_CoreDiodeT_bias_VN[5] MASTER_CoreDiodeT_bias_VN[4]
++ MASTER_CoreDiodeT_bias_VN[3] MASTER_CoreDiodeT_bias_VN[2] MASTER_CoreDiodeT_bias_VN[1] MASTER_CoreDiodeT_bias_VN[0] vssa en_VS[10] en_VS[9] en_VS[8]
++ en_VSB[10] en_VSB[9] en_VSB[8] MASTER_biasout_VN SelMUX
+xisink0[2] MASTER_biasout_VN vssa BIASGEN_en_VS net1 vssa ISINK
+xisink0[1] MASTER_biasout_VN vssa BIASGEN_en_VS net1 vssa ISINK
+MM1 net1 net1 vdda vdda sg13_hv_pmos w=2u l=1u ng=1 m=2
+MM2 bias_test net1 vdda vdda sg13_hv_pmos w=2u l=1u ng=1 m=2
+x4 en_VS[0] net8 net2 en_VSB[0] bias_test vssa vdda bias_VP SplitterCell
+MM_enb vdda vdda net3 vssa sg13_hv_nmos w=1u l=1u ng=1
+MM_s9 net2 bias_test net9 vssa sg13_hv_nmos w=2u l=10u ng=1
+MM_s10 net9 bias_test net10 vssa sg13_hv_nmos w=2u l=10u ng=1
+MM_s11 net10 bias_test net11 vssa sg13_hv_nmos w=2u l=10u ng=1
+MM_s12 net11 bias_test net3 vssa sg13_hv_nmos w=2u l=10u ng=1
+x5 en_VS[1] net12 net8 en_VSB[1] bias_test vssa vdda bias_VP SplitterCell
+x6 en_VS[2] net13 net12 en_VSB[2] bias_test vssa vdda bias_VP SplitterCell
+x7 en_VS[3] net14 net13 en_VSB[3] bias_test vssa vdda bias_VP SplitterCell
+x8 en_VS[4] net15 net14 en_VSB[4] bias_test vssa vdda bias_VP SplitterCell
+x9 en_VS[5] net16 net15 en_VSB[5] bias_test vssa vdda bias_VP SplitterCell
+x10 en_VS[6] net17 net16 en_VSB[6] bias_test vssa vdda bias_VP SplitterCell
+x11 en_VS[7] V_drain_ISINK net17 en_VSB[7] bias_test vssa vdda bias_VP SplitterCell
+MM8 net4 bias_VP vdda vdda sg13_hv_pmos w=4u l=1u ng=1 m=2
+MM7 net5 bias_VP vdda vdda sg13_hv_pmos w=4u l=1u ng=1 m=2
+MM9 bias_VP MASTER_CoreDiodeT_bias_VN[2] net4 vdda sg13_hv_pmos w=4u l=0.5u ng=1 m=2
+MM10 bias_VN MASTER_CoreDiodeT_bias_VN[2] net5 vdda sg13_hv_pmos w=4u l=0.5u ng=1 m=2
+xisink2[2] net6 vssa BIASGEN_en_VS net6 vssa ISINK
+xisink2[1] net6 vssa BIASGEN_en_VS net6 vssa ISINK
+MM_b4 bias_test bias_test net7 vssa sg13_hv_nmos w=2u l=6u ng=1
+xisink1[8] MASTER_biasout_VN vssa BIASGEN_en_VS V_drain_ISINK vssa ISINK
+xisink1[7] MASTER_biasout_VN vssa BIASGEN_en_VS V_drain_ISINK vssa ISINK
+xisink1[6] MASTER_biasout_VN vssa BIASGEN_en_VS V_drain_ISINK vssa ISINK
+xisink1[5] MASTER_biasout_VN vssa BIASGEN_en_VS V_drain_ISINK vssa ISINK
+xisink1[4] MASTER_biasout_VN vssa BIASGEN_en_VS V_drain_ISINK vssa ISINK
+xisink1[3] MASTER_biasout_VN vssa BIASGEN_en_VS V_drain_ISINK vssa ISINK
+xisink1[2] MASTER_biasout_VN vssa BIASGEN_en_VS V_drain_ISINK vssa ISINK
+xisink1[1] MASTER_biasout_VN vssa BIASGEN_en_VS V_drain_ISINK vssa ISINK
+MM_b3 net7 net7 vssa vssa sg13_hv_nmos w=2u l=6u ng=1
+x3 bias_VP vdda cfringe34x70
+x2 net6 vssa cfringe33x55
+MM3 vdda vdda bias_VP vdda sg13_hv_pmos w=4u l=0.45u ng=1 m=2
+MM4 vdda vdda bias_VN vdda sg13_hv_pmos w=4u l=0.45u ng=1 m=2
+.ends
+
+
+* expanding   symbol:  CoreDiodeT.sym # of pins=3
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/CoreDiodeT.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/CoreDiodeT.sch
+.subckt CoreDiodeT ref_VUN[7] ref_VUN[6] ref_VUN[5] ref_VUN[4] ref_VUN[3] ref_VUN[2] ref_VUN[1] ref_VUN[0] vssa en_VS
+*.PININFO ref_VUN[7:0]:B en_VS:I vssa:B
+x2[8] ref_VUN[7] vssa en_VS ref_VUN[7] vssa ISINK
+x2[7] ref_VUN[7] vssa en_VS ref_VUN[7] vssa ISINK
+x2[6] ref_VUN[7] vssa en_VS ref_VUN[7] vssa ISINK
+x2[5] ref_VUN[7] vssa en_VS ref_VUN[7] vssa ISINK
+x2[4] ref_VUN[7] vssa en_VS ref_VUN[7] vssa ISINK
+x2[3] ref_VUN[7] vssa en_VS ref_VUN[7] vssa ISINK
+x2[2] ref_VUN[7] vssa en_VS ref_VUN[7] vssa ISINK
+x2[1] ref_VUN[7] vssa en_VS ref_VUN[7] vssa ISINK
+x9[8] ref_VUN[6] vssa en_VS ref_VUN[6] vssa ISINK
+x9[7] ref_VUN[6] vssa en_VS ref_VUN[6] vssa ISINK
+x9[6] ref_VUN[6] vssa en_VS ref_VUN[6] vssa ISINK
+x9[5] ref_VUN[6] vssa en_VS ref_VUN[6] vssa ISINK
+x9[4] ref_VUN[6] vssa en_VS ref_VUN[6] vssa ISINK
+x9[3] ref_VUN[6] vssa en_VS ref_VUN[6] vssa ISINK
+x9[2] ref_VUN[6] vssa en_VS ref_VUN[6] vssa ISINK
+x9[1] ref_VUN[6] vssa en_VS ref_VUN[6] vssa ISINK
+x10[8] ref_VUN[5] vssa en_VS ref_VUN[5] vssa ISINK
+x10[7] ref_VUN[5] vssa en_VS ref_VUN[5] vssa ISINK
+x10[6] ref_VUN[5] vssa en_VS ref_VUN[5] vssa ISINK
+x10[5] ref_VUN[5] vssa en_VS ref_VUN[5] vssa ISINK
+x10[4] ref_VUN[5] vssa en_VS ref_VUN[5] vssa ISINK
+x10[3] ref_VUN[5] vssa en_VS ref_VUN[5] vssa ISINK
+x10[2] ref_VUN[5] vssa en_VS ref_VUN[5] vssa ISINK
+x10[1] ref_VUN[5] vssa en_VS ref_VUN[5] vssa ISINK
+x11[8] ref_VUN[4] vssa en_VS ref_VUN[4] vssa ISINK
+x11[7] ref_VUN[4] vssa en_VS ref_VUN[4] vssa ISINK
+x11[6] ref_VUN[4] vssa en_VS ref_VUN[4] vssa ISINK
+x11[5] ref_VUN[4] vssa en_VS ref_VUN[4] vssa ISINK
+x11[4] ref_VUN[4] vssa en_VS ref_VUN[4] vssa ISINK
+x11[3] ref_VUN[4] vssa en_VS ref_VUN[4] vssa ISINK
+x11[2] ref_VUN[4] vssa en_VS ref_VUN[4] vssa ISINK
+x11[1] ref_VUN[4] vssa en_VS ref_VUN[4] vssa ISINK
+x12[8] ref_VUN[3] vssa en_VS ref_VUN[3] vssa ISINK
+x12[7] ref_VUN[3] vssa en_VS ref_VUN[3] vssa ISINK
+x12[6] ref_VUN[3] vssa en_VS ref_VUN[3] vssa ISINK
+x12[5] ref_VUN[3] vssa en_VS ref_VUN[3] vssa ISINK
+x12[4] ref_VUN[3] vssa en_VS ref_VUN[3] vssa ISINK
+x12[3] ref_VUN[3] vssa en_VS ref_VUN[3] vssa ISINK
+x12[2] ref_VUN[3] vssa en_VS ref_VUN[3] vssa ISINK
+x12[1] ref_VUN[3] vssa en_VS ref_VUN[3] vssa ISINK
+x13[8] ref_VUN[2] vssa en_VS ref_VUN[2] vssa ISINK
+x13[7] ref_VUN[2] vssa en_VS ref_VUN[2] vssa ISINK
+x13[6] ref_VUN[2] vssa en_VS ref_VUN[2] vssa ISINK
+x13[5] ref_VUN[2] vssa en_VS ref_VUN[2] vssa ISINK
+x13[4] ref_VUN[2] vssa en_VS ref_VUN[2] vssa ISINK
+x13[3] ref_VUN[2] vssa en_VS ref_VUN[2] vssa ISINK
+x13[2] ref_VUN[2] vssa en_VS ref_VUN[2] vssa ISINK
+x13[1] ref_VUN[2] vssa en_VS ref_VUN[2] vssa ISINK
+x14[8] ref_VUN[1] vssa en_VS ref_VUN[1] vssa ISINK
+x14[7] ref_VUN[1] vssa en_VS ref_VUN[1] vssa ISINK
+x14[6] ref_VUN[1] vssa en_VS ref_VUN[1] vssa ISINK
+x14[5] ref_VUN[1] vssa en_VS ref_VUN[1] vssa ISINK
+x14[4] ref_VUN[1] vssa en_VS ref_VUN[1] vssa ISINK
+x14[3] ref_VUN[1] vssa en_VS ref_VUN[1] vssa ISINK
+x14[2] ref_VUN[1] vssa en_VS ref_VUN[1] vssa ISINK
+x14[1] ref_VUN[1] vssa en_VS ref_VUN[1] vssa ISINK
+x8[8] ref_VUN[0] vssa en_VS ref_VUN[0] vssa ISINK
+x8[7] ref_VUN[0] vssa en_VS ref_VUN[0] vssa ISINK
+x8[6] ref_VUN[0] vssa en_VS ref_VUN[0] vssa ISINK
+x8[5] ref_VUN[0] vssa en_VS ref_VUN[0] vssa ISINK
+x8[4] ref_VUN[0] vssa en_VS ref_VUN[0] vssa ISINK
+x8[3] ref_VUN[0] vssa en_VS ref_VUN[0] vssa ISINK
+x8[2] ref_VUN[0] vssa en_VS ref_VUN[0] vssa ISINK
+x8[1] ref_VUN[0] vssa en_VS ref_VUN[0] vssa ISINK
+x1 vssa ref_VUN[7] cfringe140x6
+x2 vssa ref_VUN[6] cfringe140x6
+x3 vssa ref_VUN[5] cfringe140x6
+x4 vssa ref_VUN[4] cfringe140x6
+x5 vssa ref_VUN[3] cfringe140x6
+x6 vssa ref_VUN[2] cfringe140x6
+x7 vssa ref_VUN[1] cfringe140x6
+x8 vssa ref_VUN[0] cfringe140x6
+.ends
+
+
+* expanding   symbol:  CoreFineDAC_N.sym # of pins=7
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/CoreFineDAC_N.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/CoreFineDAC_N.sch
+.subckt CoreFineDAC_N en_VS[10] en_VS[9] en_VS[8] en_VS[7] en_VS[6] en_VS[5] en_VS[4] en_VS[3] en_VS[2] en_VS[1] en_VS[0] vssa
++ vdda bias_VP bias_VN MASTER_CoreDiodeT_bias_VN[7] MASTER_CoreDiodeT_bias_VN[6] MASTER_CoreDiodeT_bias_VN[5]
++ MASTER_CoreDiodeT_bias_VN[4] MASTER_CoreDiodeT_bias_VN[3] MASTER_CoreDiodeT_bias_VN[2] MASTER_CoreDiodeT_bias_VN[1] MASTER_CoreDiodeT_bias_VN[0] BIASGEN_en_VS
+*.PININFO MASTER_CoreDiodeT_bias_VN[7:0]:I en_VS[10:0]:I vssa:B vdda:B bias_VP:B bias_VN:B BIASGEN_en_VS:I
+xinv[10] vdda en_VSB[10] en_VS[10] vssa inv_BG
+xinv[9] vdda en_VSB[9] en_VS[9] vssa inv_BG
+xinv[8] vdda en_VSB[8] en_VS[8] vssa inv_BG
+xinv[7] vdda en_VSB[7] en_VS[7] vssa inv_BG
+xinv[6] vdda en_VSB[6] en_VS[6] vssa inv_BG
+xinv[5] vdda en_VSB[5] en_VS[5] vssa inv_BG
+xinv[4] vdda en_VSB[4] en_VS[4] vssa inv_BG
+xinv[3] vdda en_VSB[3] en_VS[3] vssa inv_BG
+xinv[2] vdda en_VSB[2] en_VS[2] vssa inv_BG
+xinv[1] vdda en_VSB[1] en_VS[1] vssa inv_BG
+xinv[0] vdda en_VSB[0] en_VS[0] vssa inv_BG
+x1 MASTER_CoreDiodeT_bias_VN[7] MASTER_CoreDiodeT_bias_VN[6] MASTER_CoreDiodeT_bias_VN[5] MASTER_CoreDiodeT_bias_VN[4]
++ MASTER_CoreDiodeT_bias_VN[3] MASTER_CoreDiodeT_bias_VN[2] MASTER_CoreDiodeT_bias_VN[1] MASTER_CoreDiodeT_bias_VN[0] vssa en_VS[10] en_VS[9] en_VS[8]
++ en_VSB[10] en_VSB[9] en_VSB[8] MASTER_biasout_VN SelMUX
+xisink0[2] MASTER_biasout_VN vssa BIASGEN_en_VS net1 vssa ISINK
+xisink0[1] MASTER_biasout_VN vssa BIASGEN_en_VS net1 vssa ISINK
+MM1 net1 net1 vdda vdda sg13_hv_pmos w=2u l=1u ng=1 m=2
+MM2 bias_test net1 vdda vdda sg13_hv_pmos w=2u l=1u ng=1 m=2
+x4 en_VS[0] net7 net2 en_VSB[0] bias_test vssa vdda bias_VP SplitterCell
+MM_enb vdda vdda net3 vssa sg13_hv_nmos w=1u l=1u ng=1
+MM_s9 net2 bias_test net8 vssa sg13_hv_nmos w=2u l=10u ng=1
+MM_s10 net8 bias_test net9 vssa sg13_hv_nmos w=2u l=10u ng=1
+MM_s11 net9 bias_test net10 vssa sg13_hv_nmos w=2u l=10u ng=1
+MM_s12 net10 bias_test net3 vssa sg13_hv_nmos w=2u l=10u ng=1
+x5 en_VS[1] net11 net7 en_VSB[1] bias_test vssa vdda bias_VP SplitterCell
+x6 en_VS[2] net12 net11 en_VSB[2] bias_test vssa vdda bias_VP SplitterCell
+x7 en_VS[3] net13 net12 en_VSB[3] bias_test vssa vdda bias_VP SplitterCell
+x8 en_VS[4] net14 net13 en_VSB[4] bias_test vssa vdda bias_VP SplitterCell
+x9 en_VS[5] net15 net14 en_VSB[5] bias_test vssa vdda bias_VP SplitterCell
+x10 en_VS[6] net16 net15 en_VSB[6] bias_test vssa vdda bias_VP SplitterCell
+x11 en_VS[7] V_drain_ISINK net16 en_VSB[7] bias_test vssa vdda bias_VP SplitterCell
+MM8 net4 bias_VP vdda vdda sg13_hv_pmos w=4u l=1u ng=1 m=2
+MM7 net5 bias_VP vdda vdda sg13_hv_pmos w=4u l=1u ng=1 m=2
+MM9 bias_VP MASTER_CoreDiodeT_bias_VN[2] net4 vdda sg13_hv_pmos w=4u l=0.5u ng=1 m=2
+MM10 bias_VN MASTER_CoreDiodeT_bias_VN[2] net5 vdda sg13_hv_pmos w=4u l=0.5u ng=1 m=2
+xisink2[2] bias_VN vssa BIASGEN_en_VS bias_VN vssa ISINK
+xisink2[1] bias_VN vssa BIASGEN_en_VS bias_VN vssa ISINK
+MM_b4 bias_test bias_test net6 vssa sg13_hv_nmos w=2u l=6u ng=1
+xisink1[8] MASTER_biasout_VN vssa BIASGEN_en_VS V_drain_ISINK vssa ISINK
+xisink1[7] MASTER_biasout_VN vssa BIASGEN_en_VS V_drain_ISINK vssa ISINK
+xisink1[6] MASTER_biasout_VN vssa BIASGEN_en_VS V_drain_ISINK vssa ISINK
+xisink1[5] MASTER_biasout_VN vssa BIASGEN_en_VS V_drain_ISINK vssa ISINK
+xisink1[4] MASTER_biasout_VN vssa BIASGEN_en_VS V_drain_ISINK vssa ISINK
+xisink1[3] MASTER_biasout_VN vssa BIASGEN_en_VS V_drain_ISINK vssa ISINK
+xisink1[2] MASTER_biasout_VN vssa BIASGEN_en_VS V_drain_ISINK vssa ISINK
+xisink1[1] MASTER_biasout_VN vssa BIASGEN_en_VS V_drain_ISINK vssa ISINK
+MM_b3 net6 net6 vssa vssa sg13_hv_nmos w=2u l=6u ng=1
+MM3 vdda vdda bias_VP vdda sg13_hv_pmos w=4u l=0.45u ng=1 m=2
+MM4 vdda vdda bias_VN vdda sg13_hv_pmos w=4u l=0.45u ng=1 m=2
+x2 bias_VN vssa cfringe33x55
+x3 bias_VP vdda cfringe34x70
+.ends
+
+
+* expanding   symbol:  MasterBias.sym # of pins=15
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/MasterBias.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/MasterBias.sch
+.subckt MasterBias VBP_TIA BYP_EN VREF_100mV EXT_REF_EN VDDA IREF_1uA IREF_100nA IREF_10nA IREF_1nA IREF_100pA IREF_10pA IREF_1pA
++ IREF_100fA VREG_pad VSSA
+*.PININFO IREF_100nA:B IREF_10nA:B IREF_1nA:B IREF_100pA:B IREF_10pA:B IREF_1pA:B IREF_100fA:B VSSA:B IREF_1uA:B VREF_100mV:I
+*+ VBP_TIA:I VDDA:B BYP_EN:I EXT_REF_EN:I VREG_pad:B
+MMnbias VREG_pad EXT_REF_EN net8 VSSA sg13_hv_nmos w=25u l=500n ng=20
+x10 VDDA EXT_REF_ENB EXT_REF_EN VSSA inv_BG
+MMnbias1 VSENSE EXT_REF_ENB net8 VSSA sg13_hv_nmos w=25u l=500n ng=20
+MMnbias2 net8 VBIAS net9 VSSA sg13_hv_nmos w=25u l=500n ng=20
+MMnbias3 net8 BYP_EN net9 VSSA sg13_hv_nmos w=25u l=500n ng=20
+x1 VDDA net9 IREF_100nA net2 VSSA DecadeDivider_2
+x2 VDDA net3 IREF_1nA net4 VSSA DecadeDivider_2
+x3 VDDA net2 IREF_10nA net3 VSSA DecadeDivider_2
+x4 VDDA net4 IREF_100pA net5 VSSA DecadeDivider_2
+x5 VDDA net5 IREF_10pA net6 VSSA DecadeDivider_2
+x6 VDDA net6 IREF_1pA net7 VSSA DecadeDivider_2
+x7 VDDA net7 IREF_100fA net1 VSSA DecadeDivider_2
+x8 VDDA net9 IREF_1uA VSSA DecadeDividerAux
+x9 VDDA VBP_TIA net10 net8 VBIAS VREF_100mV VSSA OTA_bc
+x11 VSSA VDDA Cap1
+x12 net9 VDDA Cap4
+x13 net10 VBIAS Cap5
+x14 VSSA VSENSE VSSA reshigh_92k
+.ends
+
+
 * expanding   symbol:  mcap_5p.sym # of pins=2
 ** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/mcap_5p.sym
 ** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/mcap_5p.sch
@@ -913,5 +1281,414 @@ CC1 top bot cap_mfringe w=24u l=20u mmin=1 mmax=4
 CC2 top bot cap_mfringe w=24u l=20u mmin=1 mmax=4
 CC3 top bot cap_mfringe w=24u l=20u mmin=1 mmax=4
 CC4 top bot cap_mfringe w=24u l=20u mmin=1 mmax=4
+.ends
+
+
+* expanding   symbol:  FB_system.sym # of pins=4
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/FB_system.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/FB_system.sch
+.subckt FB_system vdda out V_mem vssa
+*.PININFO out:O V_mem:B vssa:B vdda:B
+MMmirr Vmir Vmir vdda vdda sg13_hv_pmos w=4u l=2u ng=4
+MMmirl4 V_mem Vmir net1 vdda sg13_hv_pmos w=1u l=2u ng=1
+MMthr out V_mem Vmir vdda sg13_hv_pmos w=4u l=2u ng=4
+MMmem1 out V_mem net2 vssa sg13_hv_nmos w=1u l=2u ng=1 m=2
+MMmirl3 net1 Vmir net3 vdda sg13_hv_pmos w=1u l=2u ng=1
+MMmirl2 net3 Vmir net4 vdda sg13_hv_pmos w=1u l=2u ng=1
+MMmirl1 net4 Vmir vdda vdda sg13_hv_pmos w=1u l=2u ng=1
+MMmem2 net2 V_mem net5 vssa sg13_hv_nmos w=1u l=2u ng=1 m=2
+MMmem3 net5 V_mem net6 vssa sg13_hv_nmos w=1u l=2u ng=1 m=2
+MMmem4 net6 V_mem vssa vssa sg13_hv_nmos w=1u l=2u ng=1 m=2
+MMdum6 out vdda vdda vdda sg13_hv_pmos w=1u l=2u ng=1 m=2
+MMdum7 V_mem vdda vdda vdda sg13_hv_pmos w=1u l=2u ng=1
+MMdum1 vssa vssa out vssa sg13_hv_nmos w=2u l=2u ng=2
+MMdum2 vssa vssa vssa vssa sg13_hv_nmos w=12u l=2u ng=2
+MMdum3 vdda vdda vdda vdda sg13_hv_pmos w=12u l=2u ng=2
+.ends
+
+
+* expanding   symbol:  ADAP_system.sym # of pins=8
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/ADAP_system.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/ADAP_system.sch
+.subckt ADAP_system vdda ackext_VABI DPI_capabias_VP gain_VPI in_UNO DPI_gain_VNI DPI_lk_VNI vssa
+*.PININFO ackext_VABI:I gain_VPI:I DPI_gain_VNI:I DPI_lk_VNI:I vssa:B vdda:B DPI_capabias_VP:B in_UNO:B
+MM21 net1 gain_VPI net_DM1_SM21 vdda sg13_hv_pmos w=4u l=4u ng=2 m=4
+MM18 in_UNO DPI_capabias_VP vssa vssa sg13_hv_nmos w=4u l=4u ng=2 m=4
+MM1 net_DM1_SM21 ackext_VABI vdda vdda sg13_hv_pmos w=1.2u l=4u ng=4
+Xdpi2 net1 vdda DPI_capabias_VP DPI_gain_VNI vssa DPI_lk_VNI DPI_gain
+MMdum5 net_DM1_SM21 vdda vdda vdda sg13_hv_pmos w=2u l=2.75u ng=1 m=4
+MMdum1 net_DM1_SM21 vdda vdda vdda sg13_hv_pmos w=0.3u l=2.75u ng=1 m=2
+.ends
+
+
+* expanding   symbol:  REF_system.sym # of pins=7
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/REF_system.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/REF_system.sch
+.subckt REF_system ack_VABI mem_VNO req_VABI capabias_VPN vssa lk_VPI vdda
+*.PININFO lk_VPI:I req_VABI:I ack_VABI:I capabias_VPN:B mem_VNO:O vssa:B vdda:B
+MM10 capabias_VPN req_VABI net2 vdda sg13_hv_pmos w=1u l=0.5u ng=1
+MM11 capabias_VPN req_VABI net1 vssa sg13_hv_nmos w=1u l=0.5u ng=1
+MM12 net2 ack_VABI vdda vdda sg13_hv_pmos w=1u l=0.5u ng=1
+MM13 mem_VNO capabias_VPN vssa vssa sg13_hv_nmos w=1u l=0.5u ng=1
+MM14 net1 lk_VPI vssa vssa sg13_hv_nmos w=4u l=4u ng=2 m=4
+.ends
+
+
+* expanding   symbol:  pulse_extender_V2.sym # of pins=6
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/pulse_extender_V2.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/pulse_extender_V2.sch
+.subckt pulse_extender_V2 vdda vssa out_VAO in_VAI pwbias_VPI capa_VP
+*.PININFO out_VAO:O pwbias_VPI:I in_VAI:I capa_VP:B vssa:B vdda:B
+MMp1 out_VAO capa_VP vdda vdda sg13_hv_pmos w=4u l=2u ng=4
+MMn1 out_VAO capa_VP vssa vssa sg13_hv_nmos w=4u l=2u ng=4
+MMn4 capa_VP in_VAI vssa vssa sg13_hv_nmos w=4u l=2u ng=4
+MMstarve4 capa_VP pwbias_VPI vdda vdda sg13_hv_pmos w=4u l=2u ng=4
+MMp3 capa_VP out_VAO vdda vdda sg13_hv_pmos w=4u l=2u ng=4
+MMdum2 vssa vssa vssa vssa sg13_hv_nmos w=12u l=2u ng=2
+MMdum1 vdda vdda vdda vdda sg13_hv_pmos w=12u l=2u ng=2
+.ends
+
+
+* expanding   symbol:  inv.sym # of pins=4
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/inv.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/inv.sch
+.subckt inv vdda out in vssa
+*.PININFO in:I out:O vssa:B vdda:B
+MM1 out in vdda vdda sg13_hv_pmos w=4u l=0.5u ng=1
+MM2 out in vssa vssa sg13_hv_nmos w=4u l=0.5u ng=1
+.ends
+
+
+* expanding   symbol:  inv_hc.sym # of pins=4
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/inv_hc.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/inv_hc.sch
+.subckt inv_hc vdda out in vssa
+*.PININFO in:I out:O vssa:B vdda:B
+MM1 out in vdda vdda sg13_hv_pmos w=10u l=0.5u ng=2
+MM2 out in vssa vssa sg13_hv_nmos w=10u l=0.5u ng=2
+.ends
+
+
+* expanding   symbol:  DPI_gain.sym # of pins=6
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/DPI_gain.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/DPI_gain.sch
+.subckt DPI_gain in_UI vdda capabias_VPN gain_VNI vssa lk_VNI
+*.PININFO gain_VNI:I lk_VNI:I capabias_VPN:B vssa:B vdda:B in_UI:B
+MMdifl vssa gain_VNI in_UI vdda sg13_hv_pmos w=2u l=2u ng=2 m=8
+MMdifr capabias_VPN capabias_VPN in_UI vdda sg13_hv_pmos w=2u l=2u ng=2 m=8
+MMtau capabias_VPN lk_VNI vssa vssa sg13_hv_nmos w=4u l=4u ng=2 m=4
+MMdum2 in_UI vdda vdda vdda sg13_hv_pmos w=1u l=2u ng=1 m=8
+MM2 vdda vdda vdda vdda sg13_hv_pmos w=10u l=2u ng=1
+.ends
+
+
+* expanding   symbol:  cfringe60x8.sym # of pins=2
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/cfringe60x8.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/cfringe60x8.sch
+.subckt cfringe60x8 C2 C1
+*.PININFO C1:B C2:B
+CC1 C1 C2 cap_mfringe w=60.0u l=8.0u mmin=1 mmax=4
+.ends
+
+
+* expanding   symbol:  cfringe35x8.sym # of pins=2
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/cfringe35x8.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/cfringe35x8.sch
+.subckt cfringe35x8 C2 C1
+*.PININFO C1:B C2:B
+CC1 C1 C2 cap_mfringe w=35.0u l=8.0u mmin=1 mmax=4
+.ends
+
+
+* expanding   symbol:  cfringe6x3.sym # of pins=2
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/cfringe6x3.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/cfringe6x3.sch
+.subckt cfringe6x3 C2 C1
+*.PININFO C1:B C2:B
+CC1 C1 C2 cap_mfringe w=6.0u l=3.0u mmin=1 mmax=4
+.ends
+
+
+* expanding   symbol:  inv_BG.sym # of pins=4
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/inv_BG.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/inv_BG.sch
+.subckt inv_BG vdda out in vssa
+*.PININFO in:I out:O vssa:B vdda:B
+MM1 out in vdda vdda sg13_hv_pmos w=1u l=0.5u ng=1
+MM2 out in vssa vssa sg13_hv_nmos w=1u l=0.5u ng=1
+.ends
+
+
+* expanding   symbol:  SelMUX.sym # of pins=5
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/SelMUX.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/SelMUX.sch
+.subckt SelMUX MASTER_bias_VN[7] MASTER_bias_VN[6] MASTER_bias_VN[5] MASTER_bias_VN[4] MASTER_bias_VN[3] MASTER_bias_VN[2]
++ MASTER_bias_VN[1] MASTER_bias_VN[0] vssa en_VS[10] en_VS[9] en_VS[8] en_VSB[10] en_VSB[9] en_VSB[8] MASTER_biasout_VN
+*.PININFO MASTER_bias_VN[7:0]:I MASTER_biasout_VN:O en_VS[10:8]:I en_VSB[10:8]:I vssa:B
+MMUX_L0_0 MASTER_bias_VN[7] en_VS[8] net1 vssa sg13_hv_nmos w=4.98u l=0.45u ng=6
+MMUX_L0_1 MASTER_bias_VN[6] en_VSB[8] net1 vssa sg13_hv_nmos w=0.45u l=10u ng=1
+MMUX_L0_2 MASTER_bias_VN[5] en_VS[8] net2 vssa sg13_hv_nmos w=0.45u l=10u ng=1
+MMUX_L0_3 MASTER_bias_VN[4] en_VSB[8] net2 vssa sg13_hv_nmos w=0.45u l=10u ng=1
+MMUX_L0_4 MASTER_bias_VN[3] en_VS[8] net3 vssa sg13_hv_nmos w=0.45u l=10u ng=1
+MMUX_L0_5 MASTER_bias_VN[2] en_VSB[8] net3 vssa sg13_hv_nmos w=0.45u l=10u ng=1
+MMUX_L0_6 MASTER_bias_VN[1] en_VS[8] net4 vssa sg13_hv_nmos w=0.45u l=10u ng=1
+MMUX_L0_7 MASTER_bias_VN[0] en_VSB[8] net4 vssa sg13_hv_nmos w=0.45u l=10u ng=1
+MMUX_L1_A net1 en_VS[9] net5 vssa sg13_hv_nmos w=4.98u l=0.45u ng=6
+MMUX_L1_B net2 en_VSB[9] net5 vssa sg13_hv_nmos w=0.45u l=10u ng=1
+MMUX_L1_C net3 en_VS[9] net6 vssa sg13_hv_nmos w=0.45u l=10u ng=1
+MMUX_L1_D net4 en_VSB[9] net6 vssa sg13_hv_nmos w=0.45u l=10u ng=1
+MMUX_L2_A net5 en_VS[10] MASTER_biasout_VN vssa sg13_hv_nmos w=5u l=0.45u ng=2
+MMUX_L2_B net6 en_VSB[10] MASTER_biasout_VN vssa sg13_hv_nmos w=0.45u l=10u ng=1
+.ends
+
+
+* expanding   symbol:  ISINK.sym # of pins=5
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/ISINK.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/ISINK.sch
+.subckt ISINK bias_VN vssa en_VS io_UN bulk
+*.PININFO en_VS:I vssa:B bias_VN:I io_UN:B bulk:B
+MM1 io_UN en_VS net2 bulk sg13_hv_nmos w=2.5u l=0.5u ng=1
+MM2 net2 bias_VN net1 bulk sg13_hv_nmos w=1u l=4u ng=1
+MM3 net1 bias_VN vssa bulk sg13_hv_nmos w=1u l=4u ng=1
+.ends
+
+
+* expanding   symbol:  SplitterCell.sym # of pins=9
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/SplitterCell.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/SplitterCell.sch
+.subckt SplitterCell en_VS A_UN B_UN en_VSB bias_VN vssa out_UPB out_UP
+*.PININFO en_VS:I en_VSB:I bias_VN:I B_UN:B out_UP:B out_UPB:B vssa:B A_UN:B
+MM_en out_UP en_VS net1 vssa sg13_hv_nmos w=1u l=1u ng=1
+MM_enb out_UPB en_VSB net1 vssa sg13_hv_nmos w=1u l=1u ng=1
+MM_s1 net1 bias_VN net3 vssa sg13_hv_nmos w=2u l=10u ng=1
+MM_s2 net3 bias_VN net4 vssa sg13_hv_nmos w=2u l=10u ng=1
+MM_s3 net4 bias_VN net5 vssa sg13_hv_nmos w=2u l=10u ng=1
+MM_s4 net5 bias_VN net2 vssa sg13_hv_nmos w=2u l=10u ng=1
+MM_s5 net2 bias_VN net6 vssa sg13_hv_nmos w=2u l=10u ng=1
+MM_s6 net6 bias_VN net7 vssa sg13_hv_nmos w=2u l=10u ng=1
+MM_s7 net7 bias_VN net8 vssa sg13_hv_nmos w=2u l=10u ng=1
+MM_s8 net8 bias_VN A_UN vssa sg13_hv_nmos w=2u l=10u ng=1
+MM_s9 A_UN bias_VN net9 vssa sg13_hv_nmos w=2u l=10u ng=1
+MM_s10 net9 bias_VN net10 vssa sg13_hv_nmos w=2u l=10u ng=1
+MM_s11 net10 bias_VN net11 vssa sg13_hv_nmos w=2u l=10u ng=1
+MM_s12 net11 bias_VN B_UN vssa sg13_hv_nmos w=2u l=10u ng=1
+.ends
+
+
+* expanding   symbol:  cfringe34x70.sym # of pins=2
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/cfringe34x70.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/cfringe34x70.sch
+.subckt cfringe34x70 C2 C1
+*.PININFO C1:B C2:B
+CC3 C1 C2 cap_mfringe w=9.3750u l=22.5u mmin=1 mmax=4
+CC1 C2 C1 cap_mfringe w=9.3750u l=11.26u mmin=1 mmax=4
+CC4 C2 C1 cap_mfringe w=15u l=36.5u mmin=1 mmax=4
+.ends
+
+
+* expanding   symbol:  cfringe33x55.sym # of pins=2
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/cfringe33x55.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/cfringe33x55.sch
+.subckt cfringe33x55 C2 C1
+*.PININFO C2:B C1:B
+CC2 C2 C1 cap_mfringe w=4.44u l=5u mmin=1 mmax=4
+CC5 C1 C2 cap_mfringe w=8.96u l=19.18u mmin=1 mmax=4
+CC6 C1 C2 cap_mfringe w=19.73u l=31u mmin=1 mmax=4
+.ends
+
+
+* expanding   symbol:  cfringe140x6.sym # of pins=2
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/cfringe140x6.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/cfringe140x6.sch
+.subckt cfringe140x6 C2 C1
+*.PININFO C1:B C2:B
+CC1 C1 C2 cap_mfringe w=140.0u l=6.37u mmin=1 mmax=4
+.ends
+
+
+* expanding   symbol:  DecadeDivider_2.sym # of pins=5
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/DecadeDivider_2.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/DecadeDivider_2.sch
+.subckt DecadeDivider_2 VDDA IREF IREF_CORE[0] IOUT VSSA
+*.PININFO VSSA:B VDDA:B IREF:B IREF_CORE[0]:B IOUT:B
+x1[2] VDDA IREF VDDA IREF VSSA IREF_CORE[0] ISOURCE
+x1[1] VDDA IREF VDDA IREF VSSA IREF_CORE[0] ISOURCE
+x10[2] VDDA IREF VDDA IREF VSSA Vbn ISOURCE
+x10[1] VDDA IREF VDDA IREF VSSA Vbn ISOURCE
+x11[20] VDDA IREF VDDA IREF VSSA IREF ISOURCE
+x11[19] VDDA IREF VDDA IREF VSSA IREF ISOURCE
+x11[18] VDDA IREF VDDA IREF VSSA IREF ISOURCE
+x11[17] VDDA IREF VDDA IREF VSSA IREF ISOURCE
+x11[16] VDDA IREF VDDA IREF VSSA IREF ISOURCE
+x11[15] VDDA IREF VDDA IREF VSSA IREF ISOURCE
+x11[14] VDDA IREF VDDA IREF VSSA IREF ISOURCE
+x11[13] VDDA IREF VDDA IREF VSSA IREF ISOURCE
+x11[12] VDDA IREF VDDA IREF VSSA IREF ISOURCE
+x11[11] VDDA IREF VDDA IREF VSSA IREF ISOURCE
+x11[10] VDDA IREF VDDA IREF VSSA IREF ISOURCE
+x11[9] VDDA IREF VDDA IREF VSSA IREF ISOURCE
+x11[8] VDDA IREF VDDA IREF VSSA IREF ISOURCE
+x11[7] VDDA IREF VDDA IREF VSSA IREF ISOURCE
+x11[6] VDDA IREF VDDA IREF VSSA IREF ISOURCE
+x11[5] VDDA IREF VDDA IREF VSSA IREF ISOURCE
+x11[4] VDDA IREF VDDA IREF VSSA IREF ISOURCE
+x11[3] VDDA IREF VDDA IREF VSSA IREF ISOURCE
+x11[2] VDDA IREF VDDA IREF VSSA IREF ISOURCE
+x11[1] VDDA IREF VDDA IREF VSSA IREF ISOURCE
+x3[15] IOUT VSSA Vbn Vbn VSSA ISINK_MB
+x3[14] IOUT VSSA Vbn Vbn VSSA ISINK_MB
+x3[13] IOUT VSSA Vbn Vbn VSSA ISINK_MB
+x3[12] IOUT VSSA Vbn Vbn VSSA ISINK_MB
+x3[11] IOUT VSSA Vbn Vbn VSSA ISINK_MB
+x3[10] IOUT VSSA Vbn Vbn VSSA ISINK_MB
+x3[9] IOUT VSSA Vbn Vbn VSSA ISINK_MB
+x3[8] IOUT VSSA Vbn Vbn VSSA ISINK_MB
+x3[7] IOUT VSSA Vbn Vbn VSSA ISINK_MB
+x3[6] IOUT VSSA Vbn Vbn VSSA ISINK_MB
+x3[5] IOUT VSSA Vbn Vbn VSSA ISINK_MB
+x3[4] IOUT VSSA Vbn Vbn VSSA ISINK_MB
+x3[3] IOUT VSSA Vbn Vbn VSSA ISINK_MB
+x3[2] IOUT VSSA Vbn Vbn VSSA ISINK_MB
+x3[1] IOUT VSSA Vbn Vbn VSSA ISINK_MB
+x2[15] Vbn VSSA Vbn Vbn VSSA ISINK_MB
+x2[14] Vbn VSSA Vbn Vbn VSSA ISINK_MB
+x2[13] Vbn VSSA Vbn Vbn VSSA ISINK_MB
+x2[12] Vbn VSSA Vbn Vbn VSSA ISINK_MB
+x2[11] Vbn VSSA Vbn Vbn VSSA ISINK_MB
+x2[10] Vbn VSSA Vbn Vbn VSSA ISINK_MB
+x2[9] Vbn VSSA Vbn Vbn VSSA ISINK_MB
+x2[8] Vbn VSSA Vbn Vbn VSSA ISINK_MB
+x2[7] Vbn VSSA Vbn Vbn VSSA ISINK_MB
+x2[6] Vbn VSSA Vbn Vbn VSSA ISINK_MB
+x2[5] Vbn VSSA Vbn Vbn VSSA ISINK_MB
+x2[4] Vbn VSSA Vbn Vbn VSSA ISINK_MB
+x2[3] Vbn VSSA Vbn Vbn VSSA ISINK_MB
+x2[2] Vbn VSSA Vbn Vbn VSSA ISINK_MB
+x2[1] Vbn VSSA Vbn Vbn VSSA ISINK_MB
+x1 VDDA IREF Cap3
+.ends
+
+
+* expanding   symbol:  DecadeDividerAux.sym # of pins=4
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/DecadeDividerAux.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/DecadeDividerAux.sch
+.subckt DecadeDividerAux VDDA VBIAS IREF_CORE[0] VSSA
+*.PININFO VSSA:B VDDA:B VBIAS:B IREF_CORE[0]:B
+x1[20] VDDA VBIAS VDDA VBIAS VSSA IREF_CORE[0] ISOURCE
+x1[19] VDDA VBIAS VDDA VBIAS VSSA IREF_CORE[0] ISOURCE
+x1[18] VDDA VBIAS VDDA VBIAS VSSA IREF_CORE[0] ISOURCE
+x1[17] VDDA VBIAS VDDA VBIAS VSSA IREF_CORE[0] ISOURCE
+x1[16] VDDA VBIAS VDDA VBIAS VSSA IREF_CORE[0] ISOURCE
+x1[15] VDDA VBIAS VDDA VBIAS VSSA IREF_CORE[0] ISOURCE
+x1[14] VDDA VBIAS VDDA VBIAS VSSA IREF_CORE[0] ISOURCE
+x1[13] VDDA VBIAS VDDA VBIAS VSSA IREF_CORE[0] ISOURCE
+x1[12] VDDA VBIAS VDDA VBIAS VSSA IREF_CORE[0] ISOURCE
+x1[11] VDDA VBIAS VDDA VBIAS VSSA IREF_CORE[0] ISOURCE
+x1[10] VDDA VBIAS VDDA VBIAS VSSA IREF_CORE[0] ISOURCE
+x1[9] VDDA VBIAS VDDA VBIAS VSSA IREF_CORE[0] ISOURCE
+x1[8] VDDA VBIAS VDDA VBIAS VSSA IREF_CORE[0] ISOURCE
+x1[7] VDDA VBIAS VDDA VBIAS VSSA IREF_CORE[0] ISOURCE
+x1[6] VDDA VBIAS VDDA VBIAS VSSA IREF_CORE[0] ISOURCE
+x1[5] VDDA VBIAS VDDA VBIAS VSSA IREF_CORE[0] ISOURCE
+x1[4] VDDA VBIAS VDDA VBIAS VSSA IREF_CORE[0] ISOURCE
+x1[3] VDDA VBIAS VDDA VBIAS VSSA IREF_CORE[0] ISOURCE
+x1[2] VDDA VBIAS VDDA VBIAS VSSA IREF_CORE[0] ISOURCE
+x1[1] VDDA VBIAS VDDA VBIAS VSSA IREF_CORE[0] ISOURCE
+MM1 VDDA VDDA VDDA VDDA sg13_hv_pmos w=0.3u l=5u ng=1 m=2
+.ends
+
+
+* expanding   symbol:  OTA_bc.sym # of pins=7
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/OTA_bc.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/OTA_bc.sch
+.subckt OTA_bc VDDA VBP C_p1 INN VOP INP VSSA
+*.PININFO VBP:I INP:I INN:I VSSA:B VDDA:B VOP:O C_p1:I
+MM13 n1 n1 VSSA VSSA sg13_hv_nmos w=2u l=0.5u ng=2 m=2
+MM1 n2 n2 VSSA VSSA sg13_hv_nmos w=2u l=0.5u ng=2 m=2
+MM12 n1 INN vtail VDDA sg13_hv_pmos w=16u l=0.5u ng=2 m=4
+MM3 n2 INP vtail VDDA sg13_hv_pmos w=16u l=0.5u ng=2 m=4
+MM4 vtail VBP VDDA VDDA sg13_hv_pmos w=12u l=500n ng=2 m=8
+MM5 vpmirr vpmirr VDDA VDDA sg13_hv_pmos w=2u l=500n ng=2 m=4
+MM6 vout1stage vpmirr VDDA VDDA sg13_hv_pmos w=2u l=500n ng=2 m=4
+MM7 vout1stage n1 VSSA VSSA sg13_hv_nmos w=1.75u l=0.5u ng=2 m=4
+MM8 VOP vout1stage VSSA VSSA sg13_hv_nmos w=4u l=0.5u ng=4 m=4
+MM9 VOP VBP VDDA VDDA sg13_hv_pmos w=4u l=0.5u ng=2
+MM10 vpmirr n2 VSSA VSSA sg13_hv_nmos w=2u l=0.5u ng=2 m=4
+x1 C_p1 vout1stage VSSA reshigh_50k
+.ends
+
+
+* expanding   symbol:  Cap1.sym # of pins=2
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/Cap1.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/Cap1.sch
+.subckt Cap1 Cp1 Cp2
+*.PININFO Cp2:B Cp1:B
+CC1 Cp1 Cp2 cap_mfringe w=407.0u l=35.0u mmin=1 mmax=4
+.ends
+
+
+* expanding   symbol:  Cap4.sym # of pins=2
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/Cap4.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/Cap4.sch
+.subckt Cap4 Cp1 Cp2
+*.PININFO Cp2:B Cp1:B
+CC11 Cp1 Cp2 cap_mfringe w=60.0u l=30.0u mmin=1 mmax=4
+.ends
+
+
+* expanding   symbol:  Cap5.sym # of pins=2
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/Cap5.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/Cap5.sch
+.subckt Cap5 Cp1 Cp2
+*.PININFO Cp2:B Cp1:B
+CC3 Cp2 Cp1 cap_mfringe w=28.0u l=10.0u mmin=1 mmax=4
+.ends
+
+
+* expanding   symbol:  reshigh_92k.sym # of pins=3
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/reshigh_92k.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/reshigh_92k.sch
+.subckt reshigh_92k R1 R2 VSSA
+*.PININFO R2:B R1:B VSSA:B
+RR3 R1 R2 91.97k $SUB=VSSA $[rhigh] w=0.5e-6 l=31e-6 b=0
+.ends
+
+
+* expanding   symbol:  ISOURCE.sym # of pins=6
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/ISOURCE.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/ISOURCE.sch
+.subckt ISOURCE VDDA MBIAS bulk ENB VSSA IO
+*.PININFO VDDA:B MBIAS:I ENB:I IO:B VSSA:B bulk:B
+MM2 net1 MBIAS VDDA bulk sg13_hv_pmos w=1u l=5u ng=1
+MM1 IO ENB net1 bulk sg13_hv_pmos w=3.3u l=0.5u ng=2
+.ends
+
+
+* expanding   symbol:  ISINK_MB.sym # of pins=5
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/ISINK_MB.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/ISINK_MB.sch
+.subckt ISINK_MB IO bulk EN MBIAS VSSA
+*.PININFO MBIAS:I EN:I IO:B VSSA:B bulk:B
+MM1 IO EN net2 bulk sg13_hv_nmos w=2.5u l=0.5u ng=1
+MM2 net2 MBIAS net1 bulk sg13_hv_nmos w=1u l=2u ng=1
+MM3 net1 MBIAS VSSA bulk sg13_hv_nmos w=1u l=2u ng=1
+.ends
+
+
+* expanding   symbol:  Cap3.sym # of pins=2
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/Cap3.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/Cap3.sch
+.subckt Cap3 Cp1 Cp2
+*.PININFO Cp2:B Cp1:B
+CC4 Cp1 Cp2 cap_mfringe w=14.0u l=88.0u mmin=1 mmax=4
+.ends
+
+
+* expanding   symbol:  reshigh_50k.sym # of pins=3
+** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/reshigh_50k.sym
+** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/OSS_INI_BLOCK/reshigh_50k.sch
+.subckt reshigh_50k R1 R2 VSSA
+*.PININFO R2:B R1:B VSSA:B
+RR1 R2 R1 49.84k $SUB=VSSA $[rhigh] w=0.5e-6 l=16.75e-6 b=0
 .ends
 
