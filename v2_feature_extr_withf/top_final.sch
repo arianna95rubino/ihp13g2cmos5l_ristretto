@@ -120,8 +120,8 @@ N 40 270 180 270 {lab=BG_100mV_core}
 N 40 310 180 310 {lab=BG_BIAS_core}
 N 40 330 180 330 {lab=BG_PROBE_core}
 N 55 410 180 410 {lab=C2F_ACK_core}
-N 55 390 180 390 {lab=C2F_REQ_core}
-N 55 370 180 370 {lab=C2F_COMP_core}
+N 55 390 180 390 {lab=vss}
+N 55 370 180 370 {lab=vss}
 N 55 450 180 450 {lab=SPI_SCK_core}
 N 55 470 180 470 {lab=SPI_MOSI_core}
 N 55 490 180 490 {lab=SPI_RST_N_core}
@@ -136,9 +136,9 @@ N -275 60 -235 60 {lab=vss}
 N -275 120 -150 120 {lab=SPI_CS_N_core}
 N -275 180 -150 180 {lab=SPI_MOSI_core}
 N -275 200 -150 200 {lab=SPI_RST_N_core}
-N -275 250 -150 250 {lab=C2F_REQ_core}
+N -275 250 -150 250 {lab=vss}
 N -275 270 -150 270 {lab=C2F_ACK_core}
-N -275 290 -150 290 {lab=C2F_COMP_core}
+N -275 290 -150 290 {lab=vss}
 N -275 340 -150 340 {lab=NN1_REQ_core}
 N -275 360 -150 360 {lab=NN1_ACK_core}
 N -275 380 -150 380 {lab=NN2_REQ_core}
@@ -261,8 +261,8 @@ C {lab_wire.sym} 170 270 0 0 {name=p68 sig_type=std_logic lab=BG_100mV_core}
 C {lab_wire.sym} 170 290 0 0 {name=p69 sig_type=std_logic lab=BG_100kRES_core}
 C {lab_wire.sym} 170 310 0 0 {name=p70 sig_type=std_logic lab=BG_BIAS_core}
 C {lab_wire.sym} 170 330 0 0 {name=p71 sig_type=std_logic lab=BG_PROBE_core}
-C {lab_wire.sym} 170 370 0 0 {name=p72 sig_type=std_logic lab=C2F_COMP_core}
-C {lab_wire.sym} 170 390 0 0 {name=p73 sig_type=std_logic lab=C2F_REQ_core}
+C {lab_wire.sym} 130 370 0 0 {name=p72 sig_type=std_logic lab=vss}
+C {lab_wire.sym} 130 390 0 0 {name=p73 sig_type=std_logic lab=vss}
 C {lab_wire.sym} 170 410 0 0 {name=p74 sig_type=std_logic lab=C2F_ACK_core}
 C {lab_wire.sym} 170 450 0 0 {name=p75 sig_type=std_logic lab=SPI_SCK_core}
 C {lab_wire.sym} 170 470 0 0 {name=p76 sig_type=std_logic lab=SPI_MOSI_core}
@@ -304,9 +304,9 @@ C {lab_wire.sym} -155 120 0 0 {name=p86 sig_type=std_logic lab=SPI_CS_N_core}
 C {lab_wire.sym} -165 160 0 0 {name=p88 sig_type=std_logic lab=SPI_SCK_core}
 C {lab_wire.sym} -155 180 0 0 {name=p89 sig_type=std_logic lab=SPI_MOSI_core}
 C {lab_wire.sym} -155 200 0 0 {name=p90 sig_type=std_logic lab=SPI_RST_N_core}
-C {lab_wire.sym} -155 250 0 0 {name=p91 sig_type=std_logic lab=C2F_REQ_core}
+C {lab_wire.sym} -215 250 0 0 {name=p91 sig_type=std_logic lab=vss}
 C {lab_wire.sym} -170 270 0 0 {name=p92 sig_type=std_logic lab=C2F_ACK_core}
-C {lab_wire.sym} -155 290 0 0 {name=p93 sig_type=std_logic lab=C2F_COMP_core}
+C {lab_wire.sym} -215 290 0 0 {name=p93 sig_type=std_logic lab=vss}
 C {lab_wire.sym} -160 340 0 0 {name=p94 sig_type=std_logic lab=NN1_REQ_core}
 C {lab_wire.sym} -160 360 0 0 {name=p95 sig_type=std_logic lab=NN1_ACK_core}
 C {lab_wire.sym} -155 380 0 0 {name=p96 sig_type=std_logic lab=NN2_REQ_core}

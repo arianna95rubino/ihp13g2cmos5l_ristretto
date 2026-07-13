@@ -14,19 +14,19 @@ x1 en_feedback_core vbias_core vdd vbias_bufP_core vss vbias_bufN_core vgain_cor
 + vin_p_ch1_core ack_up_core ack_dn_core vin_n_ch1_core vthr_l_core ch_sel_core vout_up_core vmem_dn_core vmem_up_core vout_dn_core vin_p_ch2_core
 + vin_n_ch2_core vout_amp_core req_up_core req_dn_core 2ch_feature_extr_withf
 x2 en_feedback_pad en_feedback_core SPI_CS_N_core SPI_CS_N_pad SPI_MISO_pad SPI_MISO_core SPI_SCK_core SPI_SCK_pad SPI_MOSI_core
-+ SPI_MOSI_pad SPI_RST_N_core SPI_RST_N_pad C2F_REQ_pad C2F_REQ_core C2F_ACK_core C2F_ACK_pad C2F_COMP_pad C2F_COMP_core NN1_REQ_pad
-+ NN1_REQ_core NN1_ACK_core NN1_ACK_pad NN2_REQ_pad NN2_REQ_core NN2_ACK_core NN2_ACK_pad V2I_INN_core V2I_INP_core NN3_REQ_core BG_PROBE_core
-+ NN1_MEM_PROBE_core NN2_MEM_PROBE_core NN3_MEM_PROBE_core NN3_ACK_core BG_BIAS_core BG_100kRES_core BG_100mV_core NN3_ACK_pad BG_100kRES_pad
-+ BG_BIAS_pad BG_100mV_pad V2I_INN_pad NN3_REQ_pad BG_PROBE_pad NN1_MEM_PROBE_pad NN2_MEM_PROBE_pad NN3_MEM_PROBE_pad V2I_INP_pad vbias_pad
-+ vspkthr_pad vref_pad vout_amp_pad vbias_bufP_pad vout_dn_pad vmem_dn_pad vleak_pad vbias_bufN_pad vmem_up_pad vout_up_pad ch_sel_pad
-+ req_dn_pad req_up_pad vgain_pad iovss iovdd vdd vss ch_sel_core vbias_bufN_core vref_core vbias_core vspkthr_core req_dn_core req_up_core
-+ vmem_dn_core vout_dn_core vbias_bufP_core vleak_core vout_up_core vgain_core vout_amp_core vmem_up_core vin_p_ch1_core vin_p_ch1_pad
-+ ack_up_core vin_n_ch1_core ack_up_pad vin_n_ch1_pad ack_dn_core vin_p_ch2_core ack_dn_pad vin_p_ch2_pad vin_n_ch2_core vin_n_ch2_pad
-+ vthr_h_core vthr_h_pad vthr_l_core vthr_l_pad padframe_withf
++ SPI_MOSI_pad SPI_RST_N_core SPI_RST_N_pad C2F_REQ_pad vss C2F_ACK_core C2F_ACK_pad C2F_COMP_pad vss NN1_REQ_pad NN1_REQ_core NN1_ACK_core
++ NN1_ACK_pad NN2_REQ_pad NN2_REQ_core NN2_ACK_core NN2_ACK_pad V2I_INN_core V2I_INP_core NN3_REQ_core BG_PROBE_core NN1_MEM_PROBE_core
++ NN2_MEM_PROBE_core NN3_MEM_PROBE_core NN3_ACK_core BG_BIAS_core BG_100kRES_core BG_100mV_core NN3_ACK_pad BG_100kRES_pad BG_BIAS_pad BG_100mV_pad
++ V2I_INN_pad NN3_REQ_pad BG_PROBE_pad NN1_MEM_PROBE_pad NN2_MEM_PROBE_pad NN3_MEM_PROBE_pad V2I_INP_pad vbias_pad vspkthr_pad vref_pad
++ vout_amp_pad vbias_bufP_pad vout_dn_pad vmem_dn_pad vleak_pad vbias_bufN_pad vmem_up_pad vout_up_pad ch_sel_pad req_dn_pad req_up_pad
++ vgain_pad iovss iovdd vdd vss ch_sel_core vbias_bufN_core vref_core vbias_core vspkthr_core req_dn_core req_up_core vmem_dn_core
++ vout_dn_core vbias_bufP_core vleak_core vout_up_core vgain_core vout_amp_core vmem_up_core vin_p_ch1_core vin_p_ch1_pad ack_up_core
++ vin_n_ch1_core ack_up_pad vin_n_ch1_pad ack_dn_core vin_p_ch2_core ack_dn_pad vin_p_ch2_pad vin_n_ch2_core vin_n_ch2_pad vthr_h_core vthr_h_pad
++ vthr_l_core vthr_l_pad padframe_withf
 x3 vdd vss top_FE_powergrid_withf
 x4 vdd SPI_CS_N_core SPI_MISO_core SPI_SCK_core vss SPI_MOSI_core SPI_RST_N_core NN1_REQ_core NN1_ACK_core NN2_REQ_core
 + NN2_ACK_core NN3_REQ_core NN3_ACK_core BG_PROBE_core BG_100kRES_core BG_BIAS_core BG_100mV_core NN1_MEM_PROBE_core NN2_MEM_PROBE_core
-+ NN3_MEM_PROBE_core V2I_INN_core V2I_INP_core vbias_bufP_core C2F_REQ_core C2F_ACK_core C2F_COMP_core INI_Block
++ NN3_MEM_PROBE_core V2I_INN_core V2I_INP_core vbias_bufP_core vss C2F_ACK_core vss INI_Block
 .ends
 
 * expanding   symbol:  2ch_feature_extr_withf.sym # of pins=26
