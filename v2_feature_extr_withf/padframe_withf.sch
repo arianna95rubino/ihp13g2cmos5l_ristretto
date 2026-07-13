@@ -592,7 +592,7 @@ C {ipin.sym} -300 1290 1 0 {name=pin_NN2_MEM_PROBE_in lab=NN2_MEM_PROBE_in}
 C {ipin.sym} -180 1290 1 0 {name=pin_NN1_MEM_PROBE_in lab=NN1_MEM_PROBE_in}
 C {ipin.sym} -20 1580 3 0 {name=pin_BG_100mV lab=BG_100mV_in}
 C {ipin.sym} 100 1580 3 0 {name=pin_BG_BIAS lab=BG_BIAS_in}
-C {ipin.sym} 220 1580 3 0 {name=pin_BG_100kRES lab=BG_100kRES_in}
+C {iopin.sym} 220 1580 1 0 {name=pin_BG_100kRES lab=BG_100kRES_in}
 C {ipin.sym} 300 1290 1 0 {name=pin_BG_PROBE lab=BG_PROBE_in}
 C {ipin.sym} 440 1580 3 0 {name=pin_NN3_ACK_in lab=NN3_ACK_in}
 C {ipin.sym} 520 1290 1 0 {name=pin_NN3_REQ_in lab=NN3_REQ_in}
@@ -603,7 +603,7 @@ C {opin.sym} -260 1580 1 0 {name=pin_NN2_MEM_PROBE_out lab=NN2_MEM_PROBE_out}
 C {opin.sym} -140 1580 1 0 {name=pin_NN1_MEM_PROBE_out lab=NN1_MEM_PROBE_out}
 C {opin.sym} -60 1290 3 0 {name=pin_BG_100mV_out lab=BG_100mV_out}
 C {opin.sym} 60 1290 3 0 {name=pin_BG_BIAS_out lab=BG_BIAS_out}
-C {opin.sym} 180 1290 3 0 {name=pin_BG_100kRES_out lab=BG_100kRES_out}
+C {iopin.sym} 180 1290 3 0 {name=pin_BG_100kRES_out lab=BG_100kRES_out}
 C {opin.sym} 340 1580 1 0 {name=pin_BG_PROBE_out lab=BG_PROBE_out}
 C {opin.sym} 460 1290 3 0 {name=pin_NN3_ACK_out lab=NN3_ACK_out}
 C {opin.sym} 560 1580 1 0 {name=pin_NN3_REQ_out lab=NN3_REQ_out}

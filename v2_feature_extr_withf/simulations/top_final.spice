@@ -97,8 +97,8 @@ x35 vss vn_ch2 vdd vn_in_ch2 vout_amp_ch2 en_feedback amp_feedback
 *+ vout_up_out:O vout_dn_out:O ch_sel_in:I ch_sel_out:O vbias_in:I vbias_out:O vbias_bufN_in:I vbias_bufN_out:O vbias_bufP_in:I vbias_bufP_out:O
 *+ vgain_in:I vleak_in:I vspkthr_in:I vref_in:I vgain_out:O vleak_out:O vspkthr_out:O vref_out:O vmem_up_in:I vmem_dn_in:I req_up_in:I
 *+ req_dn_in:I vmem_up_out:O vmem_dn_out:O req_up_out:O req_dn_out:O ack_up_in:I ack_up_out:O ack_dn_in:I ack_dn_out:O V2I_INP_in:I V2I_INN_in:I
-*+ NN3_MEM_PROBE_in:I NN2_MEM_PROBE_in:I NN1_MEM_PROBE_in:I BG_100mV_in:I BG_BIAS_in:I BG_100kRES_in:I BG_PROBE_in:I NN3_ACK_in:I NN3_REQ_in:I
-*+ V2I_INP_out:O V2I_INN_out:O NN3_MEM_PROBE_out:O NN2_MEM_PROBE_out:O NN1_MEM_PROBE_out:O BG_100mV_out:O BG_BIAS_out:O BG_100kRES_out:O
+*+ NN3_MEM_PROBE_in:I NN2_MEM_PROBE_in:I NN1_MEM_PROBE_in:I BG_100mV_in:I BG_BIAS_in:I BG_100kRES_in:B BG_PROBE_in:I NN3_ACK_in:I NN3_REQ_in:I
+*+ V2I_INP_out:O V2I_INN_out:O NN3_MEM_PROBE_out:O NN2_MEM_PROBE_out:O NN1_MEM_PROBE_out:O BG_100mV_out:O BG_BIAS_out:O BG_100kRES_out:B
 *+ BG_PROBE_out:O NN3_ACK_out:O NN3_REQ_out:O NN2_ACK_in:I NN1_ACK_in:I NN2_REQ_in:I NN1_REQ_in:I C2F_COMP_in:I C2F_ACK_in:I C2F_REQ_in:I
 *+ SPI_RST_N_in:I SPI_MOSI_in:I SPI_SCK_in:I SPI_CS_N_in:I SPI_MISO_in:I NN2_ACK_out:O NN1_ACK_out:O NN2_REQ_out:O NN1_REQ_out:O C2F_COMP_out:O
 *+ C2F_ACK_out:O C2F_REQ_out:O SPI_RST_N_out:O SPI_MOSI_out:O SPI_SCK_out:O SPI_MISO_out:O SPI_CS_N_out:O en_feedback_in:I en_feedback_out:O

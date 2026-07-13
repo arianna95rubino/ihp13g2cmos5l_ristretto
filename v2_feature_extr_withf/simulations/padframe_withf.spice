@@ -1,23 +1,111 @@
 ** sch_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/padframe_withf.sch
-.subckt padframe_withf en_feedback_in en_feedback_out SPI_CS_N_out SPI_CS_N_in SPI_MISO_out SPI_MISO_in SPI_SCK_out SPI_SCK_in
-+ SPI_MOSI_out SPI_MOSI_in SPI_RST_N_out SPI_RST_N_in C2F_REQ_out C2F_REQ_in C2F_ACK_out C2F_ACK_in C2F_COMP_out C2F_COMP_in NN1_REQ_out
-+ NN1_REQ_in NN1_ACK_out NN1_ACK_in NN2_REQ_out NN2_REQ_in NN2_ACK_out NN2_ACK_in V2I_INN_out V2I_INP_out NN3_REQ_in BG_PROBE_in
-+ NN1_MEM_PROBE_in NN2_MEM_PROBE_in NN3_MEM_PROBE_in NN3_ACK_out BG_BIAS_out BG_100kRES_out BG_100mV_out NN3_ACK_in BG_100kRES_in BG_BIAS_in
-+ BG_100mV_in V2I_INN_in NN3_REQ_out BG_PROBE_out NN1_MEM_PROBE_out NN2_MEM_PROBE_out NN3_MEM_PROBE_out V2I_INP_in vbias_in vspkthr_in vref_in
-+ vout_amp_out vbias_bufP_in vout_dn_out vmem_dn_out vleak_in vbias_bufN_in vmem_up_out vout_up_out ch_sel_in req_dn_out req_up_out vgain_in
-+ iovss iovdd vdd vss ch_sel_out vbias_bufN_out vref_out vbias_out vspkthr_out req_dn_in req_up_in vmem_dn_in vout_dn_in vbias_bufP_out
-+ vleak_out vout_up_in vgain_out vout_amp_in vmem_up_in vin_p_ch1_out vin_p_ch1_in ack_up_out vin_n_ch1_out ack_up_in vin_n_ch1_in ack_dn_out
-+ vin_p_ch2_out ack_dn_in vin_p_ch2_in vin_n_ch2_out vin_n_ch2_in vthr_h_out vthr_h_in vthr_l_out vthr_l_in
-*.PININFO iovss:B iovdd:B vdd:B vss:B vin_p_ch1_in:I vin_n_ch1_in:I vin_p_ch2_in:I vin_n_ch2_in:I vin_p_ch1_out:O vin_n_ch1_out:O
-*+ vin_p_ch2_out:O vin_n_ch2_out:O vthr_h_in:I vthr_l_in:I vthr_h_out:O vthr_l_out:O vout_amp_in:I vout_up_in:I vout_dn_in:I vout_amp_out:O
-*+ vout_up_out:O vout_dn_out:O ch_sel_in:I ch_sel_out:O vbias_in:I vbias_out:O vbias_bufN_in:I vbias_bufN_out:O vbias_bufP_in:I vbias_bufP_out:O
-*+ vgain_in:I vleak_in:I vspkthr_in:I vref_in:I vgain_out:O vleak_out:O vspkthr_out:O vref_out:O vmem_up_in:I vmem_dn_in:I req_up_in:I
-*+ req_dn_in:I vmem_up_out:O vmem_dn_out:O req_up_out:O req_dn_out:O ack_up_in:I ack_up_out:O ack_dn_in:I ack_dn_out:O V2I_INP_in:I V2I_INN_in:I
-*+ NN3_MEM_PROBE_in:I NN2_MEM_PROBE_in:I NN1_MEM_PROBE_in:I BG_100mV_in:I BG_BIAS_in:I BG_100kRES_in:I BG_PROBE_in:I NN3_ACK_in:I NN3_REQ_in:I
-*+ V2I_INP_out:O V2I_INN_out:O NN3_MEM_PROBE_out:O NN2_MEM_PROBE_out:O NN1_MEM_PROBE_out:O BG_100mV_out:O BG_BIAS_out:O BG_100kRES_out:O
-*+ BG_PROBE_out:O NN3_ACK_out:O NN3_REQ_out:O NN2_ACK_in:I NN1_ACK_in:I NN2_REQ_in:I NN1_REQ_in:I C2F_COMP_in:I C2F_ACK_in:I C2F_REQ_in:I
-*+ SPI_RST_N_in:I SPI_MOSI_in:I SPI_SCK_in:I SPI_CS_N_in:I SPI_MISO_in:I NN2_ACK_out:O NN1_ACK_out:O NN2_REQ_out:O NN1_REQ_out:O C2F_COMP_out:O
-*+ C2F_ACK_out:O C2F_REQ_out:O SPI_RST_N_out:O SPI_MOSI_out:O SPI_SCK_out:O SPI_MISO_out:O SPI_CS_N_out:O en_feedback_in:I en_feedback_out:O
+**.subckt padframe_withf en_feedback_in en_feedback_out SPI_CS_N_out SPI_CS_N_in SPI_MISO_out SPI_MISO_in SPI_SCK_out SPI_SCK_in
+*+ SPI_MOSI_out SPI_MOSI_in SPI_RST_N_out SPI_RST_N_in C2F_REQ_out C2F_REQ_in C2F_ACK_out C2F_ACK_in C2F_COMP_out C2F_COMP_in NN1_REQ_out
+*+ NN1_REQ_in NN1_ACK_out NN1_ACK_in NN2_REQ_out NN2_REQ_in NN2_ACK_out NN2_ACK_in V2I_INN_out V2I_INP_out NN3_REQ_in BG_PROBE_in
+*+ NN1_MEM_PROBE_in NN2_MEM_PROBE_in NN3_MEM_PROBE_in NN3_ACK_out BG_BIAS_out BG_100kRES_out BG_100mV_out NN3_ACK_in BG_100kRES_in BG_BIAS_in
+*+ BG_100mV_in V2I_INN_in NN3_REQ_out BG_PROBE_out NN1_MEM_PROBE_out NN2_MEM_PROBE_out NN3_MEM_PROBE_out V2I_INP_in vbias_in vspkthr_in vref_in
+*+ vout_amp_out vbias_bufP_in vout_dn_out vmem_dn_out vleak_in vbias_bufN_in vmem_up_out vout_up_out ch_sel_in req_dn_out req_up_out vgain_in
+*+ iovss iovdd vdd vss ch_sel_out vbias_bufN_out vref_out vbias_out vspkthr_out req_dn_in req_up_in vmem_dn_in vout_dn_in vbias_bufP_out
+*+ vleak_out vout_up_in vgain_out vout_amp_in vmem_up_in vin_p_ch1_out vin_p_ch1_in ack_up_out vin_n_ch1_out ack_up_in vin_n_ch1_in ack_dn_out
+*+ vin_p_ch2_out ack_dn_in vin_p_ch2_in vin_n_ch2_out vin_n_ch2_in vthr_h_out vthr_h_in vthr_l_out vthr_l_in
+*.iopin iovss
+*.iopin iovdd
+*.iopin vdd
+*.iopin vss
+*.ipin vin_p_ch1_in
+*.ipin vin_n_ch1_in
+*.ipin vin_p_ch2_in
+*.ipin vin_n_ch2_in
+*.opin vin_p_ch1_out
+*.opin vin_n_ch1_out
+*.opin vin_p_ch2_out
+*.opin vin_n_ch2_out
+*.ipin vthr_h_in
+*.ipin vthr_l_in
+*.opin vthr_h_out
+*.opin vthr_l_out
+*.ipin vout_amp_in
+*.ipin vout_up_in
+*.ipin vout_dn_in
+*.opin vout_amp_out
+*.opin vout_up_out
+*.opin vout_dn_out
+*.ipin ch_sel_in
+*.opin ch_sel_out
+*.ipin vbias_in
+*.opin vbias_out
+*.ipin vbias_bufN_in
+*.opin vbias_bufN_out
+*.ipin vbias_bufP_in
+*.opin vbias_bufP_out
+*.ipin vgain_in
+*.ipin vleak_in
+*.ipin vspkthr_in
+*.ipin vref_in
+*.opin vgain_out
+*.opin vleak_out
+*.opin vspkthr_out
+*.opin vref_out
+*.ipin vmem_up_in
+*.ipin vmem_dn_in
+*.ipin req_up_in
+*.ipin req_dn_in
+*.opin vmem_up_out
+*.opin vmem_dn_out
+*.opin req_up_out
+*.opin req_dn_out
+*.ipin ack_up_in
+*.opin ack_up_out
+*.ipin ack_dn_in
+*.opin ack_dn_out
+*.ipin V2I_INP_in
+*.ipin V2I_INN_in
+*.ipin NN3_MEM_PROBE_in
+*.ipin NN2_MEM_PROBE_in
+*.ipin NN1_MEM_PROBE_in
+*.ipin BG_100mV_in
+*.ipin BG_BIAS_in
+*.iopin BG_100kRES_in
+*.ipin BG_PROBE_in
+*.ipin NN3_ACK_in
+*.ipin NN3_REQ_in
+*.opin V2I_INP_out
+*.opin V2I_INN_out
+*.opin NN3_MEM_PROBE_out
+*.opin NN2_MEM_PROBE_out
+*.opin NN1_MEM_PROBE_out
+*.opin BG_100mV_out
+*.opin BG_BIAS_out
+*.iopin BG_100kRES_out
+*.opin BG_PROBE_out
+*.opin NN3_ACK_out
+*.opin NN3_REQ_out
+*.ipin NN2_ACK_in
+*.ipin NN1_ACK_in
+*.ipin NN2_REQ_in
+*.ipin NN1_REQ_in
+*.ipin C2F_COMP_in
+*.ipin C2F_ACK_in
+*.ipin C2F_REQ_in
+*.ipin SPI_RST_N_in
+*.ipin SPI_MOSI_in
+*.ipin SPI_SCK_in
+*.ipin SPI_CS_N_in
+*.ipin SPI_MISO_in
+*.opin NN2_ACK_out
+*.opin NN1_ACK_out
+*.opin NN2_REQ_out
+*.opin NN1_REQ_out
+*.opin C2F_COMP_out
+*.opin C2F_ACK_out
+*.opin C2F_REQ_out
+*.opin SPI_RST_N_out
+*.opin SPI_MOSI_out
+*.opin SPI_SCK_out
+*.opin SPI_MISO_out
+*.opin SPI_CS_N_out
+*.ipin en_feedback_in
+*.opin en_feedback_out
 x1 iovdd iovss vout_up_out vout_up_in vdd vss sg13cmos5l_IOPadAnalog
 x6 iovdd iovss vout_dn_out vout_dn_in vdd vss sg13cmos5l_IOPadAnalog
 x7 iovdd iovss vbias_bufP_in vbias_bufP_out vdd vss sg13cmos5l_IOPadAnalog
@@ -56,16 +144,16 @@ x135 iovdd iovss vin_n_ch1_in vin_n_ch1_out vdd vss sg13cmos5l_IOPadAnalog
 x136 iovdd iovss vin_p_ch1_in vin_p_ch1_out vdd vss sg13cmos5l_IOPadAnalog
 x139 iovdd iovss vout_amp_out vout_amp_in vdd vss sg13cmos5l_IOPadAnalog
 x140 iovdd iovss vin_n_ch2_in vin_n_ch2_out vdd vss sg13cmos5l_IOPadAnalog
-x141 iovdd iovss vleak_in vleak_out vdd vss sg13cmos5l_IOPadAnalog
-x142 iovdd iovss vspkthr_in vspkthr_out vdd vss sg13cmos5l_IOPadAnalog
+x141 req_up_in iovdd iovss req_up_out vdd vss sg13cmos5l_IOPadOut16mA
+x142 req_dn_in iovdd iovss req_dn_out vdd vss sg13cmos5l_IOPadOut16mA
 x149 iovdd iovss vmem_dn_out vmem_dn_in vdd vss sg13cmos5l_IOPadAnalog
-x150 iovdd iovss vbias_bufN_in vbias_bufN_out vdd vss sg13cmos5l_IOPadAnalog
+x150 iovdd iovss vmem_up_out vmem_up_in vdd vss sg13cmos5l_IOPadAnalog
 x137 iovdd iovss vgain_in vgain_out vdd vss sg13cmos5l_IOPadAnalog
-x138 iovdd iovss vref_in vref_out vdd vss sg13cmos5l_IOPadAnalog
-x147 iovdd iovss vmem_up_out vmem_up_in vdd vss sg13cmos5l_IOPadAnalog
+x138 iovdd iovss ack_up_out ack_up_in vdd vss sg13cmos5l_IOPadIn
+x147 iovdd iovss ack_dn_out ack_dn_in vdd vss sg13cmos5l_IOPadIn
 x148 iovdd iovss vdd vss sg13cmos5l_IOPadVss
-x152 req_up_in iovdd iovss req_up_out vdd vss sg13cmos5l_IOPadOut16mA
-x153 req_dn_in iovdd iovss req_dn_out vdd vss sg13cmos5l_IOPadOut16mA
+x152 iovdd iovss vleak_in vleak_out vdd vss sg13cmos5l_IOPadAnalog
+x153 iovdd iovss vspkthr_in vspkthr_out vdd vss sg13cmos5l_IOPadAnalog
 x171 iovdd iovss vdd vss sg13cmos5l_IOPadVss
 x155 iovdd iovss vdd vss sg13cmos5l_IOPadIOVss
 x156 iovdd iovss vdd vss sg13cmos5l_IOPadIOVdd
@@ -84,8 +172,8 @@ x172 iovdd iovss vdd vss sg13cmos5l_IOPadVss
 x173 iovdd iovss BG_100mV_in BG_100mV_out vdd vss sg13cmos5l_IOPadAnalog
 x174 iovdd iovss NN1_MEM_PROBE_out NN1_MEM_PROBE_in vdd vss sg13cmos5l_IOPadAnalog
 x151 iovdd iovss ch_sel_out ch_sel_in vdd vss sg13cmos5l_IOPadIn
-x239 iovdd iovss ack_up_out ack_up_in vdd vss sg13cmos5l_IOPadIn
-x15 iovdd iovss ack_dn_out ack_dn_in vdd vss sg13cmos5l_IOPadIn
+x239 iovdd iovss vbias_bufN_in vbias_bufN_out vdd vss sg13cmos5l_IOPadAnalog
+x15 iovdd iovss vref_in vref_out vdd vss sg13cmos5l_IOPadAnalog
 x31 iovdd iovss vdd vss sg13cmos5l_Filler2000
 x20 iovdd iovss vdd vss sg13cmos5l_Filler400
 x32 iovdd iovss vdd vss sg13cmos5l_Filler400
@@ -306,7 +394,7 @@ x285 iovdd iovss vdd vss sg13cmos5l_Filler4000
 x286 iovdd iovss vdd vss sg13cmos5l_Filler4000
 x287 iovdd iovss vdd vss sg13cmos5l_Filler4000
 x288 iovdd iovss vdd vss sg13cmos5l_Filler4000
-.ends
+**.ends
 
 * expanding   symbol:  sg13cmos5l_IOPadAnalog.sym # of pins=6
 ** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/sg13cmos5l_IOPadAnalog.sym
@@ -347,3 +435,4 @@ x288 iovdd iovss vdd vss sg13cmos5l_Filler4000
 * expanding   symbol:  sg13cmos5l_Filler2000.sym # of pins=4
 ** sym_path: /foss/designs/ristretto/ihp13g2cmos5l_ristretto/v2_feature_extr_withf/sg13cmos5l_Filler2000.sym
 .include /foss/pdks/ihp-sg13cmos5l/libs.ref/sg13cmos5l_io/cdl/sg13cmos5l_io.cdl
+.end

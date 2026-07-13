@@ -138,10 +138,10 @@ B 5 -152.5 87.5 -147.5 92.5 {name=NN2_MEM_PROBE_in dir=in}
 B 5 -152.5 107.5 -147.5 112.5 {name=NN3_MEM_PROBE_in dir=in}
 B 5 -152.5 227.5 -147.5 232.5 {name=NN3_ACK_out dir=out}
 B 5 -152.5 297.5 -147.5 302.5 {name=BG_BIAS_out dir=out}
-B 5 -152.5 277.5 -147.5 282.5 {name=BG_100kRES_out dir=out}
+B 5 -152.5 277.5 -147.5 282.5 {name=BG_100kRES_out dir=inout}
 B 5 -152.5 257.5 -147.5 262.5 {name=BG_100mV_out dir=out}
 B 5 147.5 227.5 152.5 232.5 {name=NN3_ACK_in dir=in}
-B 5 147.5 277.5 152.5 282.5 {name=BG_100kRES_in dir=in}
+B 5 147.5 277.5 152.5 282.5 {name=BG_100kRES_in dir=inout}
 B 5 147.5 297.5 152.5 302.5 {name=BG_BIAS_in dir=in}
 B 5 147.5 257.5 152.5 262.5 {name=BG_100mV_in dir=in}
 B 5 147.5 37.5 152.5 42.5 {name=V2I_INN_in dir=in}
