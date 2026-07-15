@@ -336,7 +336,7 @@ N 238.75 10 238.75 70 {lab=req_up}
 N -60 205 -60 225 {
 lab=GND}
 N -60 120 -60 145 {lab=#net1}
-C {2ch_feature_extr.sym} 0 -30 0 0 {name=x1}
+C {2ch_feature_extr_withf.sym} 0 -30 0 0 {name=x1}
 C {devices/vsource.sym} -740 -310 0 0 {name=Vdd value=1.2}
 C {devices/gnd.sym} -740 -260 0 0 {name=l3 lab=GND}
 C {devices/vsource.sym} -656.25 -302.5 0 0 {name=Vcm1 value="dc 0.56"}
@@ -391,7 +391,7 @@ op
 write 2ch_feature_extr_tb.raw
 set appendwrite
 
-tran 100n 4m
+tran 100n 2m
 write 2ch_feature_extr_tb.raw
 
 .endc
